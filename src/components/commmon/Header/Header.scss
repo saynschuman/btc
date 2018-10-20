@@ -123,6 +123,41 @@
   }
 }
 
+.admin-header {
+  ul {
+    padding: 20px 0;
+    margin: 0;
+    li {
+      list-style-type: none;
+      display: inline-block;
+      &:first-child {
+        color: #fff;
+        width: 200px;
+      }
+      &:nth-child(2) {
+        width: calc(100% - 302px);
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 10%;
+          top: 0;
+          background-color: #291764;
+          height: 1px;
+          width: 80%;
+          margin: 0 auto;
+          display: block;
+        }
+      }
+      &:last-child {
+        color: #2e71f4;
+        width: 102px;
+        text-align: right;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1640px) {
   .header-wrapper .header-inner {
     width: 100%;
