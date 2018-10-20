@@ -8,25 +8,52 @@ class Header extends Component {
     isAdmin: PropTypes.bool
   };
   render() {
+    const renderStyle = () => {
+      if (this.props.isAdmin) {
+        return {
+          widthLeft: "20%",
+          widthRight: "15%",
+          widthMiddle: "65%"
+        };
+      } else {
+        return {
+          widthLeft: "25%",
+          widthRight: "25%",
+          widthMiddle: "50%"
+        };
+      }
+    };
     return (
       <div className="header-wrapper">
         <div className="header-inner">
-          <div className="left item" style={{ width: "20%" }}>
+          <div className="left item" style={{ width: renderStyle().widthLeft }}>
             <div className="logo" />
           </div>
-          <div className="item menu" style={{ width: "65%" }}>
+          <div
+            className="item menu"
+            style={{ width: renderStyle().widthMiddle }}
+          >
             {this.props.isAdmin ? <AdminHeader /> : <Nav />}
           </div>
-          <div className="right item" style={{ width: "15%" }}>
+          <div
+            className="right item"
+            style={{ width: renderStyle().widthRight }}
+          >
             <ul>
               {!this.props.isAdmin && (
                 <li className="lang">
                   <a href="/">RU</a>
                 </li>
               )}
-              <li className="exit">
-                <a href="/">Выход</a>
-              </li>
+              {this.props.isAdmin ? (
+                <li className="exit admin">
+                  <a href="/">Выход</a>
+                </li>
+              ) : (
+                <li className="exit">
+                  <a href="/">Выход</a>
+                </li>
+              )}
             </ul>
           </div>
         </div>

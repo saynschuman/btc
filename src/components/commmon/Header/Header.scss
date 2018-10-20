@@ -43,6 +43,16 @@
             }
             &.exit {
               padding-left: 30px;
+              &.admin {
+                a {
+                  &::after {
+                    background-image: url("./img/user.png");
+                    width: 22px;
+                    height: 15px;
+                    top: 16px;
+                  }
+                }
+              }
               a {
                 display: block;
                 border: 1px solid #3070fd;
