@@ -11,9 +11,9 @@ class Header extends Component {
     const renderStyle = () => {
       if (this.props.isAdmin) {
         return {
-          widthLeft: "20%",
+          widthLeft: "25%",
           widthRight: "15%",
-          widthMiddle: "65%"
+          widthMiddle: "60%"
         };
       } else {
         return {
