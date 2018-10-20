@@ -4,6 +4,7 @@ import Header from "./components/commmon/Header/Header";
 import "./App.css";
 import PropTypes from "prop-types";
 import { auth } from "./mocks";
+import AsideMenu from "./components/commmon/AsideMenu/AsideMenu";
 
 class App extends Component {
   static propTypes = {
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <div>
         <Header isAdmin={auth.isAdmin} />
+        <AsideMenu />
         <Settings />
       </div>
     );
