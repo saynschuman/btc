@@ -1,0 +1,10 @@
+[ver:1,total:720]
+src/components/commmon/LoginHeader/loginHeader.scss:159,1540310400:159,m
+src/components/commmon/LoginHeader/LoginHeader.js:135,1540310400:135,m
+src/backend/api.js:130,1540306800:130,r
+src/components/AuthForm/AuthForm.js:112,1540306800:62,1540310400:50,r
+src/App.js:92,1540310400:92,m
+src/reducer/authData.js:44,1540306800:32,1540310400:12,r
+src/backend/mocks.js:28,1540306800:8,1540310400:20,r
+src/reducer/index.js:12,1540310400:12,r
+src/actions/index.js:8,1540306800:8,r
