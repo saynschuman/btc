@@ -1,0 +1,31 @@
+.loginWrapper {
+  width: 100%;
+  max-width: 557px;
+  height: auto;
+  min-height: 498px;
+  padding: 42px 0;
+  background-color: #fff;
+  display: block;
+  margin-top: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 2px;
+  .container {
+    padding: 0 53px;
+    padding-right: 26px;
+  }
+  .logintop {
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 40px;
+    color: #505050;
+    font-size: 18px;
+  }
+  .regLink {
+    float: right;
+    font-size: 16px;
+    a {
+      color: #6a9aee;
+      text-decoration: none;
+    }
+  }
+}

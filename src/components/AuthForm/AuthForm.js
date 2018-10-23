@@ -24,25 +24,34 @@ class AuthForm extends React.Component {
   };
   render() {
     return (
-      <div>
-        <h2>Вход</h2>
-        <form>
-          <input
-            name="id"
-            onChange={e => this.handleId(e.target.value)}
-            component="input"
-            type="text"
-            autoComplete="off"
-          />
-          <input
-            name="password"
-            onChange={e => this.handlePassword(e.target.value)}
-            component="input"
-            type="password"
-            autoComplete="off"
-          />
-          <input onClick={this.handleSubmit} type="submit" />
-        </form>
+      <div className="loginWrapper">
+        <div className="logintop">
+          <div className="container">
+            Войдите в свой профиль ниже{" "}
+            <span className="regLink">
+              или <a href="">Регистрация</a>
+            </span>
+          </div>
+        </div>
+        <div className="loginmain">
+          <form className="container">
+            <input
+              name="id"
+              onChange={e => this.handleId(e.target.value)}
+              component="input"
+              type="text"
+              autoComplete="off"
+            />
+            <input
+              name="password"
+              onChange={e => this.handlePassword(e.target.value)}
+              component="input"
+              type="password"
+              autoComplete="off"
+            />
+            <input onClick={this.handleSubmit} type="submit" value={"Вход"} />
+          </form>
+        </div>
       </div>
     );
   }
