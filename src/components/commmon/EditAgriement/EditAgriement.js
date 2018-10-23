@@ -35,7 +35,7 @@ export default () => {
                 </div>
               );
             }
-            return <div>Default message before request is made.</div>;
+            return <div>Default message</div>;
           }}
         </Get>
       </main>
