@@ -1,0 +1,11 @@
+[ver:1,total:2760]
+src/App.js:925,1540378800:450,1540382400:475,m
+src/components/AuthForm/AuthForm.js:850,1540378800:90,1540382400:760,m
+src/components/AuthForm/AuthForm.scss:390,1540382400:390,m
+src/components/commmon/WrongData/WrongData.scss:225,1540382400:225,m
+src/components/commmon/WrongData/WrongData.js:170,1540382400:170,m
+src/actions/index.js:120,1540382400:120,m
+src/components/admin/RootAdmin/index.js:30,1540378800:30,r
+src/components/commmon/Header/Header.jsx:30,1540378800:30,r
+src/backend/api.js:10,1540382400:10,m
+src/backend/mocks.js:10,1540382400:10,r
