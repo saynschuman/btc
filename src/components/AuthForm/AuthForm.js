@@ -24,6 +24,7 @@ class AuthForm extends React.Component {
   };
 
   render() {
+    const { isLoaded, isLoading } = this.props;
     return (
       <div className="loginWrapper">
         <div className="logintop">
@@ -55,6 +56,7 @@ class AuthForm extends React.Component {
               autoComplete="off"
             />
             <input onClick={this.handleSubmit} type="submit" value={"Вход"} />
+            {isLoading && !isLoaded && <div className="loader" />}
             <a className="forgotLink" href="/">
               Забыли пароль?
             </a>
@@ -66,6 +68,11 @@ class AuthForm extends React.Component {
 }
 
 export default connect(
-  null,
+  state => {
+    return {
+      isLoading: state.authData.isLoading,
+      isLoaded: state.authData.isLoaded
+    };
+  },
   { checkWhoAreYou }
 )(AuthForm);

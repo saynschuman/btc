@@ -10,6 +10,7 @@
   margin-left: auto;
   border-radius: 2px;
   margin-bottom: 70px;
+  position: relative;
   .container {
     padding: 0 53px;
   }
@@ -77,7 +78,28 @@
   }
 }
 
+.loader {
+  width: 70px;
+  height: 54px;
+  background-image: url("./img/loader.gif");
+  background-size: 100%;
+  position: relative;
+  margin-top: -50px;
+  float: right;
+  margin-right: 84px;
+}
+
 @media screen and (max-width: 768px) {
+  .loader {
+    width: 70px;
+    height: 54px;
+    background-image: url("./img/loader.gif");
+    background-size: 100%;
+    position: relative;
+    margin-top: -63px;
+    float: right;
+    margin-right: 99px;
+  }
   .loginWrapper {
     margin-top: 0;
     width: 90%;
@@ -114,5 +136,18 @@
   }
   .logintop .container {
     padding-right: 14px;
+  }
+}
+
+@media screen and (max-width: 594px) {
+  .loader {
+    width: 50px;
+    height: 36px;
+    background-image: url(/static/media/loader.90c0aa65.gif);
+    background-size: 100%;
+    position: relative;
+    margin-top: -55px;
+    float: right;
+    margin-right: 6px;
   }
 }

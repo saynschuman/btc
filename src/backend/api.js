@@ -7,6 +7,6 @@ export const whoAreYou = data => {
   if (data.id === investor.id && data.password === investor.password) {
     return "investor";
   } else {
-    return "Неверный ID или пароль";
+    return false;
   }
 };

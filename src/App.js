@@ -5,6 +5,7 @@ import "./App.css";
 import { connect } from "react-redux";
 import RootAdmin from "./components/admin/RootAdmin";
 import InvestorHomepage from "./components/investor/investorHomepage/investorHomePage";
+import WrongData from "./components/commmon/WrongData/WrongData";
 
 class App extends Component {
   renderInterface = () => {
@@ -19,6 +20,7 @@ class App extends Component {
             <div>
               <LoginHeader />
               <AuthForm />
+              <WrongData />
             </div>
           );
       }

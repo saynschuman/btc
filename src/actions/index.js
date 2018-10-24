@@ -8,7 +8,7 @@ export const checkWhoAreYou = authData => dispatch => {
   const promise = new Promise(resolve => {
     setTimeout(() => {
       resolve(whoAreYou(authData));
-    }, 300);
+    }, 1300);
   });
 
   promise.then(result => {
