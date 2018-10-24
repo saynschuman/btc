@@ -1,0 +1,10 @@
+[ver:1,total:1560]
+src/App.js:1040,1540378800:1040,m
+src/components/commmon/Header/Header.jsx:180,1540378800:180,m
+src/actions/index.js:160,1540378800:160,m
+src/components/admin/RootAdmin/index.js:86,1540378800:86,m
+src/reducer/authData.js:36,1540378800:36,r
+src/components/admin/AdminHomepage/AdminHomepage.js:26,1540378800:26,r
+src/backend/examplaeFetch.js:16,1540378800:16,r
+src/backend/mocks.js:10,1540378800:10,r
+src/backend/api.js:6,1540378800:6,r
