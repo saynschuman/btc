@@ -1,0 +1,12 @@
+[ver:1,total:5700]
+src/components/AuthForm/AuthForm.scss:2244,1540310400:1104,1540314000:530,1540317600:10,1540364400:240,1540368000:360,m
+src/components/AuthForm/AuthForm.js:2150,1540310400:264,1540314000:1606,1540317600:190,1540364400:90,m
+src/backend/api.js:510,1540314000:360,1540317600:150,r
+src/components/commmon/Axios/Axios.js:362,1540314000:352,1540317600:10,r
+package.json:160,1540314000:160,m
+src/App.js:77,1540314000:22,1540317600:25,1540364400:30,r
+src/components/commmon/LoginHeader/loginHeader.scss:74,1540310400:12,1540314000:40,1540317600:22,m
+src/components/commmon/LoginHeader/LoginHeader.js:56,1540314000:10,1540317600:46,r
+src/backend/mocks.js:45,1540314000:30,1540317600:15,r
+src/actions/index.js:12,1540317600:12,r
+src/components/AuthForm/AuthForm.jsjs:10,1540314000:10,d
