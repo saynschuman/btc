@@ -22,6 +22,7 @@ class AuthForm extends React.Component {
     e.preventDefault();
     this.props.isAdmin(this.state);
   };
+
   render() {
     return (
       <div className="loginWrapper">
@@ -29,27 +30,34 @@ class AuthForm extends React.Component {
           <div className="container">
             Войдите в свой профиль ниже{" "}
             <span className="regLink">
-              или <a href="">Регистрация</a>
+              или <a href="/">Регистрация</a>
             </span>
           </div>
         </div>
         <div className="loginmain">
           <form className="container">
+            <label htmlFor="id">ID администратора</label>
             <input
               name="id"
+              id="id"
               onChange={e => this.handleId(e.target.value)}
               component="input"
               type="text"
               autoComplete="off"
             />
+            <label htmlFor="password">Пароль</label>
             <input
               name="password"
+              id="password"
               onChange={e => this.handlePassword(e.target.value)}
               component="input"
               type="password"
               autoComplete="off"
             />
             <input onClick={this.handleSubmit} type="submit" value={"Вход"} />
+            <a className="forgotLink" href="/">
+              Забыли пароль?
+            </a>
           </form>
         </div>
       </div>
