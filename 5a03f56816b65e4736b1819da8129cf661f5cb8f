@@ -1,0 +1,11 @@
+[ver:1,total:2100]
+src/App.js:706,1540375200:92,1540378800:614,m
+src/backend/api.js:259,1540375200:246,1540378800:13,m
+src/backend/mocks.js:226,1540375200:110,1540378800:116,m
+src/components/commmon/Header/Header.jsx:193,1540378800:193,m
+src/components/admin/RootAdmin/index.js:189,1540375200:60,1540378800:129,m
+src/components/investor/investorHomepage/investorHomePage.js:134,1540378800:134,m
+src/components/AuthForm/AuthForm.js:120,1540375200:102,1540378800:18,m
+src/actions/index.js:119,1540375200:70,1540378800:49,m
+src/components/admin/AdminHomepage/AdminHomepage.js:81,1540378800:81,r
+src/reducer/authData.js:73,1540375200:40,1540378800:33,m
