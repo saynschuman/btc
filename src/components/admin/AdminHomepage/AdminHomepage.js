@@ -3,7 +3,7 @@ import "./AdminHomepage.scss";
 
 class AdminHomepage extends React.Component {
   render() {
-    return "hello";
+    return <div style={{ color: "#fff" }}>hello, this is admin HomePage</div>;
   }
 }
 
