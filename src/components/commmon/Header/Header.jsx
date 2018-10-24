@@ -5,11 +5,11 @@ import AdminHeader from "./components/AdminHeader";
 import PropTypes from "prop-types";
 class Header extends Component {
   static propTypes = {
-    isAdmin: PropTypes.bool
+    whoAreYou: PropTypes.string
   };
   render() {
     const renderStyle = () => {
-      if (this.props.isAdmin) {
+      if (this.props.whoAreYou === "admin") {
         return {
           widthLeft: "25%",
           widthRight: "15%",
@@ -33,19 +33,19 @@ class Header extends Component {
             className="item menu"
             style={{ width: renderStyle().widthMiddle }}
           >
-            {this.props.isAdmin ? <AdminHeader /> : <Nav />}
+            {this.props.whoAreYou === "admin" ? <AdminHeader /> : <Nav />}
           </div>
           <div
             className="right item"
             style={{ width: renderStyle().widthRight }}
           >
             <ul>
-              {!this.props.isAdmin && (
+              {this.props.whoAreYou !== "admin" && (
                 <li className="lang">
                   <a href="/">RU</a>
                 </li>
               )}
-              {this.props.isAdmin ? (
+              {this.props.whoAreYou === "admin" ? (
                 <li className="exit admin">
                   <a href="/">Выход</a>
                 </li>

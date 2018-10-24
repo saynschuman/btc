@@ -8,7 +8,7 @@ import AsideMenu from "../../commmon/AsideMenu/AsideMenu";
 const RootAdmin = () => {
   return (
     <div>
-      <Header isAdmin={true} />
+      <Header whoAreYou={"admin"} />
       <AsideMenu />
       <BrowserRouter>
         <Switch>

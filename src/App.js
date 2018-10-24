@@ -4,20 +4,22 @@ import LoginHeader from "./components/commmon/LoginHeader/LoginHeader";
 import "./App.css";
 import { connect } from "react-redux";
 import RootAdmin from "./components/admin/RootAdmin";
+import InvestorHomepage from "./components/investor/investorHomepage/investorHomePage";
 
 class App extends Component {
   render() {
-    const { isAdmin } = this.props;
+    const { whoIsLogged } = this.props;
     return (
       <div>
-        {isAdmin ? (
-          <RootAdmin />
-        ) : (
-          <div>
-            <LoginHeader />
-            <AuthForm />
-          </div>
-        )}
+        {whoIsLogged === "admin" && <RootAdmin />}
+        {whoIsLogged === "investor" && <InvestorHomepage />}
+        {whoIsLogged !== "admin" &&
+          whoIsLogged !== "investor" && (
+            <div>
+              <LoginHeader />
+              <AuthForm />
+            </div>
+          )}
       </div>
     );
   }
@@ -25,6 +27,6 @@ class App extends Component {
 
 export default connect(state => {
   return {
-    isAdmin: state.authData.isAdmin
+    whoIsLogged: state.authData.whoIsLogged
   };
 })(App);

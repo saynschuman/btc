@@ -1,4 +1,9 @@
 export const admin = {
-  id: "123",
+  id: "admin",
+  password: "123"
+};
+
+export const investor = {
+  id: "investor",
   password: "123"
 };

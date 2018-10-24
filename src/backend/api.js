@@ -1,9 +1,12 @@
-import { admin } from "./mocks";
+import { admin, investor } from "./mocks";
 
-export const checkiSAdmin = data => {
+export const whoAreYou = data => {
   if (data.id === admin.id && data.password === admin.password) {
-    return true;
+    return "admin";
+  }
+  if (data.id === investor.id && data.password === investor.password) {
+    return "investor";
   } else {
-    return false;
+    return "Неверный ID или пароль";
   }
 };

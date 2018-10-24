@@ -3,7 +3,7 @@ import { REQUEST, RESPONSE } from "../constants";
 const initialState = {
   isLoading: false,
   isLoaded: false,
-  isAdmin: false
+  whoIsLogged: ""
 };
 
 export default function(state = initialState, action) {
@@ -15,7 +15,7 @@ export default function(state = initialState, action) {
         ...state,
         isLoading: false,
         isLoaded: true,
-        isAdmin: action.isAdmin
+        whoIsLogged: action.whoIsLogged
       };
     default:
       return state;

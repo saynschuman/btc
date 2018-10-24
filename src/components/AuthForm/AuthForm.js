@@ -1,6 +1,6 @@
 import React from "react";
 import "./AuthForm.scss";
-import { isAdmin } from "../../actions";
+import { checkWhoAreYou } from "../../actions";
 import { connect } from "react-redux";
 
 class AuthForm extends React.Component {
@@ -20,7 +20,7 @@ class AuthForm extends React.Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    this.props.isAdmin(this.state);
+    this.props.checkWhoAreYou(this.state);
   };
 
   render() {
@@ -67,5 +67,5 @@ class AuthForm extends React.Component {
 
 export default connect(
   null,
-  { isAdmin }
+  { checkWhoAreYou }
 )(AuthForm);
