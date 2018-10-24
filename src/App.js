@@ -7,21 +7,39 @@ import RootAdmin from "./components/admin/RootAdmin";
 import InvestorHomepage from "./components/investor/investorHomepage/investorHomePage";
 
 class App extends Component {
-  render() {
-    const { whoIsLogged } = this.props;
-    return (
-      <div>
-        {whoIsLogged === "admin" && <RootAdmin />}
-        {whoIsLogged === "investor" && <InvestorHomepage />}
-        {whoIsLogged !== "admin" &&
-          whoIsLogged !== "investor" && (
+  renderInterface = () => {
+    if (localStorage.getItem("user") !== null) {
+      switch (localStorage.getItem("user")) {
+        case "admin":
+          return <RootAdmin />;
+        case "investor":
+          return <InvestorHomepage />;
+        default:
+          return (
             <div>
               <LoginHeader />
               <AuthForm />
             </div>
-          )}
-      </div>
-    );
+          );
+      }
+    } else {
+      switch (this.props.whoIsLogged) {
+        case "admin":
+          return <RootAdmin />;
+        case "investor":
+          return <InvestorHomepage />;
+        default:
+          return (
+            <div>
+              <LoginHeader />
+              <AuthForm />
+            </div>
+          );
+      }
+    }
+  };
+  render() {
+    return <div>{this.renderInterface()}</div>;
   }
 }
 

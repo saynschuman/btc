@@ -12,7 +12,7 @@ export const checkWhoAreYou = authData => dispatch => {
   });
 
   promise.then(result => {
-    console.log(result.data);
+    localStorage.setItem("user", result);
     return dispatch({
       type: RESPONSE,
       whoIsLogged: result

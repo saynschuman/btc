@@ -7,6 +7,11 @@ class Header extends Component {
   static propTypes = {
     whoAreYou: PropTypes.string
   };
+  exit = e => {
+    e.preventDefault();
+    localStorage.clear();
+    window.location.reload();
+  };
   render() {
     const renderStyle = () => {
       if (this.props.whoAreYou === "admin") {
@@ -47,11 +52,15 @@ class Header extends Component {
               )}
               {this.props.whoAreYou === "admin" ? (
                 <li className="exit admin">
-                  <a href="/">Выход</a>
+                  <a onClick={this.exit} href="/">
+                    Выход
+                  </a>
                 </li>
               ) : (
                 <li className="exit">
-                  <a href="/">Выход</a>
+                  <a onClick={this.exit} href="/">
+                    Выход
+                  </a>
                 </li>
               )}
             </ul>

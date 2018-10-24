@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.scss";
 import AdminHomepage from "../AdminHomepage/AdminHomepage";
-import { Route, Link, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 import Header from "../../commmon/Header/Header";
 import AsideMenu from "../../commmon/AsideMenu/AsideMenu";
 
