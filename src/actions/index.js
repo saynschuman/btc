@@ -1,4 +1,4 @@
-import { REQUEST, RESPONSE } from "../constants";
+import { REQUEST, RESPONSE, SHOW_MOBILE_MENU } from "../constants";
 import { whoAreYou } from "../backend/api";
 
 export const checkWhoAreYou = authData => dispatch => {
@@ -18,4 +18,10 @@ export const checkWhoAreYou = authData => dispatch => {
       whoIsLogged: result
     });
   });
+};
+
+export const toggleMobileMenu = () => {
+  return {
+    type: SHOW_MOBILE_MENU
+  };
 };

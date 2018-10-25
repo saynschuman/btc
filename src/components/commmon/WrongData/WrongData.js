@@ -10,7 +10,7 @@ export default () => {
   return (
     <div className="wrongData">
       <div>Неверный ID или пароль</div>
-      <a onClick={exit} className="closeWrong" href="/" />
+      <span onClick={exit} className="closeWrong" href="/" />
     </div>
   );
 };

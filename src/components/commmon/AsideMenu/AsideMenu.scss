@@ -1,6 +1,6 @@
 aside {
-  position: fixed;
-  top: 108px;
+  position: relative;
+  top: 0;
   background-color: #000056;
   width: 300px;
   ul {
@@ -22,6 +22,22 @@ aside {
         &:hover {
           color: #1b80f2;
           background-color: 000142;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  aside {
+    width: 250px;
+    ul {
+      li {
+        a {
+          font-size: 17px;
+          padding-left: 20px;
+          width: 210px;
+          padding-right: 20px;
         }
       }
     }
