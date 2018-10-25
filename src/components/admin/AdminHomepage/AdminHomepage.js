@@ -42,19 +42,19 @@ class AdminHomepage extends React.Component {
               </div>
               <div className={'admin-block'}>
                   <div className="block-header">
-                      <div className="header-title">Количество активных инвесторов</div>
+                      <div className="header-title users">Количество активных инвесторов</div>
                   </div>
                   <p className="block-body">54</p>
               </div>
               <div className={'admin-block'}>
                   <div className="block-header">
-                      <div className="header-title">Остаток мощности у проекта</div>
+                      <div className="header-title light">Остаток мощности у проекта</div>
                   </div>
                   <p className="block-body">1.021 TH/s</p>
               </div>
               <div className={'admin-block'}>
                   <div className="block-header">
-                      <div className="header-title">Текущая стоимость единицы мощности</div>
+                      <div className="header-title graph">Текущая стоимость единицы мощности</div>
                   </div>
                   <p className="block-body smaller38">1 TH/s = 1 BTC</p>
               </div>
@@ -70,7 +70,7 @@ class AdminHomepage extends React.Component {
               <div className="col middle mr">
                   <div className={'admin-block'}>
                       <div className="block-header">
-                          <div className="header-title">Мощность всех инвесторов</div>
+                          <div className="header-title hand">Мощность всех инвесторов</div>
                       </div>
                       <p className="block-body smaller38">1.021 TH/s</p>
                   </div>
@@ -78,7 +78,7 @@ class AdminHomepage extends React.Component {
                 <div className="col middle ml">
                     <div className={'admin-block'}>
                         <div className="block-header">
-                            <div className="header-title">Количество активных инвестиций</div>
+                            <div className="header-title money">Количество активных инвестиций</div>
                         </div>
                         <p className="block-body smaller38">70</p>
                     </div>

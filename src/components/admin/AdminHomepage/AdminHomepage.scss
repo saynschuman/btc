@@ -37,6 +37,31 @@
       border-bottom: 1px solid #320a8b;
       .header-title {
         width: 223px;
+        &.users {
+          &:after {
+            background-image: url("./img/users.png");
+          }
+        }
+        &.light {
+          &:after {
+            background-image: url("./img/light.png");
+          }
+        }
+        &.graph {
+          &:after {
+            background-image: url("./img/graph.png");
+          }
+        }
+        &.hand {
+          &:after {
+            background-image: url("./img/hand.png");
+          }
+        }
+        &.money {
+          &:after {
+            background-image: url("./img/money.png");
+          }
+        }
         &:after {
           content: '';
           display: inline-block;
