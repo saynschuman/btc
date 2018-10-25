@@ -3,6 +3,8 @@ aside {
   top: 0;
   background-color: #000056;
   width: 300px;
+  display: inline-block;
+  vertical-align: top;
   ul {
     padding: 0;
     margin: 0;
@@ -102,10 +104,10 @@ aside {
             text-align: center;
             &:after {
               content: '';
-              background-image: url('./img/user.png');
+              background-image: url('./img/logOut.png');
               width: 22px;
-              height: 15px;
-              top: 16px;
+              height: 22px;
+              top: 10px;
               position: absolute;
               background-size: 100%;
               margin-left: 12px;

@@ -9,7 +9,10 @@ const RootAdmin = () => {
   return (
     <div>
       <AdminPageHeader whoAreYou={"admin"} />
-      <AsideMenu />
+      <div className="admin-composition">
+        <AsideMenu />
+        <AdminHomepage />
+      </div>
       <BrowserRouter>
         <Switch>
           <Route path="/homepage" component={AdminHomepage} />
