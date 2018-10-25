@@ -6,7 +6,7 @@ const data = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
         {
-            label: 'My First dataset',
+            label: 'bitcoin curse',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(75,192,192,0.4)',
@@ -60,7 +60,7 @@ class AdminHomepage extends React.Component {
               </div>
           </div>
             <div className="col col-right">
-                <div className={'admin-block'}>
+                <div className={'admin-block gr'}>
                     <div className="block-header">
                       <div className="header-title">График курса BTC</div>
                     </div>
