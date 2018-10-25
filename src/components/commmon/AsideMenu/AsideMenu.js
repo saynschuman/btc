@@ -7,15 +7,31 @@ import { toggleMobileMenu } from "../../../actions";
 import classNames from "classnames";
 
 const Aside = props => {
+  const exit = e => {
+      e.preventDefault();
+      localStorage.clear();
+      window.location.reload();
+  };
   return (
     <aside
       className={classNames({ mobileMenuVisible: props.menuIsOpen })}
       // style={{ height: window.innerHeight }}
-    >
-      {/* <PerfectScrollbar> */}
+        >
+        {/* <PerfectScrollbar> */}
+        <div className="mobile-admin-nav">
+            <ul className={'nav-top'}>
+                <li>Панель администратора</li>
+                <li className={'id-admin'}>ID: 36143324</li>
+                <li className="exit admin">
+                    <a onClick={exit} href="/">
+                        Выход
+                    </a>
+                </li>
+            </ul>
+        </div>
       <ul>
         <li>
-          <a href="/">Главная</a>
+          <a className={'active'} href="/">Главная</a>
         </li>
         <li>
           <a href="/">Настройка прав администратора</a>

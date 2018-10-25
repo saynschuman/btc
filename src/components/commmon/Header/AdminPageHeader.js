@@ -25,9 +25,9 @@ class AdminPageHeader extends Component {
             <ul>
               <li className="exit admin">
                 <a onClick={this.exit} href="/">
-                  Выход
+                    Выход
                 </a>
-              </li>
+            </li>
             </ul>
             <div
               onClick={this.props.toggleMobileMenu}
