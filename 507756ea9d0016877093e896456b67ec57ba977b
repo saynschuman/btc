@@ -1,0 +1,10 @@
+[ver:1,total:3840]
+src/components/admin/AdminSettings/AdminSettings.js:2289,1540551600:250,1540555200:2039,m
+src/components/admin/AdminSettings/AdminSettings.scss:512,1540551600:430,1540555200:82,m
+src/components/commmon/AsideMenu/AsideMenu.js:449,1540551600:320,1540555200:129,m
+package.json:180,1540555200:180,m
+src/components/admin/RootAdmin/index.js:175,1540551600:160,1540555200:15,m
+.prettierrc:105,1540555200:105,m
+.idea/watcherTasks.xml:60,1540555200:60,m
+src/components/admin/AdminHomepage/AdminHomepage.scss:40,1540551600:40,r
+src/App.js:30,1540555200:30,r
