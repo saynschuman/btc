@@ -1,0 +1,11 @@
+[ver:1,total:3060]
+src/components/admin/AdminHomepage/AdminHomepage.scss:800,1540476000:540,1540494000:180,1540519200:18,1540551600:62,r
+src/components/commmon/Header/AdminPageHeader.js:796,1540519200:549,1540544400:180,1540548000:60,1540551600:7,r
+src/components/admin/RootAdmin/index.js:542,1540519200:4,1540548000:20,1540551600:518,m
+src/components/admin/AdminHomepage/AdminHomepage.js:501,1540519200:4,1540548000:380,1540551600:117,r
+src/components/admin/AdminSettings/AdminSettings.js:312,1540551600:312,m
+src/components/admin/AdminSettings/AdminSettings.scss:52,1540551600:52,m
+src/App.js:41,1540519200:9,1540548000:20,1540551600:12,r
+src/components/commmon/AsideMenu/AsideMenu.js:8,1540519200:8,r
+src/components/admin/AdminHomepage/img/users.svg:4,1540519200:4,r
+src/components/commmon/AsideMenu/AsideMenu.scss:4,1540519200:4,r
