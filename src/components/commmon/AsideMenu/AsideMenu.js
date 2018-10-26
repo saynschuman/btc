@@ -5,36 +5,41 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 import { connect } from "react-redux";
 import { toggleMobileMenu } from "../../../actions";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 
 const Aside = props => {
   const exit = e => {
-      e.preventDefault();
-      localStorage.clear();
-      window.location.reload();
+    e.preventDefault();
+    localStorage.clear();
+    window.location.reload();
   };
   return (
     <aside
       className={classNames({ mobileMenuVisible: props.menuIsOpen })}
       // style={{ height: window.innerHeight }}
-        >
-        {/* <PerfectScrollbar> */}
-        <div className="mobile-admin-nav">
-            <ul className={'nav-top'}>
-                <li>Панель администратора</li>
-                <li className={'id-admin'}>ID: 36143324</li>
-                <li className="exit admin">
-                    <a onClick={exit} href="/">
-                        Выход
-                    </a>
-                </li>
-            </ul>
-        </div>
+    >
+      {/* <PerfectScrollbar> */}
+      <div className="mobile-admin-nav">
+        <ul className={"nav-top"}>
+          <li>Панель администратора</li>
+          <li className={"id-admin"}>ID: 36143324</li>
+          <li className="exit admin">
+            <a onClick={exit} href="/">
+              Выход
+            </a>
+          </li>
+        </ul>
+      </div>
       <ul>
         <li>
-          <a className={'active'} href="/">Главная</a>
+          <Link to={"/"} className={"active"}>
+            Главная
+          </Link>
         </li>
         <li>
-          <a href="/">Настройка прав администратора</a>
+          <Link to={"/settings"} className={"active"}>
+            Настройка прав администратора
+          </Link>
         </li>
         <li>
           <a href="/">Отчеты</a>
