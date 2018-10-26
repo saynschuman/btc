@@ -1,7 +1,6 @@
 import React from "react";
 import "./AdminSettings.scss";
 import Select from "react-select";
-import {} from "../../../../node_modules/react-select/lib/";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
