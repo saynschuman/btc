@@ -16,6 +16,10 @@
     border: 1px solid #27138b;
     border-left: none;
     padding: 14px;
+    &:first-child {
+      text-align: left;
+      padding-left: 80px;
+    }
     &:last-child {
       border-right: none;
     }
@@ -24,6 +28,29 @@
     border: 1px solid #27138b;
     border-left: none;
     padding: 14px;
+    &:first-child {
+      text-align: left;
+    }
+    input {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      height: 41px;
+      padding: 0 15px;
+      width: 100%;
+      max-width: 100px;
+      &.id {
+        color: #08c995;
+      }
+      &.password {
+        padding-left: 33px;
+      }
+      &:focus {
+        outline: none;
+        background: #000048;
+      }
+    }
     &:last-child {
       border-right: none;
     }

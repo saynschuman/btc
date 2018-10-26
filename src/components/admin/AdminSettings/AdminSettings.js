@@ -11,9 +11,9 @@ const options = [
 class AdminSettings extends React.Component {
   state = {
     selectedOption: null,
-    password: "",
-    email: "",
-    id: ""
+    password: "1234567890",
+    email: "watson@gmail.com",
+    id: "412412532               "
   };
   handleChange = (e, key) => {
     this.setState({
@@ -42,6 +42,7 @@ class AdminSettings extends React.Component {
                 <tr>
                   <td>
                     <input
+                      className={"id"}
                       type="text"
                       onChange={e => this.handleChange(e, "id")}
                       value={this.state.id}
@@ -50,6 +51,7 @@ class AdminSettings extends React.Component {
                   <td>
                     <input
                       type="password"
+                      className={"password"}
                       onChange={e => this.handleChange(e, "password")}
                       value={this.state.password}
                     />
