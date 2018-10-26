@@ -4,6 +4,10 @@
   padding: 23px 62px;
 }
 
+.settings-body {
+  height: 300px;
+}
+
 .settings-table {
   border: 1px solid #27138b;
   border-left: none;
@@ -56,9 +60,73 @@
     }
     .rules {
       min-width: 100px;
+      border: 1px solid #3070fd !important;
+      text-align: left;
+      div {
+        border: none;
+      }
       input{
         width: 100%;
       }
+      .css-2o5izw {
+        background-color: #00074f !important;
+        height: 35px;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+      .css-1492t68 {
+        color: #fff;
+      }
+      .css-1ep9fjw {
+        display: none;
+      }
+      .css-d8oujb {
+        display: none;
+      }
+      .css-15k3avv {
+        background-color: #00074f;
+        border: 1px solid #3070fd;
+        top: 30px;
+        width: calc(100% + 2px);
+        margin-left: -1px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        div {
+          cursor: pointer;
+          background-color: transparent;
+        }
+      }
+      .css-xp4uvy {
+        color: #fff;
+      }
+      .css-vj8t7z {
+        border-color: #3070fd;
+        cursor: pointer;
+        border-width: 1px;
+        box-shadow: none;
+        background-color: #00074f;
+        height: 35px;
+        white-space: nowrap;
+      }
     }
+  }
+}
+
+.settings-save {
+  width: 154px;
+  height: 45px;
+  border: 1px solid #036efa;
+  border-radius: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  background-color: transparent;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  &:focus {
+    outline: none;
   }
 }
