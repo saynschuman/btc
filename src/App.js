@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import RootAdmin from "./components/admin/RootAdmin";
 // import InvestorHomepage from "./components/investor/investorHomepage/investorHomePage";
 import WrongData from "./components/commmon/WrongData/WrongData";
+import axios from "axios";
 
 class App extends Component {
   renderInterface = () => {
@@ -40,7 +41,41 @@ class App extends Component {
       }
     }
   };
+  getData = () => {
+    fetch("https://atc-bl.nadzor.online/bl198765/admin/", {
+      mode: "cors",
+      method: "GET",
+      cache: "no-cache",
+      headers: {
+        "Access-Control-Allow-Headers": "Content-Type, *",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://atc-bl.nadzor.online/",
+        "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE",
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQwNjMzODA2LCJleHAiOjE1NDA2Mzc0MDZ9.hoM36JsTWR54Hd4vwE71ukiDInldnpW_hvbMMii8AJ4"
+      }
+    })
+      .then(res => res.json())
+      .then(res => console.log(res));
+    // axios
+    //   .get("https://atc-bl.nadzor.online/bl198765/admin/", {
+    //     withCredentials: true,
+    //     proxy: {
+    //       host: "https://atc-bl.nadzor.online/",
+    //       port: 22
+    //     },
+    //     headers: {
+    //       Authorization:
+    //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQwNjMzODA2LCJleHAiOjE1NDA2Mzc0MDZ9.hoM36JsTWR54Hd4vwE71ukiDInldnpW_hvbMMii8AJ4"
+    //     },
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Origin": "*"
+    //   })
+    //   .then(res => console.log(res));
+  };
   render() {
+    this.getData();
     return <div>{this.renderInterface()}</div>;
   }
 }

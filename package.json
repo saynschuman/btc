@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "module": "dist/react-select.esm.js",
+  "proxy": "https://atc-bl.nadzor.online/",
   "dependencies": {
     "axios": "^0.18.0",
     "chart.js": "^2.7.3",
