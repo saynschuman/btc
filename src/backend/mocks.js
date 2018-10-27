@@ -28,7 +28,7 @@ export const adminList = [
     email: "den@gmail.com"
   },
   {
-    id: 41235252352,
+    id: 41235251352,
     password: "sdfewgg3s32f",
     rule: "admin",
     email: "saynsch@gmail.com"

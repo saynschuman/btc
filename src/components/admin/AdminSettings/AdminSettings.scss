@@ -36,7 +36,7 @@
       text-align: left;
     }
     input {
-      background: transparent;
+      background: #000048;
       border: none;
       color: #fff;
       font-size: 20px;
@@ -53,6 +53,9 @@
       &:focus {
         outline: none;
         background: #000048;
+      }
+      &.cantEdit {
+        background: transparent;
       }
     }
     &:last-child {
@@ -174,5 +177,37 @@
   cursor: pointer;
   &:focus {
     outline: none;
+  }
+}
+
+.edit-admin-button {
+  height: 34px;
+  padding: 0;
+  width: 171px;
+  text-align: center;
+  min-width: 171px;
+  color: #fff;
+  border: none;
+  background: #1e5799;
+  font-size: 20px;
+  border-radius: 35px;
+  cursor: pointer;
+  background: linear-gradient(to left, #0059fb 0%, #053798 100%);
+  background: -moz-linear-gradient(to left, #0059fb 0%, #053798 100%);
+  background: -webkit-linear-gradient(to left, #0059fb 0%, #053798 100%);
+  &:focus {
+    outline: none
+  }
+}
+
+.close-button-admin {
+  height: 20px;
+  width: 20px;
+  background-image: url("./EditAdmins/img/close.png");
+  cursor: pointer;
+  transition: .3s;
+  &:hover {
+    opacity: .6;
+    transition: .3s;
   }
 }

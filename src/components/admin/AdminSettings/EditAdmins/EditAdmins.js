@@ -1,6 +1,7 @@
 import React from "react";
 import CustomInput from "../../../commmon/CustomInput/CustomInput";
 import CustomSelect from "../../../commmon/CustomSelect/CustomSelect";
+import classNames from "classnames";
 
 const rules = [
   { value: "admin", label: "Админ" },
@@ -8,31 +9,67 @@ const rules = [
   { value: "investor", label: "Инвестор" }
 ];
 
-export default props => {
-  return (
-    <tr>
-      <td>
-        <CustomInput type={"text"} className={"id"} value={props.id} />
-      </td>
-      <td>
-        <CustomInput
-          type={"password"}
-          className={"password"}
-          value={props.password}
-        />
-      </td>
-      <td>
-        <CustomSelect data={rules} value={props.rules} />
-      </td>
-      <td>
-        <CustomInput type={"text"} value={props.email} />
-      </td>
-      <td>
-        <button>Редактировать</button>
-      </td>
-      <td>
-        <div className="close-row" />
-      </td>
-    </tr>
-  );
-};
+class EditAdmins extends React.Component {
+  state = {
+    cantEdit: true,
+    editButton: "Редактировать"
+  };
+  handleEdit = () => {
+    if (this.state.cantEdit) {
+      this.setState({
+        cantEdit: false,
+        editButton: "Сохранить"
+      });
+    } else {
+      this.setState({
+        cantEdit: true,
+        editButton: "Редактировать"
+      });
+    }
+  };
+  render() {
+    return (
+      <tr>
+        <td>
+          <CustomInput
+            type={"text"}
+            className={classNames("id", { cantEdit: this.state.cantEdit })}
+            value={this.props.id}
+            disabled={this.state.cantEdit}
+          />
+        </td>
+        <td>
+          <CustomInput
+            type={"password"}
+            className={classNames("password", {
+              cantEdit: this.state.cantEdit
+            })}
+            value={this.props.password}
+            disabled={this.state.cantEdit}
+          />
+        </td>
+        <td>
+          <CustomSelect data={rules} value={this.props.rules} />
+        </td>
+        <td>
+          <CustomInput
+            type={"text"}
+            className={classNames({ cantEdit: this.state.cantEdit })}
+            value={this.props.email}
+            disabled={this.state.cantEdit}
+          />
+        </td>
+        <td>
+          <button onClick={this.handleEdit} className={"edit-admin-button"}>
+            {this.state.editButton}
+          </button>
+        </td>
+        <td>
+          <div className="close-button-admin" />
+        </td>
+      </tr>
+    );
+  }
+}
+
+export default EditAdmins;

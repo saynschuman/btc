@@ -16,6 +16,7 @@ class CustomInput extends React.Component {
         type={this.props.type}
         onChange={e => this.handleChange(e)}
         value={this.state.value}
+        disabled={this.props.disabled}
       />
     );
   }

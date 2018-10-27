@@ -1,5 +1,11 @@
-import { REQUEST, RESPONSE, SHOW_MOBILE_MENU } from "../constants";
-import { whoAreYou } from "../backend/api";
+import {
+  REQUEST,
+  RESPONSE,
+  SHOW_MOBILE_MENU,
+  ADMINS_REQUEST,
+  ADMINS_RESPONSE
+} from "../constants";
+import { whoAreYou, getAdminsFromServer } from "../backend/api";
 
 export const checkWhoAreYou = authData => dispatch => {
   dispatch({
@@ -24,4 +30,23 @@ export const toggleMobileMenu = () => {
   return {
     type: SHOW_MOBILE_MENU
   };
+};
+
+export const getAdmins = () => dispatch => {
+  dispatch({
+    type: ADMINS_REQUEST
+  });
+  const promise = new Promise(resolve => {
+    setTimeout(() => {
+      resolve(getAdminsFromServer());
+    }, 1300);
+  });
+
+  promise.then(result => {
+    console.log(result);
+    return dispatch({
+      type: ADMINS_RESPONSE,
+      adminList: result
+    });
+  });
 };
