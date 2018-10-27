@@ -1,0 +1,17 @@
+[ver:1,total:5340]
+src/components/admin/AdminSettings/AdminSettings.js:1203,1540638000:473,1540641600:730,m
+src/components/admin/AdminSettings/AdminSettings.scss:1164,1540638000:1044,1540641600:120,m
+src/components/admin/AdminSettings/EditAdmins/EditAdmins.js:1151,1540638000:796,1540641600:355,m
+src/actions/index.js:470,1540638000:152,1540641600:318,m
+src/components/admin/AdminSettings/AdminsLoader/AdminsLoader.js:243,1540641600:243,m
+src/App.js:210,1540638000:210,m
+src/components/admin/AdminSettings/AdminsLoader/AdminsLoader.scss:206,1540641600:206,m
+src/reducer/admins.js:187,1540641600:187,m
+src/reducer/index.js:121,1540641600:121,m
+src/backend/api.js:89,1540638000:56,1540641600:33,m
+src/backend/mocks.js:77,1540638000:68,1540641600:9,m
+src/components/commmon/CustomInput/CustomInput.js:64,1540638000:64,m
+src/constants/index.js:59,1540641600:59,m
+src/components/admin/RootAdmin/index.js:40,1540638000:40,r
+src/components/commmon/AsideMenu/AsideMenu.js:37,1540638000:37,r
+src/reducer/authData.js:19,1540641600:19,r
