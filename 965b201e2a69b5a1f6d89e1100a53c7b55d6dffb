@@ -1,0 +1,7 @@
+[ver:1,total:2040]
+src/components/admin/AdminSettings/AdminSettings.js:1016,1540627200:180,1540630800:836,m
+src/components/commmon/CustomInput/CustomInput.js:352,1540630800:352,m
+src/components/admin/AdminSettings/EditAdmins/EditAdmins.js:296,1540630800:296,m
+src/backend/mocks.js:269,1540630800:269,m
+src/components/commmon/CustomSelect/CustomSelect.js:92,1540630800:92,r
+src/components/commmon/AsideMenu/AsideMenu.js:15,1540630800:15,r
