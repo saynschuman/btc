@@ -7,13 +7,16 @@ import {
   INVESTORS_REQUEST,
   INVESTORS_RESPONSE,
   INVESTORS_REPORT_REQUEST,
-  INVESTORS_REPORT_RESPONSE
+  INVESTORS_REPORT_RESPONSE,
+  INVESTITIONS_REPORT_REQUEST,
+  INVESTITIONS_REPORT_RESPONSE
 } from "../constants";
 import {
   whoAreYou,
   getAdminsFromServer,
   getInvestorsFromServer,
-  getInvestorsReportFromServer
+  getInvestorsReportFromServer,
+  getInvestitionsReportFromServer
 } from "../backend/api";
 
 export const checkWhoAreYou = authData => dispatch => {
@@ -90,6 +93,23 @@ export const getInvestorsReport = () => dispatch => {
     return dispatch({
       type: INVESTORS_REPORT_RESPONSE,
       investorsReports: result
+    });
+  });
+};
+
+export const getInvestitionsReport = () => dispatch => {
+  dispatch({
+    type: INVESTITIONS_REPORT_REQUEST
+  });
+  const promise = new Promise(resolve => {
+    resolve(getInvestitionsReportFromServer());
+  });
+
+  promise.then(result => {
+    console.log(result);
+    return dispatch({
+      type: INVESTITIONS_REPORT_RESPONSE,
+      investitionsReports: result
     });
   });
 };

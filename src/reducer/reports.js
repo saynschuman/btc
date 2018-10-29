@@ -1,12 +1,17 @@
 import {
   INVESTORS_REPORT_REQUEST,
-  INVESTORS_REPORT_RESPONSE
+  INVESTORS_REPORT_RESPONSE,
+  INVESTITIONS_REPORT_REQUEST,
+  INVESTITIONS_REPORT_RESPONSE
 } from "../constants";
 
 const initialState = {
   isLoading: false,
   isLoaded: false,
-  investorsReports: ""
+  investorsReports: [],
+  investitionsIsLoading: false,
+  investitionsIsLoaded: true,
+  investitionsReports: []
 };
 
 export default function(state = initialState, action) {
@@ -19,6 +24,19 @@ export default function(state = initialState, action) {
         isLoading: false,
         isLoaded: true,
         investorsReports: action.investorsReports
+      };
+    case INVESTITIONS_REPORT_REQUEST:
+      return {
+        ...state,
+        investitionsIsLoading: true,
+        investitionsIsLoaded: false
+      };
+    case INVESTITIONS_REPORT_RESPONSE:
+      return {
+        ...state,
+        investitionsIsLoading: false,
+        investitionsIsLoaded: true,
+        investitionsReports: action.investitionsReports
       };
     default:
       return state;

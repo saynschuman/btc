@@ -58,3 +58,30 @@ export const InvestorReport = [
     email: "watson@mail.ru"
   }
 ];
+
+export const InvestitionReport = [
+  {
+    id: 123123,
+    dateInv: "05.06.2018",
+    investorId: 3423123,
+    name: "Сергей",
+    surName: "Сергеев",
+    startSumm: 0.15453,
+    leftInv: 0.15453,
+    koef: 0.8,
+    dateEnd: "05.06.2018(40дн)",
+    alreadyPayed: 2.15453
+  },
+  {
+    id: 136367,
+    dateInv: "05.06.2018",
+    investorId: 3423123,
+    name: "Сергей",
+    surName: "Сергеев",
+    startSumm: 0.15453,
+    leftInv: 0.15453,
+    koef: 0.8,
+    dateEnd: "05.06.2018(40дн)",
+    alreadyPayed: 2.15453
+  }
+];

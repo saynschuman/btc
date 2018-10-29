@@ -68,6 +68,12 @@ table {
   }
 }
 
+@media screen and (max-width: 1665px) {
+ .investitions-table-desk {
+   font-size: 10px !important;
+ }
+}
+
 @media screen and (max-width: 1440px) {
 .reports-table {
   font-size: 13px;
@@ -75,6 +81,9 @@ table {
 }
 
 @media screen and (max-width: 991px) {
+  .investitions-mobile {
+    padding-bottom: 0;
+  }
   .search {
     padding: 26px 10px;
     border-bottom: 1px solid #320a8a;
