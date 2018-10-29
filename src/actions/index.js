@@ -29,7 +29,7 @@ export const checkWhoAreYou = authData => dispatch => {
   const promise = new Promise(resolve => {
     setTimeout(() => {
       resolve(whoAreYou(authData));
-    }, 1300);
+    }, 200);
   });
 
   promise.then(result => {
@@ -52,9 +52,9 @@ export const getAdmins = () => dispatch => {
     type: ADMINS_REQUEST
   });
   const promise = new Promise(resolve => {
-    // setTimeout(() => {
-    resolve(getAdminsFromServer());
-    // }, 200);
+    setTimeout(() => {
+      resolve(getAdminsFromServer());
+    }, 200);
   });
 
   promise.then(result => {
@@ -71,7 +71,9 @@ export const getInvestors = () => dispatch => {
     type: INVESTORS_REQUEST
   });
   const promise = new Promise(resolve => {
-    resolve(getInvestorsFromServer());
+    setTimeout(() => {
+      resolve(getInvestorsFromServer());
+    }, 200);
   });
 
   promise.then(result => {
@@ -88,7 +90,9 @@ export const getInvestorsReport = () => dispatch => {
     type: INVESTORS_REPORT_REQUEST
   });
   const promise = new Promise(resolve => {
-    resolve(getInvestorsReportFromServer());
+    setTimeout(() => {
+      resolve(getInvestorsReportFromServer());
+    }, 200);
   });
 
   promise.then(result => {
@@ -105,7 +109,9 @@ export const getInvestitionsReport = () => dispatch => {
     type: INVESTITIONS_REPORT_REQUEST
   });
   const promise = new Promise(resolve => {
-    resolve(getInvestitionsReportFromServer());
+    setTimeout(() => {
+      resolve(getInvestitionsReportFromServer());
+    }, 200);
   });
 
   promise.then(result => {
@@ -124,7 +130,7 @@ export const getChargeTable = () => dispatch => {
   const promise = new Promise(resolve => {
     setTimeout(() => {
       resolve(getChargeTableFromServer());
-    }, 300);
+    }, 200);
   });
 
   promise.then(result => {

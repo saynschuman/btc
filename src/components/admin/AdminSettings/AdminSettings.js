@@ -11,8 +11,8 @@ import EditInvestorsMobile from "./EditInvestors/EditInvestorsMobile";
 
 class AdminSettings extends React.Component {
   componentDidMount() {
-    this.props.getAdmins();
-    this.props.getInvestors();
+    !this.props.isLoaded && this.props.getAdmins();
+    !this.props.isLoaded && this.props.getInvestors();
   }
   render() {
     return (
