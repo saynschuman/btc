@@ -181,7 +181,7 @@ export const getHistoryApplications = () => dispatch => {
     console.log(result);
     return dispatch({
       type: RESPONSE_HISTORY_APPLICATIONS,
-      requestApplications: result
+      historyApplications: result
     });
   });
 };

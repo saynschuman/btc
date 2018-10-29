@@ -6,11 +6,17 @@ import ApplicationsTable from "./components/ApplicationsTable";
 import AdminsLoader from "../AdminSettings/AdminsLoader/AdminsLoader";
 import ApplicationsTableMobile from "./components/ApplicationsTableMobile";
 import connect from "react-redux/es/connect/connect";
-import { getRequestApplications } from "../../../actions";
+import {
+  getRequestApplications,
+  getHistoryApplications
+} from "../../../actions";
+import ApplicationsHistory from "./components/ApplicationsHistory";
+import ApplicationsHistoryMobile from "./components/ApplicationsHistoryMobile";
 
 class Applications extends React.Component {
   componentDidMount() {
     !this.props.isLoaded && this.props.getRequestApplications();
+    !this.props.isLoaded && this.props.getHistoryApplications();
   }
   render() {
     return (
@@ -95,6 +101,78 @@ class Applications extends React.Component {
             </div>
           </div>
         </div>
+        <div className={"admin-block"}>
+          <div className="table-reports report-investors">
+            <div className="settings-header">История одобренных заявок</div>
+            <div className="settings-body settings-body-desktop">
+              <PerfectScrollbar className={"edit-admins-desktop"}>
+                <table
+                  className={"settings-table reports-table applications-table"}
+                >
+                  <tbody>
+                    <tr>
+                      <th>Дата и время заявки</th>
+                      <th>Дата выплаты</th>
+                      <th>ID инвестора</th>
+                      <th>ID инвестиции</th>
+                      <th>Имя</th>
+                      <th>Фамилия</th>
+                      <th>Объем мощности на продажу, TH/s</th>
+                      <th>Цена единицы мощности в момент заявки, BTC</th>
+                      <th>ID админ., одобривших заявку</th>
+                      <th>Сумма к выплате, BTC</th>
+                    </tr>
+                    {this.props.historyApplicationsIsLoading && (
+                      <ReportsLoader />
+                    )}
+                    {this.props.historyApplicationsIsLoaded &&
+                      this.props.historyApplications.map(report => {
+                        return (
+                          <ApplicationsHistory
+                            key={report.investitionId}
+                            timeDate={report.timeDate}
+                            timePay={report.timePay}
+                            investorId={report.investorId}
+                            investitionId={report.investitionId}
+                            name={report.name}
+                            surName={report.surName}
+                            powerValue={report.powerValue}
+                            cost={report.cost}
+                            idAdmAplied={report.idAdmAplied}
+                            summ={report.summ}
+                          />
+                        );
+                      })}
+                  </tbody>
+                </table>
+              </PerfectScrollbar>
+            </div>
+            <div className="settings-body settings-body-mobile">
+              <PerfectScrollbar className={"edit-admins-mobile"}>
+                {this.props.historyApplicationsIsLoading && <AdminsLoader />}
+                {this.props.historyApplicationsIsLoaded &&
+                  this.props.historyApplications.map(report => {
+                    return (
+                      <ApplicationsHistoryMobile
+                        key={report.investitionId}
+                        timeDate={report.timeDate}
+                        timePay={report.timePay}
+                        investorId={report.investorId}
+                        investitionId={report.investitionId}
+                        name={report.name}
+                        surName={report.surName}
+                        powerValue={report.powerValue}
+                        cost={report.cost}
+                        idAdmAplied={report.idAdmAplied}
+                        summ={report.summ}
+                      />
+                    );
+                  })}
+              </PerfectScrollbar>
+            </div>
+            <div className="setting-footer" />
+          </div>
+        </div>
       </div>
     );
   }
@@ -105,8 +183,11 @@ export default connect(
     return {
       isLoading: state.reports.requestApplicationsIsLoading,
       isLoaded: state.reports.requestApplicationsIsLoaded,
-      requestApplications: state.reports.requestApplications
+      requestApplications: state.reports.requestApplications,
+      historyApplicationsIsLoading: state.reports.historyApplicationsIsLoading,
+      historyApplicationsIsLoaded: state.reports.historyApplicationsIsLoaded,
+      historyApplications: state.reports.historyApplications
     };
   },
-  { getRequestApplications }
+  { getRequestApplications, getHistoryApplications }
 )(Applications);
