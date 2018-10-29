@@ -6,6 +6,8 @@ import EditAdminsMobile from "./EditAdmins/EditAdminsMobile";
 import { connect } from "react-redux";
 import { getAdmins } from "../../../actions";
 import AdminsLoader from "./AdminsLoader/AdminsLoader";
+import EditInvestors from "../../admin/AdminSettings/EditInvestors/EditInvestors";
+import EditInvestorsMobile from "./EditInvestors/EditInvestorsMobile";
 
 class AdminSettings extends React.Component {
   componentDidMount() {
@@ -60,6 +62,62 @@ class AdminSettings extends React.Component {
                       password={admin.password}
                       rule={admin.rule}
                       email={admin.email}
+                    />
+                  );
+                })}
+              </PerfectScrollbar>
+            </div>
+          )}
+
+          <div className="settings-footer">
+            <button className={"settings-save"}>Сохранить</button>
+          </div>
+        </div>
+        <div className="admin-block">
+          <div className="settings-header">Инвесторы</div>
+          {this.props.isLoading && <AdminsLoader />}
+          {this.props.isLoaded && (
+            <div className="settings-body settings-body-desktop">
+              <PerfectScrollbar className={"edit-admins-desktop"}>
+                <table className={"settings-table"}>
+                  <tbody>
+                    <tr>
+                      <th>ID</th>
+                      <th>Имя</th>
+                      <th>Фамилия</th>
+                      <th>Статус</th>
+                      <th />
+                    </tr>
+
+                    {this.props.adminList.map(investor => {
+                      return (
+                        <EditInvestors
+                          key={investor.id}
+                          id={investor.id}
+                          name={investor.name}
+                          surName={investor.surName}
+                          status={investor.status}
+                        />
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </PerfectScrollbar>
+            </div>
+          )}
+
+          {this.props.isLoading && <AdminsLoader />}
+          {this.props.isLoaded && (
+            <div className="settings-body settings-body-mobile">
+              <PerfectScrollbar className={"edit-admins-mobile"}>
+                {this.props.adminList.map(investor => {
+                  return (
+                    <EditInvestorsMobile
+                      key={investor.id}
+                      id={investor.id}
+                      name={investor.name}
+                      surName={investor.surName}
+                      status={investor.status}
                     />
                   );
                 })}

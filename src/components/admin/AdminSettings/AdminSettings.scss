@@ -45,7 +45,7 @@
       height: 41px;
       padding: 0 15px;
       width: 100%;
-      max-width: 100px;
+      max-width: calc(100% - 30px);
       &.id {
         color: #08c995;
       }
@@ -229,6 +229,13 @@ button.saveButton {
 }
 .settings-body-mobile{
   display: none;
+}
+
+
+@media screen and (max-width: 1400px) {
+  .settings-table td input {
+    min-width: 100px;
+  }
 }
 
 @media screen and (max-width: 991px) {
