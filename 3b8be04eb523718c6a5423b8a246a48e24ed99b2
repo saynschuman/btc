@@ -1,0 +1,15 @@
+[ver:1,total:3060]
+src/components/admin/AdminReports/AdminReports.js:1279,1540810800:545,1540814400:734,m
+src/components/admin/AdminReports/AdminReports.scss:395,1540810800:126,1540814400:269,m
+src/components/admin/AdminReports/InvestitionsReportMobile/InvestitionsReportMobile.js:292,1540814400:292,m
+src/backend/mocks.js:268,1540810800:242,1540814400:26,m
+src/components/admin/AdminReports/InvestitionsReport/InvestitionsReport.js:257,1540810800:152,1540814400:105,m
+src/reducer/reports.js:202,1540810800:202,m
+src/actions/index.js:145,1540810800:121,1540814400:24,m
+src/components/admin/AdminReports/InvestorReportMobile/InvestorReportMobile.js:63,1540810800:13,1540814400:50,r
+src/components/admin/AdminReports/InvestorReport/InvestorReport.js:50,1540810800:50,r
+src/backend/api.js:44,1540810800:44,m
+src/constants/index.js:30,1540810800:30,m
+src/reducer/investitions.js:20,1540810800:20,d
+src/components/admin/AdminReports/ReportsLoader/ReportsLoader.js:9,1540810800:9,r
+src/components/admin/AdminSettings/AdminsLoader/AdminsLoader.js:6,1540810800:6,r
