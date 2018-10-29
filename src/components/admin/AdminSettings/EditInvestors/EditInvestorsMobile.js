@@ -1,6 +1,7 @@
 import React from "react";
 import CustomInput from "../../../commmon/CustomInput/CustomInput";
 import classNames from "classnames";
+import CustomCheckbox from "../../../commmon/CustomCheckbox/CustomCheckbox";
 
 class EditInvestorsMobile extends React.Component {
   render() {
@@ -50,14 +51,7 @@ class EditInvestorsMobile extends React.Component {
             <tr>
               <td>Статус</td>
               <td>
-                <CustomInput
-                  type={"text"}
-                  className={classNames({
-                    cantEdit: true
-                  })}
-                  value={this.props.status}
-                  disabled={true}
-                />
+                <CustomCheckbox checked={this.props.status} />
               </td>
             </tr>
           </tbody>
