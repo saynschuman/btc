@@ -1,0 +1,12 @@
+[ver:1,total:2220]
+src/backend/mocks.js:1021,1540839600:631,1540843200:390,m
+src/components/admin/Applications/Applications.js:596,1540839600:596,m
+src/components/admin/Applications/components/ApplicationsHistoryMobile.js:134,1540839600:134,m
+src/components/admin/Applications/components/ApplicationsHistory.js:96,1540839600:96,m
+src/actions/index.js:82,1540839600:52,1540843200:30,m
+src/components/commmon/AsideMenu/AsideMenu.scss:80,1540839600:80,r
+src/components/admin/Applications/components/ApplicationsTableMobile.js:63,1540839600:63,r
+src/components/admin/Applications/Applications.scss:45,1540839600:45,m
+src/components/admin/Applications/components/ApplicationsTable.js:45,1540839600:45,r
+src/components/admin/AdminPays/components/ApplicationsHistory.js:33,1540839600:33,d
+src/components/admin/AdminPays/components/ApplicationsHistoryMobile.js:25,1540839600:25,d
