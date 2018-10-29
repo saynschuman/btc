@@ -2,6 +2,7 @@ import React from "react";
 import "./AdminSettings.scss";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import EditAdmins from "../../admin/AdminSettings/EditAdmins/EditAdmins";
+import EditAdminsMobile from "./EditAdmins/EditAdminsMobile";
 import { connect } from "react-redux";
 import { getAdmins } from "../../../actions";
 import AdminsLoader from "./AdminsLoader/AdminsLoader";
@@ -15,10 +16,10 @@ class AdminSettings extends React.Component {
       <div className={"admin-body"}>
         <div className="admin-block">
           <div className="settings-header">Администраторы</div>
-          <div className="settings-body">
-            <PerfectScrollbar>
-              {this.props.isLoading && <AdminsLoader />}
-              {this.props.isLoaded && (
+          {this.props.isLoading && <AdminsLoader />}
+          {this.props.isLoaded && (
+            <div className="settings-body settings-body-desktop">
+              <PerfectScrollbar className={"edit-admins-desktop"}>
                 <table className={"settings-table"}>
                   <tbody>
                     <tr>
@@ -43,9 +44,29 @@ class AdminSettings extends React.Component {
                     })}
                   </tbody>
                 </table>
-              )}
-            </PerfectScrollbar>
-          </div>
+              </PerfectScrollbar>
+            </div>
+          )}
+
+          {this.props.isLoading && <AdminsLoader />}
+          {this.props.isLoaded && (
+            <div className="settings-body settings-body-mobile">
+              <PerfectScrollbar className={"edit-admins-mobile"}>
+                {this.props.adminList.map(admin => {
+                  return (
+                    <EditAdminsMobile
+                      key={admin.id}
+                      id={admin.id}
+                      password={admin.password}
+                      rule={admin.rule}
+                      email={admin.email}
+                    />
+                  );
+                })}
+              </PerfectScrollbar>
+            </div>
+          )}
+
           <div className="settings-footer">
             <button className={"settings-save"}>Сохранить</button>
           </div>

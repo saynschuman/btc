@@ -20,17 +20,5 @@ export const adminList = [
     password: "sdfewgg3s32f",
     rule: "moderator",
     email: "brain@gmail.com"
-  },
-  {
-    id: 41235252352,
-    password: "sdfewgg3s32f",
-    rule: "investor",
-    email: "den@gmail.com"
-  },
-  {
-    id: 41235251352,
-    password: "sdfewgg3s32f",
-    rule: "admin",
-    email: "saynsch@gmail.com"
   }
 ];

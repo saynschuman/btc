@@ -6,7 +6,9 @@
 
 .settings-body {
   height: 300px;
+  display: block;
 }
+
 
 .settings-table {
   border: 1px solid #27138b;
@@ -216,4 +218,76 @@ button.saveButton {
   background: linear-gradient(to left, #5400ff 0%, #3b09b8 100%);
   background: -moz-linear-gradient(to left, #5400ff 0%, #3b09b8 100%);
   background: -webkit-linear-gradient(to left, #5400ff 0%, #3b09b8 100%);
+}
+
+.edit-admins-desktop {
+  display: table;
+}
+
+.edit-admins-mobile {
+  display: none;
+}
+.settings-body-mobile{
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .settings-header {
+    font-size: 18px;
+    text-align: left;
+    padding: 19px 24px;
+  }
+  .settings-table {
+    font-size: 16px;
+    td {
+      padding: 10px;
+      text-align: left;
+      input {
+        padding: 0 10px;
+        width: 100%;
+        max-width: calc(100% - 20px);
+      }
+    }
+  }
+  .settings-table td .rules .css-1492t68 {
+    font-size: 14px;
+  }
+  .settings-table td input.password {
+    padding-left: 10px;
+  }
+  .edit-admins-desktop {
+    display: none;
+  }
+  .edit-admins-mobile {
+  display: block
+}
+  .settings-body-desktop {
+    display: none;
+  }
+
+  .settings-body-mobile {
+    height: 800px;
+    display: block;
+  }
+  .close-button-admin-moblie {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 106px;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid #0472f9;
+    border-radius: 30px;
+    cursor: pointer;
+
+  }
+  .settings-table-mobile {
+    background-color: #070779;
+    padding-bottom: 18px;
+    margin-bottom: 13px;
+  }
 }
