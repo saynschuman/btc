@@ -2,11 +2,16 @@ import React from "react";
 
 class InvestorReportMobile extends React.Component {
   state = {
-    singleReportVisible: false
+    singleReportMobileVisible: false
   };
   showReport = () => {
     this.setState({
-      singleReportVisible: !this.state.singleReportVisible
+      singleReportMobileVisible: !this.state.singleReportMobileVisible
+    });
+  };
+  closeReport = () => {
+    this.setState({
+      singleReportMobileVisible: false
     });
   };
   render() {
@@ -47,6 +52,69 @@ class InvestorReportMobile extends React.Component {
         <button className={"edit-admin-button"} onClick={this.showReport}>
           Посмотреть
         </button>
+        {this.state.singleReportMobileVisible && (
+          <div className="singleInvestor singleInvestorMobile">
+            <div className="singleInvestorInner">
+              <div onClick={this.closeReport} className="close-modal">
+                <div className="close-button-admin" />
+              </div>
+              <div className="header">
+                <div className="title">
+                  Инвестор: <br />
+                  Сергей Сергеевич <span>ID: 3423123</span>
+                </div>
+              </div>
+              <div className="body">
+                <div className={"settings-table-mobile"}>
+                  <table className={"settings-table reports-table"}>
+                    <tbody>
+                      <tr>
+                        <td>Дата операции</td>
+                        <td>05.06.2018</td>
+                      </tr>
+                      <tr>
+                        <td>Тип</td>
+                        <td>Продажа</td>
+                      </tr>
+                      <tr>
+                        <td>Курс BTC в момент операции</td>
+                        <td>2.4346236243</td>
+                      </tr>
+                      <tr>
+                        <td>Цена единицы мощности (BTC)</td>
+                        <td>32315</td>
+                      </tr>
+                      <tr>
+                        <td>Объем операции (BTC)</td>
+                        <td className={"blue"}>4.135342113</td>
+                      </tr>
+                      <tr>
+                        <td>Стоимость операции (BTC)</td>
+                        <td className={"green"}>4.135342113</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="footer">
+                <div className="col col-50 border-right">
+                  <div className="footer-top">
+                    <div className="footer-title title-light">
+                      Общая мощность инвестора на текущий момент
+                    </div>
+                    <div className="footer-bottom">224312</div>
+                  </div>
+                </div>
+                <div className="col col-50">
+                  <div className="footer-title title-money">
+                    Общая мощность инвестора на текущий момент
+                  </div>
+                  <div className="footer-bottom">224312</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

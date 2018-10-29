@@ -164,6 +164,7 @@ table {
   }
 }
 
+
 .border-right {
   border-right: 1px solid #270163;
 }
@@ -188,6 +189,26 @@ table {
 
 
 @media screen and (max-width: 991px) {
+  .singleInvestor .singleInvestorInner .header .title {
+    margin-left: 18px;
+    line-height: 1.4;
+  }
+  .singleInvestor .singleInvestorInner .close-modal {
+    border-left: none;
+  }
+  .singleInvestor .singleInvestorInner {
+    width: 90%;
+    margin-top: 20px;
+  }
+  .singleInvestor .singleInvestorInner .footer-title {
+    margin-left: 0;
+    padding-left: 21px;
+  }
+  .singleInvestor .singleInvestorInner .header .title span {
+    padding-left: 0;
+    display: block;
+    margin-top: 20px;
+  }
   .investitions-mobile {
     padding-bottom: 0;
   }
