@@ -32,17 +32,13 @@ const Aside = props => {
       </div>
       <ul>
         <li>
-          <Link to={"/"} className={"active"}>
-            Главная
-          </Link>
+          <Link to={"/"}>Главная</Link>
         </li>
         <li>
-          <Link to={"/settings"} className={"active"}>
-            Настройка прав администратора
-          </Link>
+          <Link to={"/settings"}>Настройка прав администратора</Link>
         </li>
         <li>
-          <a href="/">Отчеты</a>
+          <Link to={"/reports"}>Отчеты</Link>
         </li>
         <li>
           <a href="/">Выплаты начислений инвесторам</a>
