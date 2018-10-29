@@ -60,7 +60,12 @@ class EditAdmins extends React.Component {
           />
         </td>
         <td>
-          <button onClick={this.handleEdit} className={"edit-admin-button"}>
+          <button
+            onClick={this.handleEdit}
+            className={classNames("edit-admin-button", {
+              saveButton: !this.state.cantEdit
+            })}
+          >
             {this.state.editButton}
           </button>
         </td>

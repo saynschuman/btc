@@ -211,3 +211,9 @@
     transition: .3s;
   }
 }
+
+button.saveButton {
+  background: linear-gradient(to left, #5400ff 0%, #3b09b8 100%);
+  background: -moz-linear-gradient(to left, #5400ff 0%, #3b09b8 100%);
+  background: -webkit-linear-gradient(to left, #5400ff 0%, #3b09b8 100%);
+}

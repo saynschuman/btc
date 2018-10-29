@@ -39,7 +39,7 @@ export const getAdmins = () => dispatch => {
   const promise = new Promise(resolve => {
     setTimeout(() => {
       resolve(getAdminsFromServer());
-    }, 1300);
+    }, 200);
   });
 
   promise.then(result => {
