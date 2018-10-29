@@ -1,0 +1,13 @@
+[ver:1,total:540]
+src/components/commmon/CustomCheckbox/CustomCheckbox.scss:186,1540803600:186,r
+src/components/admin/AdminReports/AdminReports.js:155,1540803600:155,m
+src/components/admin/RootAdmin/index.js:51,1540803600:51,m
+src/components/commmon/AsideMenu/AsideMenu.js:49,1540803600:49,m
+src/components/admin/AdminHomepage/AdminHomepage.js:32,1540803600:32,r
+src/components/admin/AdminHomepage/AdminHomepage.scss:14,1540803600:14,r
+src/components/admin/AdminSettings/AdminSettings.js:12,1540803600:12,r
+src/components/admin/AdminReports/AdminReports.scss:12,1540803600:12,m
+src/reducer/investors.js:11,1540803600:11,r
+src/components/commmon/CustomCheckbox/CustomCheckbox.js:6,1540803600:6,r
+src/components/commmon/CustomInput/CustomInput.js:6,1540803600:6,r
+src/components/admin/AdminSettings/EditInvestors/EditInvestorsMobile.js:6,1540803600:6,r
