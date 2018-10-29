@@ -1,0 +1,8 @@
+[ver:1,total:1440]
+src/backend/mocks.js:371,1540832400:371,m
+src/actions/index.js:285,1540832400:45,1540836000:240,m
+src/components/admin/AdminReports/AdminReports.js:270,1540832400:270,r
+src/reducer/reports.js:220,1540836000:220,m
+src/backend/api.js:195,1540832400:145,1540836000:50,m
+src/constants/index.js:90,1540836000:90,m
+src/backend/examplaeFetch.js:9,1540832400:9,r
