@@ -4,7 +4,11 @@ import {
   INVESTITIONS_REPORT_REQUEST,
   INVESTITIONS_REPORT_RESPONSE,
   CHARGE_TABLE_REQUEST,
-  CHARGE_TABLE_REPORT_RESPONSE
+  CHARGE_TABLE_REPORT_RESPONSE,
+  REQUEST_REQUEST_APPLICATIONS,
+  RESPONSE_REQUEST_APPLICATIONS,
+  REQUEST_HISTORY_APPLICATIONS,
+  RESPONSE_HISTORY_APPLICATIONS
 } from "../constants";
 
 const initialState = {
@@ -16,7 +20,13 @@ const initialState = {
   investitionsReports: [],
   chargeTableIsLoading: false,
   chargeTableIsLoaded: false,
-  chargeTable: []
+  chargeTable: [],
+  requestApplicationsIsLoading: false,
+  requestApplicationsIsLoaded: false,
+  requestApplications: [],
+  historyApplicationsIsLoading: false,
+  historyApplicationsIsLoaded: false,
+  historyApplications: []
 };
 
 export default function(state = initialState, action) {
@@ -55,6 +65,32 @@ export default function(state = initialState, action) {
         chargeTableIsLoading: false,
         chargeTableIsLoaded: true,
         chargeTable: action.chargeTable
+      };
+    case REQUEST_REQUEST_APPLICATIONS:
+      return {
+        ...state,
+        requestApplicationsIsLoading: true,
+        requestApplicationsIsLoaded: false
+      };
+    case RESPONSE_REQUEST_APPLICATIONS:
+      return {
+        ...state,
+        requestApplicationsIsLoading: false,
+        requestApplicationsIsLoaded: true,
+        requestApplications: action.requestApplications
+      };
+    case REQUEST_HISTORY_APPLICATIONS:
+      return {
+        ...state,
+        historyApplicationsIsLoading: true,
+        historyApplicationsIsLoaded: false
+      };
+    case RESPONSE_HISTORY_APPLICATIONS:
+      return {
+        ...state,
+        historyApplicationsIsLoading: false,
+        historyApplicationsIsLoaded: true,
+        historyApplications: action.historyApplications
       };
     default:
       return state;

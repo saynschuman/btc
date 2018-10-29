@@ -5,7 +5,9 @@ import {
   investorList,
   InvestorReport,
   InvestitionReport,
-  ChargeTable
+  ChargeTable,
+  HistoryApplications,
+  SaleApplications
 } from "./mocks";
 
 export const whoAreYou = data => {
@@ -37,4 +39,12 @@ export const getInvestitionsReportFromServer = () => {
 
 export const getChargeTableFromServer = () => {
   return ChargeTable;
+};
+
+export const getRequestApplicationsFromServer = () => {
+  return SaleApplications;
+};
+
+export const getHistoryApplicationsFromServer = () => {
+  return HistoryApplications;
 };

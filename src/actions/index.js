@@ -11,7 +11,11 @@ import {
   INVESTITIONS_REPORT_REQUEST,
   INVESTITIONS_REPORT_RESPONSE,
   CHARGE_TABLE_REQUEST,
-  CHARGE_TABLE_REPORT_RESPONSE
+  CHARGE_TABLE_REPORT_RESPONSE,
+  REQUEST_REQUEST_APPLICATIONS,
+  RESPONSE_REQUEST_APPLICATIONS,
+  REQUEST_HISTORY_APPLICATIONS,
+  RESPONSE_HISTORY_APPLICATIONS
 } from "../constants";
 import {
   whoAreYou,
@@ -19,7 +23,9 @@ import {
   getInvestorsFromServer,
   getInvestorsReportFromServer,
   getInvestitionsReportFromServer,
-  getChargeTableFromServer
+  getChargeTableFromServer,
+  getRequestApplicationsFromServer,
+  getHistoryApplicationsFromServer
 } from "../backend/api";
 
 export const checkWhoAreYou = authData => dispatch => {
@@ -138,6 +144,44 @@ export const getChargeTable = () => dispatch => {
     return dispatch({
       type: CHARGE_TABLE_REPORT_RESPONSE,
       chargeTable: result
+    });
+  });
+};
+
+export const getRequestApplications = () => dispatch => {
+  dispatch({
+    type: REQUEST_REQUEST_APPLICATIONS
+  });
+  const promise = new Promise(resolve => {
+    setTimeout(() => {
+      resolve(getRequestApplicationsFromServer());
+    }, 200);
+  });
+
+  promise.then(result => {
+    console.log(result);
+    return dispatch({
+      type: RESPONSE_REQUEST_APPLICATIONS,
+      requestApplications: result
+    });
+  });
+};
+
+export const getHistoryApplications = () => dispatch => {
+  dispatch({
+    type: REQUEST_HISTORY_APPLICATIONS
+  });
+  const promise = new Promise(resolve => {
+    setTimeout(() => {
+      resolve(getHistoryApplicationsFromServer());
+    }, 200);
+  });
+
+  promise.then(result => {
+    console.log(result);
+    return dispatch({
+      type: RESPONSE_HISTORY_APPLICATIONS,
+      requestApplications: result
     });
   });
 };

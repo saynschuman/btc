@@ -115,3 +115,59 @@ export const ChargeTable = [
     payed: 2.32525
   }
 ];
+
+export const SaleApplications = [
+  {
+    timeDate: 123123,
+    investorId: 1231312,
+    investitionId: 123123,
+    name: "wedwed",
+    surName: "wewef",
+    leftInvest: "wedwed",
+    reqValue: "wewed",
+    cost: 232,
+    summ: 2324,
+    idAdmAplied: 1212,
+    accept: true
+  },
+  {
+    timeDate: 123123,
+    investorId: 1231312,
+    investitionId: 23434243,
+    name: "wedwed",
+    surName: "wewef",
+    leftInvest: "wedwed",
+    reqValue: "wewed",
+    cost: 232,
+    summ: 2324,
+    idAdmAplied: 1212,
+    accept: true
+  }
+];
+
+export const HistoryApplications = [
+  {
+    timeDate: 123123,
+    timePay: 123123,
+    investorId: 1231312,
+    investitionId: 123123,
+    name: "wedwed",
+    surName: "wewef",
+    powerValue: "234",
+    cost: 232,
+    idAdmAplied: 1212,
+    summ: 2324
+  },
+  {
+    timeDate: 123123,
+    timePay: 123123,
+    investorId: 1231312,
+    investitionId: 123123,
+    name: "wedwed",
+    surName: "wewef",
+    powerValue: "234",
+    cost: 232,
+    idAdmAplied: 1212,
+    summ: 2324
+  }
+];
