@@ -1,0 +1,16 @@
+[ver:1,total:1020]
+src/actions/index.js:330,1540832400:330,m
+src/components/commmon/AsideMenu/AsideMenu.js:190,1540832400:190,r
+src/backend/api.js:150,1540832400:150,r
+src/components/admin/AdminSettings/AdminSettings.scss:76,1540832400:76,m
+build/static/css/main.45abc47f.chunk.css.map:66,1540832400:66,r
+src/components/admin/AdminReports/AdminReports.js:60,1540832400:60,m
+src/components/admin/AdminHomepage/AdminHomepage.js:30,1540832400:30,r
+src/components/admin/AdminSettings/AdminSettings.js:30,1540832400:30,m
+build/static/css/main.45abc47f.chunk.css:30,1540832400:30,r
+src/components/admin/AdminHomepage/AdminHomepage.scss:16,1540832400:16,r
+src/components/admin/AdminPays/components/PaysTableMobile.js:13,1540832400:13,r
+src/components/admin/RootAdmin/index.js:11,1540832400:11,r
+src/backend/mocks.js:6,1540832400:6,r
+src/components/admin/AdminPays/AdminPays.scss:6,1540832400:6,r
+src/components/admin/AdminPays/AdminPays.js:6,1540832400:6,r
