@@ -1,5 +1,6 @@
 import React from "react";
 import CustomInput from "../../../commmon/CustomInput/CustomInput";
+import CustomCheckbox from "../../../commmon/CustomCheckbox/CustomCheckbox";
 import classNames from "classnames";
 
 class EditInvestors extends React.Component {
@@ -37,14 +38,7 @@ class EditInvestors extends React.Component {
           />
         </td>
         <td>
-          <CustomInput
-            type={"text"}
-            className={classNames({
-              cantEdit: true
-            })}
-            value={this.props.status}
-            disabled={true}
-          />
+          <CustomCheckbox checked={this.props.status} />
         </td>
         <td>
           <div className="close-button-admin" />
