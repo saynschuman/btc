@@ -22,3 +22,18 @@ export const adminList = [
     email: "brain@gmail.com"
   }
 ];
+
+export const investorList = [
+  {
+    id: 412541673,
+    name: "Сергей",
+    surName: "Сергеев",
+    status: true
+  },
+  {
+    id: 412541621,
+    name: "Сергей",
+    surName: "Сергеев",
+    status: false
+  }
+];

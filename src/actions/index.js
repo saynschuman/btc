@@ -3,9 +3,15 @@ import {
   RESPONSE,
   SHOW_MOBILE_MENU,
   ADMINS_REQUEST,
-  ADMINS_RESPONSE
+  ADMINS_RESPONSE,
+  INVESTORS_REQUEST,
+  INVESTORS_RESPONSE
 } from "../constants";
-import { whoAreYou, getAdminsFromServer } from "../backend/api";
+import {
+  whoAreYou,
+  getAdminsFromServer,
+  getInvestorsFromServer
+} from "../backend/api";
 
 export const checkWhoAreYou = authData => dispatch => {
   dispatch({
@@ -47,6 +53,23 @@ export const getAdmins = () => dispatch => {
     return dispatch({
       type: ADMINS_RESPONSE,
       adminList: result
+    });
+  });
+};
+
+export const getInvestors = () => dispatch => {
+  dispatch({
+    type: INVESTORS_REQUEST
+  });
+  const promise = new Promise(resolve => {
+    resolve(getInvestorsFromServer());
+  });
+
+  promise.then(result => {
+    console.log(result);
+    return dispatch({
+      type: INVESTORS_RESPONSE,
+      investorsList: result
     });
   });
 };

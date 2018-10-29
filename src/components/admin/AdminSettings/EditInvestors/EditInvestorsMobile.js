@@ -1,13 +1,6 @@
 import React from "react";
 import CustomInput from "../../../commmon/CustomInput/CustomInput";
-import CustomSelect from "../../../commmon/CustomSelect/CustomSelect";
 import classNames from "classnames";
-
-const rules = [
-  { value: "admin", label: "Админ" },
-  { value: "moderator", label: "Модератор" },
-  { value: "investor", label: "Инвестор" }
-];
 
 class EditInvestorsMobile extends React.Component {
   render() {
@@ -33,10 +26,10 @@ class EditInvestorsMobile extends React.Component {
               <td>
                 <CustomInput
                   type={"text"}
-                  className={classNames("id", {
+                  className={classNames({
                     cantEdit: true
                   })}
-                  value={this.props.id}
+                  value={this.props.name}
                   disabled={true}
                 />
               </td>
@@ -46,10 +39,10 @@ class EditInvestorsMobile extends React.Component {
               <td>
                 <CustomInput
                   type={"text"}
-                  className={classNames("id", {
+                  className={classNames({
                     cantEdit: true
                   })}
-                  value={this.props.id}
+                  value={this.props.surName}
                   disabled={true}
                 />
               </td>
@@ -59,10 +52,10 @@ class EditInvestorsMobile extends React.Component {
               <td>
                 <CustomInput
                   type={"text"}
-                  className={classNames("id", {
+                  className={classNames({
                     cantEdit: true
                   })}
-                  value={this.props.id}
+                  value={this.props.status}
                   disabled={true}
                 />
               </td>

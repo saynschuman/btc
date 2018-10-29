@@ -1,4 +1,4 @@
-import { admin, investor, adminList } from "./mocks";
+import { admin, investor, adminList, investorList } from "./mocks";
 
 export const whoAreYou = data => {
   if (data.id === admin.id && data.password === admin.password) {
@@ -13,4 +13,8 @@ export const whoAreYou = data => {
 
 export const getAdminsFromServer = () => {
   return adminList;
+};
+
+export const getInvestorsFromServer = () => {
+  return investorList;
 };

@@ -19,30 +19,30 @@ class EditInvestors extends React.Component {
         <td>
           <CustomInput
             type={"text"}
-            className={classNames("id", {
+            className={classNames({
               cantEdit: true
             })}
-            value={this.props.id}
+            value={this.props.name}
             disabled={true}
           />
         </td>
         <td>
           <CustomInput
             type={"text"}
-            className={classNames("id", {
+            className={classNames({
               cantEdit: true
             })}
-            value={this.props.id}
+            value={this.props.surName}
             disabled={true}
           />
         </td>
         <td>
           <CustomInput
             type={"text"}
-            className={classNames("id", {
+            className={classNames({
               cantEdit: true
             })}
-            value={this.props.id}
+            value={this.props.status}
             disabled={true}
           />
         </td>

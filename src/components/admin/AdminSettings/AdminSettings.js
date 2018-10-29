@@ -4,7 +4,7 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import EditAdmins from "../../admin/AdminSettings/EditAdmins/EditAdmins";
 import EditAdminsMobile from "./EditAdmins/EditAdminsMobile";
 import { connect } from "react-redux";
-import { getAdmins } from "../../../actions";
+import { getAdmins, getInvestors } from "../../../actions";
 import AdminsLoader from "./AdminsLoader/AdminsLoader";
 import EditInvestors from "../../admin/AdminSettings/EditInvestors/EditInvestors";
 import EditInvestorsMobile from "./EditInvestors/EditInvestorsMobile";
@@ -12,6 +12,7 @@ import EditInvestorsMobile from "./EditInvestors/EditInvestorsMobile";
 class AdminSettings extends React.Component {
   componentDidMount() {
     this.props.getAdmins();
+    this.props.getInvestors();
   }
   render() {
     return (
@@ -75,8 +76,8 @@ class AdminSettings extends React.Component {
         </div>
         <div className="admin-block">
           <div className="settings-header">Инвесторы</div>
-          {this.props.isLoading && <AdminsLoader />}
-          {this.props.isLoaded && (
+          {this.props.investorsListIsLoading && <AdminsLoader />}
+          {this.props.investorsListIsLoaded && (
             <div className="settings-body settings-body-desktop">
               <PerfectScrollbar className={"edit-admins-desktop"}>
                 <table className={"settings-table"}>
@@ -89,7 +90,7 @@ class AdminSettings extends React.Component {
                       <th />
                     </tr>
 
-                    {this.props.adminList.map(investor => {
+                    {this.props.investorsList.map(investor => {
                       return (
                         <EditInvestors
                           key={investor.id}
@@ -106,11 +107,11 @@ class AdminSettings extends React.Component {
             </div>
           )}
 
-          {this.props.isLoading && <AdminsLoader />}
-          {this.props.isLoaded && (
+          {this.props.investorsListIsLoading && <AdminsLoader />}
+          {this.props.investorsListIsLoaded && (
             <div className="settings-body settings-body-mobile">
               <PerfectScrollbar className={"edit-admins-mobile"}>
-                {this.props.adminList.map(investor => {
+                {this.props.investorsList.map(investor => {
                   return (
                     <EditInvestorsMobile
                       key={investor.id}
@@ -138,8 +139,11 @@ export default connect(
     return {
       adminList: state.admins.adminList,
       isLoading: state.admins.isLoading,
-      isLoaded: state.admins.isLoaded
+      isLoaded: state.admins.isLoaded,
+      investorsList: state.investors.investorsList,
+      investorsListIsLoading: state.investors.isLoading,
+      investorsListIsLoaded: state.investors.isLoaded
     };
   },
-  { getAdmins }
+  { getAdmins, getInvestors }
 )(AdminSettings);
