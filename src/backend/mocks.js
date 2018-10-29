@@ -37,3 +37,24 @@ export const investorList = [
     status: false
   }
 ];
+
+export const InvestorReport = [
+  {
+    id: 123123,
+    name: "Сергрей",
+    surName: "Сергеев",
+    power: 12.3212,
+    payed: 12.3213,
+    phone: "+7(987)234-32-34",
+    email: "watson@mail.ru"
+  },
+  {
+    id: 12312351,
+    name: "Сергрей",
+    surName: "Сергеев",
+    power: 12.3212,
+    payed: 12.3213,
+    phone: "+7(987)234-32-34",
+    email: "watson@mail.ru"
+  }
+];

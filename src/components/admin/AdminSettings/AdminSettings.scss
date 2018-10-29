@@ -22,10 +22,12 @@
     border: 1px solid #27138b;
     border-left: none;
     padding: 14px;
-    &:first-child {
-      text-align: left;
-      padding-left: 80px;
-    }
+    text-align: left;
+    padding-left: 20px;
+    //&:first-child {
+    //  text-align: left;
+    //  padding-left: 80px;
+    //}
     &:last-child {
       border-right: none;
     }
@@ -34,6 +36,8 @@
     border: 1px solid #27138b;
     border-left: none;
     padding: 14px;
+    text-align: left;
+    padding-left: 20px;
     &:first-child {
       text-align: left;
     }

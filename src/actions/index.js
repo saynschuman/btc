@@ -5,12 +5,15 @@ import {
   ADMINS_REQUEST,
   ADMINS_RESPONSE,
   INVESTORS_REQUEST,
-  INVESTORS_RESPONSE
+  INVESTORS_RESPONSE,
+  INVESTORS_REPORT_REQUEST,
+  INVESTORS_REPORT_RESPONSE
 } from "../constants";
 import {
   whoAreYou,
   getAdminsFromServer,
-  getInvestorsFromServer
+  getInvestorsFromServer,
+  getInvestorsReportFromServer
 } from "../backend/api";
 
 export const checkWhoAreYou = authData => dispatch => {
@@ -70,6 +73,23 @@ export const getInvestors = () => dispatch => {
     return dispatch({
       type: INVESTORS_RESPONSE,
       investorsList: result
+    });
+  });
+};
+
+export const getInvestorsReport = () => dispatch => {
+  dispatch({
+    type: INVESTORS_REPORT_REQUEST
+  });
+  const promise = new Promise(resolve => {
+    resolve(getInvestorsReportFromServer());
+  });
+
+  promise.then(result => {
+    console.log(result);
+    return dispatch({
+      type: INVESTORS_REPORT_RESPONSE,
+      investorsReports: result
     });
   });
 };
