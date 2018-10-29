@@ -1,0 +1,10 @@
+[ver:1,total:1140]
+src/components/admin/AdminReports/InvestorReportMobile/InvestorReportMobile.js:387,1540818000:180,1540821600:12,1540825200:195,r
+src/components/commmon/AsideMenu/AsideMenu.js:384,1540825200:384,m
+src/components/admin/AdminReports/AdminReports.scss:144,1540821600:84,1540825200:60,r
+src/components/commmon/Header/AdminPageHeader.js:78,1540825200:78,m
+src/components/admin/RootAdmin/index.js:63,1540825200:63,r
+src/components/admin/AdminSettings/AdminSettings.scss:39,1540821600:24,1540825200:15,r
+src/App.js:23,1540825200:23,r
+src/components/admin/AdminReports/AdminReports.js:15,1540825200:15,r
+src/components/Root.js:7,1540825200:7,r
