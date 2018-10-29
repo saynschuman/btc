@@ -29,6 +29,7 @@ aside {
         &.is-active {
           color: #1b80f2;
           background-color: #000142;
+          text-shadow: 0 0 14px #1b80f2;
         }
       }
     }
@@ -57,6 +58,9 @@ aside {
 
 
 @media screen and (max-width: 1050px) {
+  aside ul li a.is-active {
+    background-color: transparent;
+  }
   aside {
     background-color: #09093c;
   }

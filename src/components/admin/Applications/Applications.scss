@@ -7,6 +7,10 @@
   padding-bottom: 1px;
 }
 
+.settings-table th {
+  vertical-align: top;
+}
+
 @media screen and (max-width: 1700px) {
   .applications-table {
     font-size: .9vw
