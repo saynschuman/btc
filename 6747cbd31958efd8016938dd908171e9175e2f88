@@ -1,0 +1,17 @@
+[ver:1,total:1860]
+src/components/admin/AdminSettings/AdminSettings.js:609,1540796400:609,m
+src/components/admin/AdminSettings/EditInvestors/EditInvestors.js:427,1540796400:427,m
+src/components/admin/AdminSettings/AdminSettings.scss:257,1540796400:257,m
+src/components/admin/InvestorSettings/InvestorSettings.js:150,1540796400:150,d
+src/components/admin/AdminSettings/EditInvestors/EditInvestorsMobile.js:115,1540796400:115,m
+src/components/admin/AdminHomepage/AdminHomepage.scss:60,1540796400:60,r
+.idea/watcherTasks.xml:60,1540796400:60,m
+src/components/admin/AdminSettings/EditInvestors/EditAdmins.js:40,1540796400:40,d
+src/components/admin/AdminSettings/EditAdmins/EditInvestorsMobile.js:30,1540796400:30,d
+src/components/admin/AdminSettings/EditAdmins/EditInvestors.js:27,1540796400:27,d
+src/components/admin/AdminSettings/EditInvestors/EditAdminsMobile.js:20,1540796400:20,d
+src/components/admin/InvestorSettings/InvestorSettings.scss:17,1540796400:17,d
+src/actions/index.js:12,1540796400:12,r
+src/components/admin/AdminHomepage/AdminHomepage.js:12,1540796400:12,r
+src/components/admin/AdminSettings/EditAdmins/EditAdminsMobile.js:12,1540796400:12,r
+src/components/commmon/CustomInput/CustomInput.js:12,1540796400:12,r
