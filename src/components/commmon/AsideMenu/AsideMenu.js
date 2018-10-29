@@ -1,7 +1,6 @@
 import React from "react";
 import "./AsideMenu.scss";
 import "react-perfect-scrollbar/dist/css/styles.css";
-// import PerfectScrollbar from "react-perfect-scrollbar";
 import { connect } from "react-redux";
 import { toggleMobileMenu } from "../../../actions";
 import classNames from "classnames";
@@ -14,11 +13,7 @@ const Aside = props => {
     window.location.reload();
   };
   return (
-    <aside
-      className={classNames({ mobileMenuVisible: props.menuIsOpen })}
-      // style={{ height: window.innerHeight }}
-    >
-      {/* <PerfectScrollbar> */}
+    <aside className={classNames({ mobileMenuVisible: props.menuIsOpen })}>
       <div className="mobile-admin-nav">
         <ul className={"nav-top"}>
           <li>Панель администратора</li>
@@ -31,32 +26,31 @@ const Aside = props => {
         </ul>
       </div>
       <ul>
-        <li>
+        <li onClick={props.toggleMobileMenu}>
           <Link to={"/"}>Главная</Link>
         </li>
-        <li>
+        <li onClick={props.toggleMobileMenu}>
           <Link to={"/settings"}>Настройка прав администратора</Link>
         </li>
-        <li>
+        <li onClick={props.toggleMobileMenu}>
           <Link to={"/reports"}>Отчеты</Link>
         </li>
-        <li>
+        <li onClick={props.toggleMobileMenu}>
           <a href="/">Выплаты начислений инвесторам</a>
         </li>
-        <li>
+        <li onClick={props.toggleMobileMenu}>
           <a href="/">Заявки инвесторов на продажу</a>
         </li>
-        <li>
+        <li onClick={props.toggleMobileMenu}>
           <a href="/">Настройка схемы расчета</a>
         </li>
-        <li>
+        <li onClick={props.toggleMobileMenu}>
           <a href="/">Прочее</a>
         </li>
-        <li>
+        <li onClick={props.toggleMobileMenu}>
           <a href="/">Новости</a>
         </li>
       </ul>
-      {/* </PerfectScrollbar> */}
     </aside>
   );
 };

@@ -4,6 +4,7 @@ import AdminHeader from "./components/AdminHeader";
 import { connect } from "react-redux";
 import { toggleMobileMenu } from "../../../actions";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 
 class AdminPageHeader extends Component {
   exit = e => {
@@ -16,7 +17,9 @@ class AdminPageHeader extends Component {
       <div className="header-wrapper">
         <div className="header-inner">
           <div className="left item">
-            <div className="logo" />
+            <Link to={"/"}>
+              <div className="logo" />
+            </Link>
           </div>
           <div className="item menu">
             <AdminHeader />
@@ -25,9 +28,9 @@ class AdminPageHeader extends Component {
             <ul>
               <li className="exit admin">
                 <a onClick={this.exit} href="/">
-                    Выход
+                  Выход
                 </a>
-            </li>
+              </li>
             </ul>
             <div
               onClick={this.props.toggleMobileMenu}
