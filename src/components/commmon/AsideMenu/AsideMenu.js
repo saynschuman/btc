@@ -36,7 +36,7 @@ const Aside = props => {
           <Link to={"/reports"}>Отчеты</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <a href="/">Выплаты начислений инвесторам</a>
+          <Link to={"/pays"}>Выплаты начислений инвесторам</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
           <a href="/">Заявки инвесторов на продажу</a>

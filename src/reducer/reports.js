@@ -2,7 +2,9 @@ import {
   INVESTORS_REPORT_REQUEST,
   INVESTORS_REPORT_RESPONSE,
   INVESTITIONS_REPORT_REQUEST,
-  INVESTITIONS_REPORT_RESPONSE
+  INVESTITIONS_REPORT_RESPONSE,
+  CHARGE_TABLE_REQUEST,
+  CHARGE_TABLE_REPORT_RESPONSE
 } from "../constants";
 
 const initialState = {
@@ -10,8 +12,11 @@ const initialState = {
   isLoaded: false,
   investorsReports: [],
   investitionsIsLoading: false,
-  investitionsIsLoaded: true,
-  investitionsReports: []
+  investitionsIsLoaded: false,
+  investitionsReports: [],
+  chargeTableIsLoading: false,
+  chargeTableIsLoaded: false,
+  chargeTable: []
 };
 
 export default function(state = initialState, action) {
@@ -37,6 +42,19 @@ export default function(state = initialState, action) {
         investitionsIsLoading: false,
         investitionsIsLoaded: true,
         investitionsReports: action.investitionsReports
+      };
+    case CHARGE_TABLE_REQUEST:
+      return {
+        ...state,
+        chargeTableIsLoading: true,
+        chargeTableIsLoaded: false
+      };
+    case CHARGE_TABLE_REPORT_RESPONSE:
+      return {
+        ...state,
+        chargeTableIsLoading: false,
+        chargeTableIsLoaded: true,
+        chargeTable: action.chargeTable
       };
     default:
       return state;

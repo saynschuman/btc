@@ -9,14 +9,17 @@ import {
   INVESTORS_REPORT_REQUEST,
   INVESTORS_REPORT_RESPONSE,
   INVESTITIONS_REPORT_REQUEST,
-  INVESTITIONS_REPORT_RESPONSE
+  INVESTITIONS_REPORT_RESPONSE,
+  CHARGE_TABLE_REQUEST,
+  CHARGE_TABLE_REPORT_RESPONSE
 } from "../constants";
 import {
   whoAreYou,
   getAdminsFromServer,
   getInvestorsFromServer,
   getInvestorsReportFromServer,
-  getInvestitionsReportFromServer
+  getInvestitionsReportFromServer,
+  getChargeTableFromServer
 } from "../backend/api";
 
 export const checkWhoAreYou = authData => dispatch => {
@@ -110,6 +113,25 @@ export const getInvestitionsReport = () => dispatch => {
     return dispatch({
       type: INVESTITIONS_REPORT_RESPONSE,
       investitionsReports: result
+    });
+  });
+};
+
+export const getChargeTable = () => dispatch => {
+  dispatch({
+    type: CHARGE_TABLE_REQUEST
+  });
+  const promise = new Promise(resolve => {
+    setTimeout(() => {
+      resolve(getChargeTableFromServer());
+    }, 300);
+  });
+
+  promise.then(result => {
+    console.log(result);
+    return dispatch({
+      type: CHARGE_TABLE_REPORT_RESPONSE,
+      chargeTable: result
     });
   });
 };

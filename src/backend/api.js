@@ -4,7 +4,8 @@ import {
   adminList,
   investorList,
   InvestorReport,
-  InvestitionReport
+  InvestitionReport,
+  ChargeTable
 } from "./mocks";
 
 export const whoAreYou = data => {
@@ -32,4 +33,8 @@ export const getInvestorsReportFromServer = () => {
 
 export const getInvestitionsReportFromServer = () => {
   return InvestitionReport;
+};
+
+export const getChargeTableFromServer = () => {
+  return ChargeTable;
 };

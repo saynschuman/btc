@@ -85,3 +85,33 @@ export const InvestitionReport = [
     alreadyPayed: 2.15453
   }
 ];
+
+export const ChargeTable = [
+  {
+    investorId: 12421214,
+    investitionId: 121412412,
+    name: "Vasya",
+    surName: "Vasisliev",
+    paySize: 0.15452,
+    koef: 0.6,
+    payed: 2.32525
+  },
+  {
+    investorId: 23251521,
+    investitionId: 121412412,
+    name: "Vasya",
+    surName: "Vasisliev",
+    paySize: 0.15452,
+    koef: 0.6,
+    payed: 2.32525
+  },
+  {
+    investorId: 747541521,
+    investitionId: 121412412,
+    name: "Vasya",
+    surName: "Vasisliev",
+    paySize: 0.15452,
+    koef: 0.6,
+    payed: 2.32525
+  }
+];
