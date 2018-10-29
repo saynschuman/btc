@@ -1,0 +1,12 @@
+[ver:1,total:1020]
+src/components/admin/AdminSettings/AdminSettings.js:245,1540800000:245,m
+src/components/admin/AdminSettings/EditInvestors/EditInvestorsMobile.js:155,1540796400:120,1540800000:35,m
+src/actions/index.js:150,1540800000:150,m
+src/components/admin/AdminSettings/EditInvestors/EditInvestors.js:120,1540800000:120,m
+src/reducer/investors.js:110,1540800000:110,m
+src/backend/mocks.js:90,1540800000:90,m
+src/reducer/index.js:50,1540800000:50,m
+src/constants/index.js:40,1540800000:40,m
+src/backend/api.js:30,1540800000:30,m
+src/reducer/admins.js:15,1540800000:15,r
+src/components/admin/AdminSettings/EditAdmins/EditAdminsMobile.js:15,1540800000:15,r
