@@ -68,6 +68,106 @@ table {
   }
 }
 
+.singleInvestor {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, .4);
+  top: 0px;
+  left: 0;
+  .singleInvestorInner {
+    .close-modal {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      padding: 25px;
+      height: 22px;
+      width: 22px;
+      border-left: 1px solid #031058;
+      cursor: pointer;
+    }
+    width: 80%;
+    position: relative;
+    display: block;
+    max-width: 1146px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #020149;
+    .popup-table {
+      tr {
+        th {
+          &:nth-child(2) {
+            padding-left: 7px;
+          }
+        }
+        td {
+          &:nth-child(2) {
+            padding-left: 7px;
+          }
+        }
+      }
+    }
+    .empty-char {
+      min-width: 31px;
+    }
+    .header {
+      .title {
+        border-left: 1px solid #110558;
+        margin-left: 65px;
+        padding: 25px 0;
+        padding-left: 4px;
+        font-size: 20px;
+        span {
+          padding-left: 60px;
+        }
+      }
+    }
+    .footer-title {
+      margin-left: 53px;
+      padding: 20px;
+      font-size: 17px;
+      position: relative;
+      &.title-light {
+        &:after {
+          content: '';
+          position: absolute;
+          top: 20px;
+          right: 17px;
+          height: 30px;
+          width: 30px;
+          background-size: 100% ;
+          background-image: url("./InvestorReport/img/light.png");
+        }
+      }
+      &.title-money {
+        &:after {
+          content: '';
+          position: absolute;
+          top: 20px;
+          right: 0px;
+          height: 30px;
+          width: 30px;
+          background-size: 100% ;
+          background-image: url("./InvestorReport/img/money.png");
+        }
+      }
+    }
+    .footer-bottom {
+      font-size: 48px;
+      margin-left: 70px;
+      margin-bottom: 30px;
+      margin-top: 10px;
+      background-color: #020149;
+    }
+  }
+}
+
+.border-right {
+  border-right: 1px solid #270163;
+}
+
 @media screen and (max-width: 1665px) {
  .investitions-table-desk {
    font-size: 10px !important;
