@@ -4,7 +4,7 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 import { connect } from "react-redux";
 import { toggleMobileMenu } from "../../../actions";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Aside = props => {
   const exit = e => {
@@ -27,29 +27,45 @@ const Aside = props => {
       </div>
       <ul>
         <li onClick={props.toggleMobileMenu}>
-          <Link to={"/"}>Главная</Link>
+          <NavLink exact={true} activeClassName="is-active" to="/">
+            Главная
+          </NavLink>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <Link to={"/settings"}>Настройка прав администратора</Link>
+          <NavLink to={"/settings"} activeClassName="is-active">
+            Настройка прав администратора
+          </NavLink>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <Link to={"/reports"}>Отчеты</Link>
+          <NavLink to={"/reports"} activeClassName="is-active">
+            Отчеты
+          </NavLink>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <Link to={"/pays"}>Выплаты начислений инвесторам</Link>
+          <NavLink to={"/pays"} activeClassName="is-active">
+            Выплаты начислений инвесторам
+          </NavLink>
         </li>
-        <li onClick={props.toggleMobileMenu}>
-          <a href="/">Заявки инвесторов на продажу</a>
-        </li>
-        <li onClick={props.toggleMobileMenu}>
-          <a href="/">Настройка схемы расчета</a>
-        </li>
-        <li onClick={props.toggleMobileMenu}>
-          <a href="/">Прочее</a>
-        </li>
-        <li onClick={props.toggleMobileMenu}>
-          <a href="/">Новости</a>
-        </li>
+        {/*<li onClick={props.toggleMobileMenu}>*/}
+        {/*<NavLink to={"/"} activeClassName="is-active">*/}
+        {/*Заявки инвесторов на продажу*/}
+        {/*</NavLink>*/}
+        {/*</li>*/}
+        {/*<li onClick={props.toggleMobileMenu}>*/}
+        {/*<NavLink to={"/"} activeClassName="is-active">*/}
+        {/*Настройка схемы расчета*/}
+        {/*</NavLink>*/}
+        {/*</li>*/}
+        {/*<li onClick={props.toggleMobileMenu}>*/}
+        {/*<NavLink to={"/"} activeClassName="is-active">*/}
+        {/*Прочее*/}
+        {/*</NavLink>*/}
+        {/*</li>*/}
+        {/*<li onClick={props.toggleMobileMenu}>*/}
+        {/*<NavLink to={"/"} activeClassName="is-active">*/}
+        {/*Новости*/}
+        {/*</NavLink>*/}
+        {/*</li>*/}
       </ul>
     </aside>
   );

@@ -15,10 +15,27 @@ const RootAdmin = () => {
         <AdminPageHeader whoAreYou={"admin"} />
         <AsideMenu />
         <Switch>
-          <Route exact={true} path="/" component={AdminHomepage} />
-          <Route path="/settings" component={AdminSettings} />
-          <Route path="/reports" component={AdminReports} />
-          <Route path="/pays" component={AdminPays} />
+          <Route
+            activeClassName={"is-active"}
+            exact={true}
+            path="/"
+            component={AdminHomepage}
+          />
+          <Route
+            activeClassName={"is-active"}
+            path="/settings"
+            component={AdminSettings}
+          />
+          <Route
+            activeClassName={"is-active"}
+            path="/reports"
+            component={AdminReports}
+          />
+          <Route
+            activeClassName={"is-active"}
+            path="/pays"
+            component={AdminPays}
+          />
         </Switch>
       </div>
     </BrowserRouter>
