@@ -1,0 +1,9 @@
+[ver:1,total:3660]
+src/components/admin/AdminSettings/AdminSettings.scss:1129,1540792800:434,1540796400:695,m
+src/components/admin/AdminSettings/EditAdmins/EditAdminsMobile.js:1082,1540792800:767,1540796400:315,m
+src/components/admin/AdminSettings/AdminSettings.js:942,1540792800:837,1540796400:105,m
+src/components/admin/AdminSettings/EditAdmins/EditAdmins.js:191,1540792800:176,1540796400:15,r
+src/actions/index.js:160,1540796400:160,m
+src/backend/mocks.js:114,1540792800:114,m
+src/reducer/admins.js:30,1540796400:30,r
+src/components/admin/AdminSettings/AdminsLoader/AdminsLoader.js:12,1540792800:12,r
