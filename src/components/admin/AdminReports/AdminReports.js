@@ -13,8 +13,8 @@ import InvestitionsReportMobile from "./InvestitionsReportMobile/InvestitionsRep
 
 class AdminReports extends React.Component {
   componentDidMount() {
-    !this.props.isLoaded && this.props.getInvestorsReport();
-    !this.props.isLoaded && this.props.getInvestitionsReport();
+    this.props.getInvestorsReport();
+    this.props.getInvestitionsReport();
   }
   state = {
     investors: true,

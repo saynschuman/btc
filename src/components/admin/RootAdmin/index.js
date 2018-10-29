@@ -7,6 +7,7 @@ import AdminPageHeader from "../../commmon/Header/AdminPageHeader";
 import AdminSettings from "../../admin/AdminSettings/AdminSettings";
 import AdminReports from "../AdminReports/AdminReports";
 import AdminPays from "../AdminPays/AdminPays";
+import Applications from "../Applications/Applications";
 
 const RootAdmin = () => {
   return (
@@ -35,6 +36,11 @@ const RootAdmin = () => {
             activeClassName={"is-active"}
             path="/pays"
             component={AdminPays}
+          />
+          <Route
+            activeClassName={"is-active"}
+            path="/applications"
+            component={Applications}
           />
         </Switch>
       </div>

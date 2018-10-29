@@ -46,11 +46,11 @@ const Aside = props => {
             Выплаты начислений инвесторам
           </NavLink>
         </li>
-        {/*<li onClick={props.toggleMobileMenu}>*/}
-        {/*<NavLink to={"/"} activeClassName="is-active">*/}
-        {/*Заявки инвесторов на продажу*/}
-        {/*</NavLink>*/}
-        {/*</li>*/}
+        <li onClick={props.toggleMobileMenu}>
+          <NavLink to={"/applications"} activeClassName="is-active">
+            Заявки инвесторов на продажу
+          </NavLink>
+        </li>
         {/*<li onClick={props.toggleMobileMenu}>*/}
         {/*<NavLink to={"/"} activeClassName="is-active">*/}
         {/*Настройка схемы расчета*/}
