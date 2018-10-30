@@ -344,3 +344,12 @@ export const yieldList = [
     yield: 0.45123
   }
 ];
+
+const image = require("./images/1.jpeg");
+
+export const article = {
+  title: "Новость 1",
+  date: "20.08.2018",
+  image: image,
+  text: `<b>Hello</b>, lorem inpsum <i>dolor sit emet</i> `
+};
