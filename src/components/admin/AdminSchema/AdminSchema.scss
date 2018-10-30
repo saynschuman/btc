@@ -132,6 +132,15 @@
 }
 
 @media screen and (max-width: 991px) {
+  .schema-page .right .settings-body tr td:first-child {
+    padding-left: 7px;
+  }
+  .invest-period-mobile {
+    padding-bottom: 1px;
+  }
+  .schema-page .right .settings-body tr td:nth-child(even){
+    width: 50%;
+  }
   .schema-page .left .settings-body {
     padding-left: 20px;
     padding-right: 20px;

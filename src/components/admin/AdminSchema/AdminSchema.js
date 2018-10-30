@@ -1,13 +1,16 @@
 import React from "react";
 import "./AdminSchema.scss";
 import InvestPeriod from "./components/InvestPeriod";
+import InvestPeriodMobile from "./components/InvestPeriodMobile";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { connect } from "react-redux";
 import { getInvestPeriod } from "../../../actions";
+import ReportsLoader from "../AdminReports/ReportsLoader/ReportsLoader";
+import AdminsLoader from "../AdminSettings/AdminsLoader/AdminsLoader";
 
 class AdminSchema extends React.Component {
   componentDidMount() {
-    this.props.getInvestPeriod();
+    !this.props.isLoaded && this.props.getInvestPeriod();
   }
   render() {
     return (
@@ -43,7 +46,7 @@ class AdminSchema extends React.Component {
                 Периоды инвестиций и коэфиценты начислений
               </div>
             </div>
-            <div className="settings-body">
+            <div className="settings-body settings-body-desktop">
               <PerfectScrollbar className={"no-ver-scrl"}>
                 <table className="settings-table">
                   <tbody>
@@ -53,15 +56,33 @@ class AdminSchema extends React.Component {
                       <th>Коэфицент начисления</th>
                       <th />
                     </tr>
-                    {this.props.investPeriod.map((period, index) => (
-                      <InvestPeriod
+                    {this.props.isLoading && <ReportsLoader />}
+                    {this.props.isLoaded &&
+                      this.props.investPeriod.map((period, index) => (
+                        <InvestPeriod
+                          key={index}
+                          quantity={period.monthQuantity}
+                          koef={period.koef}
+                        />
+                      ))}
+                  </tbody>
+                </table>
+              </PerfectScrollbar>
+            </div>
+            <div className="settings-body settings-body-mobile">
+              <PerfectScrollbar className={"edit-admins-mobile"}>
+                {this.props.isLoading && <AdminsLoader />}
+                {this.props.isLoaded &&
+                  this.props.investPeriod.map((period, index) => {
+                    return (
+                      <InvestPeriodMobile
                         key={index}
+                        ind={index}
                         quantity={period.monthQuantity}
                         koef={period.koef}
                       />
-                    ))}
-                  </tbody>
-                </table>
+                    );
+                  })}
               </PerfectScrollbar>
             </div>
             <div className="settings-footer">
