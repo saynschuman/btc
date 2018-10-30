@@ -1,0 +1,16 @@
+[ver:1,total:2160]
+src/components/admin/AdminSchema/AdminSchema.js:791,1540904400:791,m
+src/components/admin/AdminSchema/AdminSchema.scss:505,1540904400:505,m
+src/backend/mocks.js:290,1540904400:290,m
+src/components/admin/AdminSchema/components/SchemaSettings.js:178,1540904400:178,m
+src/actions/index.js:152,1540904400:152,m
+src/reducer/reports.js:68,1540904400:68,m
+src/backend/api.js:32,1540904400:32,m
+src/components/admin/AdminSchema/components/InvestPeriodMobile.js:30,1540904400:30,r
+src/components/admin/AdminSchema/components/InvestPeriod.js:27,1540904400:27,r
+src/components/admin/AdminReports/InvestorReport/InvestorReport.js:22,1540904400:22,r
+src/constants/index.js:20,1540904400:20,m
+src/components/admin/AdminReports/AdminReports.js:15,1540904400:15,r
+src/components/admin/AdminPays/components/PaysTableMobile.js:10,1540904400:10,r
+src/components/admin/AdminPays/AdminPays.js:10,1540904400:10,r
+src/components/admin/Applications/Applications.js:10,1540904400:10,r
