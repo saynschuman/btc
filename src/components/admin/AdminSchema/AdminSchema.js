@@ -1,10 +1,11 @@
 import React from "react";
 import "./AdminSchema.scss";
 import CustomInput from "./../../commmon/CustomInput/CustomInput";
+import PerfectScrollbar from "react-perfect-scrollbar";
 
 export default () => (
   <div className={"admin-body schema-page"}>
-    <div className="col col-50">
+    <div className="col col-50 left">
       <div className={"admin-block"}>
         <div className="block-header">
           <div className="header-title title-report title-edit">
@@ -36,38 +37,90 @@ export default () => (
           </div>
         </div>
         <div className="settings-body">
-          <table className="settings-table">
-            <tr>
-              <th>№</th>
-              <th>Кол-во месяцев</th>
-              <th>Коэфицент начисления</th>
-              <th />
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>
-                <CustomInput className={"bordered-input"} value={"1"} />
-              </td>
-              <td>
-                <CustomInput className={"bordered-input"} value={"0.1"} />
-              </td>
-              <td>
-                <div className="close-button-admin" />
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>
-                <CustomInput className={"bordered-input"} value={"1"} />
-              </td>
-              <td>
-                <CustomInput className={"bordered-input"} value={"0.1"} />
-              </td>
-              <td>
-                <div className="close-button-admin" />
-              </td>
-            </tr>
-          </table>
+          <PerfectScrollbar className={"no-ver-scrl"}>
+            <table className="settings-table">
+              <tbody>
+                <tr>
+                  <th>№</th>
+                  <th>Кол-во месяцев</th>
+                  <th>Коэфицент начисления</th>
+                  <th />
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td className={"input-58"}>
+                    <CustomInput className={"bordered-input"} value={"1"} />
+                  </td>
+                  <td className={"input-84"}>
+                    <CustomInput className={"bordered-input"} value={"0.1"} />
+                  </td>
+                  <td>
+                    <div className="close-button-admin" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td className={"input-58"}>
+                    <CustomInput className={"bordered-input"} value={"1"} />
+                  </td>
+                  <td className={"input-84"}>
+                    <CustomInput className={"bordered-input"} value={"0.1"} />
+                  </td>
+                  <td>
+                    <div className="close-button-admin" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td className={"input-58"}>
+                    <CustomInput className={"bordered-input"} value={"1"} />
+                  </td>
+                  <td className={"input-84"}>
+                    <CustomInput className={"bordered-input"} value={"0.1"} />
+                  </td>
+                  <td>
+                    <div className="close-button-admin" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td className={"input-58"}>
+                    <CustomInput className={"bordered-input"} value={"1"} />
+                  </td>
+                  <td className={"input-84"}>
+                    <CustomInput className={"bordered-input"} value={"0.1"} />
+                  </td>
+                  <td>
+                    <div className="close-button-admin" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td className={"input-58"}>
+                    <CustomInput className={"bordered-input"} value={"1"} />
+                  </td>
+                  <td className={"input-84"}>
+                    <CustomInput className={"bordered-input"} value={"0.1"} />
+                  </td>
+                  <td>
+                    <div className="close-button-admin" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td className={"input-58"}>
+                    <CustomInput className={"bordered-input"} value={"1"} />
+                  </td>
+                  <td className={"input-84"}>
+                    <CustomInput className={"bordered-input"} value={"0.1"} />
+                  </td>
+                  <td>
+                    <div className="close-button-admin" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </PerfectScrollbar>
         </div>
         <div className="settings-footer">
           <div className="buttons-block">
