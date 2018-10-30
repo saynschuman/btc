@@ -1,7 +1,16 @@
 import React from "react";
 import "./News.scss";
+import { article } from "../../../backend/mocks";
+import { getArticles } from "../../../actions";
+import { connect } from "react-redux";
+import PerfectScrollbar from "react-perfect-scrollbar";
+import AdminsLoader from "../AdminSettings/AdminsLoader/AdminsLoader";
+import Article from "./components/Article";
 
 class News extends React.Component {
+  componentDidMount() {
+    !this.props.isLoaded && this.props.getArticles();
+  }
   render() {
     return (
       <div className={"admin-body"}>
@@ -10,7 +19,22 @@ class News extends React.Component {
             <div className="block-header">
               <div className="header-title news-title">Список новостей</div>
             </div>
-            <div className="news-body">123</div>
+            <div className="news-body">
+              <PerfectScrollbar>
+                <div className="news-body-inner">
+                  {this.props.isLoading && <AdminsLoader />}
+                  {this.props.isLoaded &&
+                    this.props.articles.map((article, index) => (
+                      <Article
+                        key={index}
+                        title={article.title}
+                        date={article.date}
+                        image={article.smallImage}
+                      />
+                    ))}
+                </div>
+              </PerfectScrollbar>
+            </div>
             <div className="news-footer">
               <div className="settings-save schema-save">Добавить</div>
             </div>
@@ -24,28 +48,39 @@ class News extends React.Component {
               </div>
             </div>
             <div className="news-body">
-              <article>
-                <div className="article-title">Редактируемый заголовок</div>
-                <p>
-                  Повседневная практика показывает, что курс на
-                  социально-ориентированный национальный проект требует
-                  определения и уточнения системы обучения кадров,
-                  соответствующей насущным потребностям. Повседневная практика
-                  показывает, что курс на социально-ориентированный национальный
-                  проект требует определения и уточнения системы обучения
-                  кадров, соответствующей насущным потребностям.
-                </p>
+              <PerfectScrollbar>
+                <div className="article-inner">
+                  <div
+                    className="featured-image"
+                    style={{ backgroundImage: `url(${article.image})` }}
+                  />
+                  <article>
+                    <div className="article-title">Редактируемый заголовок</div>
+                    <p>
+                      Повседневная практика показывает, что курс на
+                      социально-ориентированный национальный проект требует
+                      определения и уточнения системы обучения кадров,
+                      соответствующей насущным потребностям. Повседневная
+                      практика показывает, что курс на социально-ориентированный
+                      национальный проект требует определения и уточнения
+                      системы обучения кадров, соответствующей насущным
+                      потребностям.
+                    </p>
 
-                <p>
-                  Показывает, что курс на социально-ориентированный национальный
-                  проект требует определения и уточнения системы обучения
-                  кадров, соответствующей насущным потребностям. Повседневная
-                  практика показывает, что курс на социально-ориентированный
-                  национальный проект требует определения и уточнения системы
-                  обучения кадров, соответствующей насущным потребностям.
-                </p>
-              </article>
+                    <p>
+                      Показывает, что курс на социально-ориентированный
+                      национальный проект требует определения и уточнения
+                      системы обучения кадров, соответствующей насущным
+                      потребностям. Повседневная практика показывает, что курс
+                      на социально-ориентированный национальный проект требует
+                      определения и уточнения системы обучения кадров,
+                      соответствующей насущным потребностям.
+                    </p>
+                  </article>
+                </div>
+              </PerfectScrollbar>
             </div>
+
             <div className="news-footer">
               <div className="settings-save schema-save">Опубликовать</div>
             </div>
@@ -56,4 +91,13 @@ class News extends React.Component {
   }
 }
 
-export default News;
+export default connect(
+  state => {
+    return {
+      isLoading: state.articles.isLoading,
+      isLoaded: state.articles.isLoaded,
+      articles: state.articles.articlesList
+    };
+  },
+  { getArticles }
+)(News);

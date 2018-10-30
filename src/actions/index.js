@@ -21,7 +21,9 @@ import {
   REQUEST_SCHEMA_SETTINGS,
   RESPONSE_SCHEMA_SETTINGS,
   REQUEST_YIELD_LIST,
-  RESPONSE_YIELD_LIST
+  RESPONSE_YIELD_LIST,
+  REQEST_ARTICLES_LIST,
+  RESPONSE_ARTICLES_LIST
 } from "../constants";
 import {
   whoAreYou,
@@ -34,7 +36,8 @@ import {
   getHistoryApplicationsFromServer,
   getInvestPeriodFromServer,
   getSchemaSettingsFromServer,
-  getYieldListFromServer
+  getYieldListFromServer,
+  getArticlesFromServer
 } from "../backend/api";
 
 export const checkWhoAreYou = authData => dispatch => {
@@ -248,6 +251,25 @@ export const getYieldList = () => dispatch => {
     return dispatch({
       type: RESPONSE_YIELD_LIST,
       schemaSettings: result
+    });
+  });
+};
+
+export const getArticles = () => dispatch => {
+  dispatch({
+    type: REQEST_ARTICLES_LIST
+  });
+  const promise = new Promise(resolve => {
+    setTimeout(() => {
+      resolve(getArticlesFromServer());
+    }, 200);
+  });
+
+  promise.then(result => {
+    console.log(result);
+    return dispatch({
+      type: RESPONSE_ARTICLES_LIST,
+      articlesList: result
     });
   });
 };

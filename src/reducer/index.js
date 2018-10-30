@@ -5,6 +5,7 @@ import { reducer as form } from "redux-form";
 import admins from "./admins";
 import investors from "./investors";
 import reports from "./reports";
+import articles from "./articles";
 
 export default combineReducers({
   form,
@@ -12,5 +13,6 @@ export default combineReducers({
   toggleMobileMenu,
   admins,
   investors,
-  reports
+  reports,
+  articles
 });

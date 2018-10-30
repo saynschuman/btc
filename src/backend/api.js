@@ -10,7 +10,8 @@ import {
   SaleApplications,
   investPeriod,
   schemaSettings,
-  yieldList
+  yieldList,
+  articleList
 } from "./mocks";
 
 export const whoAreYou = data => {
@@ -62,4 +63,8 @@ export const getSchemaSettingsFromServer = () => {
 
 export const getYieldListFromServer = () => {
   return yieldList;
+};
+
+export const getArticlesFromServer = () => {
+  return articleList;
 };

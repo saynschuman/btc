@@ -346,10 +346,63 @@ export const yieldList = [
 ];
 
 const image = require("./images/1.jpeg");
+const smallImage = require("./images/small_image.jpg");
 
 export const article = {
-  title: "Новость 1",
+  title: "",
   date: "20.08.2018",
   image: image,
+  smallImage: smallImage,
   text: `<b>Hello</b>, lorem inpsum <i>dolor sit emet</i> `
 };
+
+const article1 = {
+  ...article,
+  title: "Новость 1"
+};
+
+const article2 = {
+  ...article,
+  title: "Новость 2"
+};
+
+const article3 = {
+  ...article,
+  title: "Новость 3"
+};
+
+const article4 = {
+  ...article,
+  title: "Новость 4"
+};
+
+const article5 = {
+  ...article,
+  title: "Новость 5"
+};
+
+const article6 = {
+  ...article,
+  title: "Новость 6"
+};
+
+const article7 = {
+  ...article,
+  title: "Новость 7"
+};
+
+const article8 = {
+  ...article,
+  title: "Новость 8"
+};
+
+export const articleList = [
+  article1,
+  article2,
+  article3,
+  article4,
+  article5,
+  article6,
+  article7,
+  article8
+];

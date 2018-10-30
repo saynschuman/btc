@@ -1,3 +1,5 @@
+@import "../../../Mixins/gradient";
+
 .col-30 {
   width: 30%;
   &.left {
@@ -35,6 +37,13 @@
 }
 
 .news-body {
+  padding-bottom: 0;
+  padding-right: 10px;
+  .featured-image {
+    width: calc(100% - 20px);
+    height: 314px;
+    background-size: cover;
+  }
   article {
     font-size: 20px;
     padding: 30px;
@@ -42,4 +51,86 @@
       font-weight: 600;
     }
   }
+}
+
+.article-inner {
+  height: 600px;
+}
+
+.ps--active-x > .ps__rail-x, .ps--active-y > .ps__rail-y {
+  display: block;
+  background-color: #020940;
+  width: 7px;
+  opacity: 1;
+  &:hover {
+    width: 7px;
+    background-color: #020940;
+  }
+}
+
+.ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y {
+  width: 7px;
+  cursor: pointer;
+}
+
+.ps__thumb-y {
+  width: 7px;
+  right: 0px;
+  position: absolute;
+  &:hover {
+    width: 7px;
+    @include bottom-gradient(#11c1ed, #005aff);
+  }
+  @include bottom-gradient(#11c1ed, #005aff);
+}
+
+.news-item {
+  .news-image {
+    display: inline-block;
+    vertical-align: middle;
+    width: 80%;
+    padding: 40px 0;
+    background-size: cover;
+  }
+  .news-toggle {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20%;
+  }
+  .new-title {
+      display: inline-block;
+      vertical-align: middle;
+    width: calc(60% - 15px);
+    padding-left: 15px;
+    font-size: 20px
+  }
+  .news-edit {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20%;
+    .icon {
+      height: 25px;
+      width: 31px;
+      background-image: url("./img/edit.png");
+      margin-right: 10px;
+      display: block;
+      cursor: pointer;
+    }
+  }
+  .news-delete {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20%;
+    .icon {
+      height: 23px;
+      width: 18px;
+      background-image: url("./img/delete.png");
+      cursor: pointer;
+    }
+  }
+}
+
+.news-body-inner {
+  height: 500px;
+  padding-right: 5px;
 }
