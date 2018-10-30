@@ -1,0 +1,7 @@
+[ver:1,total:1980]
+src/App.js:1300,1540843200:400,1540875600:420,1540879200:480,m
+src/backend/mocks.js:440,1540843200:440,r
+src/components/admin/AdminSchema/AdminSchema.js:115,1540879200:100,1540882800:15,m
+src/components/admin/RootAdmin/index.js:90,1540879200:60,1540882800:30,m
+src/components/admin/AdminSchema/AdminSchema.scss:20,1540879200:20,m
+src/components/commmon/AsideMenu/AsideMenu.js:15,1540882800:15,m
