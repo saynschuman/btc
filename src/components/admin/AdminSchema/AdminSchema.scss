@@ -1,0 +1,75 @@
+@import "../../../Mixins/gradient";
+
+.violet-button {
+  @include linear-gradient(#5400ff, #3b09b8);
+}
+
+.blue-button {
+  @include linear-gradient(#025bff, #0a6dc2);
+}
+
+
+
+.schema-page {
+  .buttons-block {
+    display: block;
+    button {
+      width: 177px;
+      margin-left: 30px;
+    }
+  }
+  .header-title.title-edit {
+    &:after {
+      background-image: url('./img/settings.png') !important;
+    }
+  }
+  .header-title.title-money {
+    &:after {
+      background-image: url('./img/money.png') !important;
+    }
+  }
+  .settings-body {
+    border-bottom: 1px solid #24158b;
+    padding: 56px 47px;
+    height: auto;
+    .edit-power {
+      padding: 0;
+      margin: 0;
+      margin-top: 25px;
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0;
+        margin: 0;
+        font-size: 48px;
+        &:nth-child(2) {
+          width: 20%;
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+        input {
+          vertical-align: middle;
+          margin-bottom: 6px;
+          height: 55px;
+          display: block;
+          width: calc(100% - 10px);
+          padding: 0 5px;
+          color: #fff;
+          font-size: 20px;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  .settings-footer {
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .schema-page .settings-body .edit-power li {
+    font-size: 42px
+  }
+}

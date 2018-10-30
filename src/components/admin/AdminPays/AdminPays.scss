@@ -1,13 +1,10 @@
-@mixin linear-gradient($from, $to) {
-  background: linear-gradient(to left, $from 0%, $to 100%);
-  background: -moz-linear-gradient(to left, $from 0%, $to 100%);
-  background: -webkit-linear-gradient(to left, $from 0%, $to 100%);
-}
+@import "../../../Mixins/gradient";
 
 .bordered-input {
   border: 1px solid #3070fd !important;
   border-radius: 3px;
   height: 33px;
+  background-color: #00074f;
 }
 
 .report-investors {
