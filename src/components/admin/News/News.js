@@ -8,6 +8,7 @@ import AdminsLoader from "../AdminSettings/AdminsLoader/AdminsLoader";
 import ReportsLoader from "../AdminReports/ReportsLoader/ReportsLoader";
 import Article from "./components/Article";
 import PortalNews from "./components/PortalNews";
+import PortalNewsMobile from "./components/PortalNewsMobile";
 
 class News extends React.Component {
   componentDidMount() {
@@ -19,7 +20,7 @@ class News extends React.Component {
       <div className={"admin-body"}>
         <div className="clearfix">
           <div className="col col-30 left">
-            <div className="admin-block">
+            <div className="admin-block news-block-static-mobile">
               <div className="block-header">
                 <div className="header-title news-title">Список новостей</div>
               </div>
@@ -97,7 +98,7 @@ class News extends React.Component {
           <div className="block-header">
             <div className="header-title edit-news-title">Портал новостей</div>
           </div>
-          <div className="news-body">
+          <div className="news-body settings-body-desktop">
             <PerfectScrollbar>
               <div className="news-portal-inner">
                 <table className="settings-table">
@@ -121,6 +122,20 @@ class News extends React.Component {
                   </tbody>
                 </table>
               </div>
+            </PerfectScrollbar>
+          </div>
+          <div className="news-body settings-body-mobile">
+            <PerfectScrollbar className={"edit-admins-mobile"}>
+              {this.props.portalNewsIsLoading && <AdminsLoader />}
+              {this.props.portalNewsIsLoaded &&
+                this.props.portalNews.map((portal, index) => (
+                  <PortalNewsMobile
+                    ind={index}
+                    key={portal.id}
+                    link={portal.link}
+                    status={portal.status}
+                  />
+                ))}
             </PerfectScrollbar>
           </div>
           <div className="news-footer">
