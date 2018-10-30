@@ -61,11 +61,11 @@ const Aside = props => {
             Прочее
           </NavLink>
         </li>
-        {/*<li onClick={props.toggleMobileMenu}>*/}
-        {/*<NavLink to={"/"} activeClassName="is-active">*/}
-        {/*Новости*/}
-        {/*</NavLink>*/}
-        {/*</li>*/}
+        <li onClick={props.toggleMobileMenu}>
+          <NavLink to={"/news"} activeClassName="is-active">
+            Новости
+          </NavLink>
+        </li>
       </ul>
     </aside>
   );
