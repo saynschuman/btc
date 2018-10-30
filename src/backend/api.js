@@ -11,7 +11,8 @@ import {
   investPeriod,
   schemaSettings,
   yieldList,
-  articleList
+  articleList,
+  portalNews
 } from "./mocks";
 
 export const whoAreYou = data => {
@@ -67,4 +68,8 @@ export const getYieldListFromServer = () => {
 
 export const getArticlesFromServer = () => {
   return articleList;
+};
+
+export const getPortalNewsFromServer = () => {
+  return portalNews;
 };

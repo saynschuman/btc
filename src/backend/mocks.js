@@ -406,3 +406,45 @@ export const articleList = [
   article7,
   article8
 ];
+export const portalNews = [
+  {
+    id: 1,
+    link: "https://www.blockchain.com/ru/",
+    status: false
+  },
+  {
+    id: 2,
+    link: "https://www.blockchain.com/ru/",
+    status: false
+  },
+  {
+    id: 3,
+    link: "https://www.blockchain.com/ru/",
+    status: false
+  },
+  {
+    id: 4,
+    link: "https://www.blockchain.com/ru/",
+    status: false
+  },
+  {
+    id: 5,
+    link: "https://www.blockchain.com/ru/",
+    status: false
+  },
+  {
+    id: 6,
+    link: "https://www.blockchain.com/ru/",
+    status: false
+  },
+  {
+    id: 7,
+    link: "https://www.blockchain.com/ru/",
+    status: false
+  },
+  {
+    id: 8,
+    link: "https://www.blockchain.com/ru/",
+    status: false
+  }
+];

@@ -23,7 +23,9 @@ import {
   REQUEST_YIELD_LIST,
   RESPONSE_YIELD_LIST,
   REQEST_ARTICLES_LIST,
-  RESPONSE_ARTICLES_LIST
+  RESPONSE_ARTICLES_LIST,
+  REQUEST_PORTAL_NEWS,
+  RESPONSE_PORTAL_NEWS
 } from "../constants";
 import {
   whoAreYou,
@@ -37,7 +39,8 @@ import {
   getInvestPeriodFromServer,
   getSchemaSettingsFromServer,
   getYieldListFromServer,
-  getArticlesFromServer
+  getArticlesFromServer,
+  getPortalNewsFromServer
 } from "../backend/api";
 
 export const checkWhoAreYou = authData => dispatch => {
@@ -270,6 +273,25 @@ export const getArticles = () => dispatch => {
     return dispatch({
       type: RESPONSE_ARTICLES_LIST,
       articlesList: result
+    });
+  });
+};
+
+export const getPortalNews = () => dispatch => {
+  dispatch({
+    type: REQUEST_PORTAL_NEWS
+  });
+  const promise = new Promise(resolve => {
+    setTimeout(() => {
+      resolve(getPortalNewsFromServer());
+    }, 200);
+  });
+
+  promise.then(result => {
+    console.log(result);
+    return dispatch({
+      type: RESPONSE_PORTAL_NEWS,
+      portalNews: result
     });
   });
 };
