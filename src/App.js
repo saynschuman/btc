@@ -52,7 +52,7 @@ class App extends Component {
   //       "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE",
   //       "Content-Type": "application/json",
   //       Authorization:
-  //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQwNjMzODA2LCJleHAiOjE1NDA2Mzc0MDZ9.hoM36JsTWR54Hd4vwE71ukiDInldnpW_hvbMMii8AJ4"
+  //         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQwODQ2Mzk0LCJleHAiOjE1NDA4NDk5OTR9.3KfHw2bXtbwjwW1TJgxpzX93XplJXCmNVunuk-DfJwA"
   //     }
   //   })
   //     .then(res => res.json())
