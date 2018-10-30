@@ -14,8 +14,9 @@
   .buttons-block {
     display: block;
     button {
-      width: 177px;
-      margin-left: 30px;
+      max-width: 240px;
+      font-size: 20px;
+      padding: 10px;
     }
   }
   .header-title.title-edit {
@@ -26,6 +27,24 @@
   .header-title.title-money {
     &:after {
       background-image: url('./img/money.png') !important;
+    }
+  }
+  .right {
+    .settings-body {
+      padding-left: 0;
+      padding-right: 0;
+      tr {
+        th {
+          &:first-child {
+            padding-left: 50px;
+          }
+        }
+        td {
+          &:first-child {
+            padding-left: 50px;
+          }
+        }
+      }
     }
   }
   .settings-body {
@@ -65,7 +84,16 @@
   }
   .settings-footer {
     padding-top: 20px;
+    padding-left: 30px;
   }
+}
+
+@media screen and (max-width: 1600px) {
+.schema-page .buttons-block button {
+  max-width: 174px;
+  font-size: 20px;
+  padding: 10px;
+}
 }
 
 @media screen and (max-width: 1400px) {

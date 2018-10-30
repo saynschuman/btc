@@ -1,5 +1,6 @@
 import React from "react";
 import "./AdminSchema.scss";
+import CustomInput from "./../../commmon/CustomInput/CustomInput";
 
 export default () => (
   <div className={"admin-body schema-page"}>
@@ -34,8 +35,46 @@ export default () => (
             Периоды инвестиций и коэфиценты начислений
           </div>
         </div>
-        <div className="settings-body">123</div>
-        <div className="settings-footer">123</div>
+        <div className="settings-body">
+          <table className="settings-table">
+            <tr>
+              <th>№</th>
+              <th>Кол-во месяцев</th>
+              <th>Коэфицент начисления</th>
+              <th />
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>
+                <CustomInput className={"bordered-input"} value={"1"} />
+              </td>
+              <td>
+                <CustomInput className={"bordered-input"} value={"0.1"} />
+              </td>
+              <td>
+                <div className="close-button-admin" />
+              </td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>
+                <CustomInput className={"bordered-input"} value={"1"} />
+              </td>
+              <td>
+                <CustomInput className={"bordered-input"} value={"0.1"} />
+              </td>
+              <td>
+                <div className="close-button-admin" />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div className="settings-footer">
+          <div className="buttons-block">
+            <button className={"blue-button"}>Добавить вклад</button>
+            <button className={"violet-button"}>Сохранить</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
