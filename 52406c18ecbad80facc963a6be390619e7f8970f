@@ -1,0 +1,11 @@
+[ver:1,total:840]
+src/components/admin/AdminOther/AdminOther.scss:354,1540915200:294,1540918800:60,r
+src/components/admin/News/News.js:200,1540918800:200,m
+src/components/admin/RootAdmin/index.js:120,1540918800:120,m
+src/components/admin/AdminOther/AdminOther.js:60,1540915200:60,r
+src/components/admin/AdminOther/components/YieldTable.js:27,1540915200:27,r
+src/components/commmon/AsideMenu/AsideMenu.js:20,1540918800:20,m
+src/components/admin/News/News.scss:20,1540918800:20,m
+src/components/admin/AdminOther/components/YieldTableMobile.js:15,1540915200:15,r
+src/actions/index.js:12,1540915200:12,r
+src/constants/index.js:12,1540915200:12,r
