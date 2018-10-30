@@ -19,7 +19,9 @@ import {
   REQUEST_INVEST_PERIOD,
   RESPONSE_INVEST_PERIOD,
   REQUEST_SCHEMA_SETTINGS,
-  RESPONSE_SCHEMA_SETTINGS
+  RESPONSE_SCHEMA_SETTINGS,
+  REQUEST_YIELD_LIST,
+  RESPONSE_YIELD_LIST
 } from "../constants";
 import {
   whoAreYou,
@@ -31,7 +33,8 @@ import {
   getRequestApplicationsFromServer,
   getHistoryApplicationsFromServer,
   getInvestPeriodFromServer,
-  getSchemaSettingsFromServer
+  getSchemaSettingsFromServer,
+  getYieldListFromServer
 } from "../backend/api";
 
 export const checkWhoAreYou = authData => dispatch => {
@@ -225,6 +228,25 @@ export const getSchemaSettings = () => dispatch => {
     console.log(result);
     return dispatch({
       type: RESPONSE_SCHEMA_SETTINGS,
+      schemaSettings: result
+    });
+  });
+};
+
+export const getYieldList = () => dispatch => {
+  dispatch({
+    type: REQUEST_YIELD_LIST
+  });
+  const promise = new Promise(resolve => {
+    setTimeout(() => {
+      resolve(getYieldListFromServer());
+    }, 200);
+  });
+
+  promise.then(result => {
+    console.log(result);
+    return dispatch({
+      type: RESPONSE_YIELD_LIST,
       schemaSettings: result
     });
   });

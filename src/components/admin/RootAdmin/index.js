@@ -9,6 +9,7 @@ import AdminReports from "../AdminReports/AdminReports";
 import AdminPays from "../AdminPays/AdminPays";
 import Applications from "../Applications/Applications";
 import AdminSchema from "../AdminSchema/AdminSchema";
+import AdminOther from "../AdminOther/AdminOther";
 
 const RootAdmin = () => {
   return (
@@ -47,6 +48,11 @@ const RootAdmin = () => {
             activeClassName={"is-active"}
             path="/schema"
             component={AdminSchema}
+          />
+          <Route
+            activeClassName={"is-active"}
+            path="/other"
+            component={AdminOther}
           />
         </Switch>
       </div>

@@ -297,3 +297,50 @@ export const schemaSettings = [
     updatedByAdmin: 623421643
   }
 ];
+
+export const yieldList = [
+  {
+    month: "Январь 2017",
+    yield: 0.45123
+  },
+  {
+    month: "Февраль 2017",
+    yield: 0.45123
+  },
+  {
+    month: "Март 2017",
+    yield: 0.45123
+  },
+  {
+    month: "Апрель 2017",
+    yield: 0.45123
+  },
+  {
+    month: "Май 2017",
+    yield: 0.45123
+  },
+  {
+    month: "Июнь 2017",
+    yield: 0.45123
+  },
+  {
+    month: "Январь 2017",
+    yield: 0.45123
+  },
+  {
+    month: "Апрель 2017",
+    yield: 0.45123
+  },
+  {
+    month: "Май 2017",
+    yield: 0.45123
+  },
+  {
+    month: "Июнь 2017",
+    yield: 0.45123
+  },
+  {
+    month: "Январь 2017",
+    yield: 0.45123
+  }
+];

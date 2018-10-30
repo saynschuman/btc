@@ -9,7 +9,8 @@ import {
   HistoryApplications,
   SaleApplications,
   investPeriod,
-  schemaSettings
+  schemaSettings,
+  yieldList
 } from "./mocks";
 
 export const whoAreYou = data => {
@@ -57,4 +58,8 @@ export const getInvestPeriodFromServer = () => {
 
 export const getSchemaSettingsFromServer = () => {
   return schemaSettings;
+};
+
+export const getYieldListFromServer = () => {
+  return yieldList;
 };

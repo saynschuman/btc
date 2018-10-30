@@ -12,7 +12,9 @@ import {
   REQUEST_INVEST_PERIOD,
   RESPONSE_INVEST_PERIOD,
   REQUEST_SCHEMA_SETTINGS,
-  RESPONSE_SCHEMA_SETTINGS
+  RESPONSE_SCHEMA_SETTINGS,
+  REQUEST_YIELD_LIST,
+  RESPONSE_YIELD_LIST
 } from "../constants";
 
 const initialState = {
@@ -36,7 +38,10 @@ const initialState = {
   investPeriod: [],
   schemaSettingsIsLoading: false,
   schemaSettingsIsLoaded: false,
-  schemaSettings: []
+  schemaSettings: [],
+  yieldListIsLoading: false,
+  yieldListIsLoaded: false,
+  yieldList: []
 };
 
 export default function(state = initialState, action) {
@@ -127,6 +132,19 @@ export default function(state = initialState, action) {
         schemaSettingsIsLoading: false,
         schemaSettingsIsLoaded: true,
         schemaSettings: action.schemaSettings
+      };
+    case REQUEST_YIELD_LIST:
+      return {
+        ...state,
+        yieldListIsLoading: true,
+        yieldListIsLoaded: false
+      };
+    case RESPONSE_YIELD_LIST:
+      return {
+        ...state,
+        yieldListIsLoading: false,
+        yieldListIsLoaded: true,
+        yieldList: action.schemaSettings
       };
     default:
       return state;
