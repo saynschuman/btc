@@ -233,3 +233,22 @@ export const HistoryApplications = [
     summ: 1.555
   }
 ];
+
+export const investPeriod = [
+  {
+    monthQuantity: 2,
+    koef: 1.3
+  },
+  {
+    monthQuantity: 6,
+    koef: 0.6
+  },
+  {
+    monthQuantity: 3,
+    koef: 1.3
+  },
+  {
+    monthQuantity: 2,
+    koef: 1.1
+  }
+];

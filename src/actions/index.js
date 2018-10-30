@@ -15,7 +15,9 @@ import {
   REQUEST_REQUEST_APPLICATIONS,
   RESPONSE_REQUEST_APPLICATIONS,
   REQUEST_HISTORY_APPLICATIONS,
-  RESPONSE_HISTORY_APPLICATIONS
+  RESPONSE_HISTORY_APPLICATIONS,
+  REQUEST_INVEST_PERIOD,
+  RESPONSE_INVEST_PERIOD
 } from "../constants";
 import {
   whoAreYou,
@@ -25,7 +27,8 @@ import {
   getInvestitionsReportFromServer,
   getChargeTableFromServer,
   getRequestApplicationsFromServer,
-  getHistoryApplicationsFromServer
+  getHistoryApplicationsFromServer,
+  getInvestPeriodFromServer
 } from "../backend/api";
 
 export const checkWhoAreYou = authData => dispatch => {
@@ -182,6 +185,25 @@ export const getHistoryApplications = () => dispatch => {
     return dispatch({
       type: RESPONSE_HISTORY_APPLICATIONS,
       historyApplications: result
+    });
+  });
+};
+
+export const getInvestPeriod = () => dispatch => {
+  dispatch({
+    type: REQUEST_INVEST_PERIOD
+  });
+  const promise = new Promise(resolve => {
+    setTimeout(() => {
+      resolve(getInvestPeriodFromServer());
+    }, 200);
+  });
+
+  promise.then(result => {
+    console.log(result);
+    return dispatch({
+      type: RESPONSE_INVEST_PERIOD,
+      investPeriod: result
     });
   });
 };

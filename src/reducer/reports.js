@@ -8,7 +8,9 @@ import {
   REQUEST_REQUEST_APPLICATIONS,
   RESPONSE_REQUEST_APPLICATIONS,
   REQUEST_HISTORY_APPLICATIONS,
-  RESPONSE_HISTORY_APPLICATIONS
+  RESPONSE_HISTORY_APPLICATIONS,
+  REQUEST_INVEST_PERIOD,
+  RESPONSE_INVEST_PERIOD
 } from "../constants";
 
 const initialState = {
@@ -26,7 +28,10 @@ const initialState = {
   requestApplications: [],
   historyApplicationsIsLoading: false,
   historyApplicationsIsLoaded: false,
-  historyApplications: []
+  historyApplications: [],
+  investPeriodIsLoading: false,
+  investPeriodIsLoaded: false,
+  investPeriod: []
 };
 
 export default function(state = initialState, action) {
@@ -91,6 +96,19 @@ export default function(state = initialState, action) {
         historyApplicationsIsLoading: false,
         historyApplicationsIsLoaded: true,
         historyApplications: action.historyApplications
+      };
+    case REQUEST_INVEST_PERIOD:
+      return {
+        ...state,
+        investPeriodIsLoading: true,
+        investPeriodIsLoaded: false
+      };
+    case RESPONSE_INVEST_PERIOD:
+      return {
+        ...state,
+        investPeriodIsLoading: false,
+        investPeriodIsLoaded: true,
+        investPeriod: action.investPeriod
       };
     default:
       return state;

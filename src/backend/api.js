@@ -7,7 +7,8 @@ import {
   InvestitionReport,
   ChargeTable,
   HistoryApplications,
-  SaleApplications
+  SaleApplications,
+  investPeriod
 } from "./mocks";
 
 export const whoAreYou = data => {
@@ -47,4 +48,8 @@ export const getRequestApplicationsFromServer = () => {
 
 export const getHistoryApplicationsFromServer = () => {
   return HistoryApplications;
+};
+
+export const getInvestPeriodFromServer = () => {
+  return investPeriod;
 };
