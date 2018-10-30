@@ -1,0 +1,16 @@
+[ver:1,total:5160]
+src/components/admin/News/News.scss:2028,1540918800:280,1540922400:1608,1540926000:140,m
+src/components/admin/News/News.js:1973,1540918800:820,1540922400:1009,1540926000:144,m
+src/backend/mocks.js:408,1540918800:50,1540922400:265,1540926000:93,m
+src/components/admin/News/components/Article.js:201,1540922400:30,1540926000:171,m
+src/actions/index.js:160,1540922400:120,1540926000:40,m
+src/reducer/articles.js:90,1540922400:90,m
+src/components/admin/AdminReports/AdminReports.js:87,1540918800:50,1540922400:25,1540926000:12,r
+src/constants/index.js:45,1540922400:45,m
+src/reducer/index.js:40,1540922400:40,m
+src/Mixins/gradient.scss:30,1540922400:30,m
+src/backend/api.js:30,1540922400:30,m
+src/components/admin/AdminPays/AdminPays.scss:25,1540922400:25,r
+build/static/js/1.756f0b9d.chunk.js.map:20,1540922400:20,r
+src/reducer/reports.js:15,1540922400:15,r
+src/components/admin/AdminSettings/AdminsLoader/AdminsLoader.js:8,1540922400:8,r
