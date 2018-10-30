@@ -1,0 +1,7 @@
+[ver:1,total:480]
+src/components/admin/AdminSchema/AdminSchema.scss:252,1540904400:132,1540908000:120,m
+src/components/admin/AdminSchema/components/SchemaSettingsMobile.js:124,1540908000:124,m
+src/components/admin/AdminSchema/AdminSchema.js:75,1540904400:24,1540908000:51,m
+src/components/admin/AdminSchema/components/SchemaSettings.js:12,1540904400:12,r
+src/backend/mocks.js:12,1540904400:12,r
+src/components/admin/AdminSchema/components/InvestPeriodMobile.js:5,1540908000:5,r
