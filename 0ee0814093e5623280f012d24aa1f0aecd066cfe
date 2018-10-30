@@ -1,0 +1,15 @@
+[ver:1,total:2940]
+src/components/admin/News/News.js:1192,1540926000:1192,m
+src/components/admin/News/News.scss:770,1540926000:710,1540929600:60,m
+src/components/admin/News/components/PortalNews.js:377,1540926000:377,m
+src/backend/mocks.js:130,1540926000:130,m
+src/actions/index.js:91,1540926000:91,m
+src/reducer/portal.js:79,1540926000:79,m
+src/reducer/index.js:61,1540926000:61,m
+src/components/admin/AdminSchema/components/InvestPeriod.js:60,1540926000:60,r
+src/components/admin/News/components/Article.js:60,1540926000:60,r
+src/constants/index.js:42,1540926000:42,m
+src/backend/api.js:30,1540926000:30,m
+src/components/admin/AdminReports/AdminReports.js:24,1540926000:24,r
+src/reducer/articles.js:12,1540926000:12,r
+src/components/commmon/CustomCheckbox/CustomCheckbox.js:12,1540926000:12,r
