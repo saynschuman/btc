@@ -8,7 +8,7 @@ import { getInvestPeriod, getSchemaSettings } from "../../../actions";
 import ReportsLoader from "../AdminReports/ReportsLoader/ReportsLoader";
 import AdminsLoader from "../AdminSettings/AdminsLoader/AdminsLoader";
 import SchemaSettings from "./components/SchemaSettings";
-// import SchemaSettingsMobile from "./components/SchemaSettingsMobile";
+import SchemaSettingsMobile from "./components/SchemaSettingsMobile";
 
 class AdminSchema extends React.Component {
   componentDidMount() {
@@ -134,25 +134,19 @@ class AdminSchema extends React.Component {
             </div>
             <div className="settings-body settings-body-mobile">
               <PerfectScrollbar className={"edit-admins-mobile"}>
-                {/*{this.props.historyApplicationsIsLoading && <AdminsLoader />}*/}
-                {/*{this.props.historyApplicationsIsLoaded &&*/}
-                {/*this.props.historyApplications.map(report => {*/}
-                {/*return (*/}
-                {/*<ApplicationsHistoryMobile*/}
-                {/*key={report.investitionId}*/}
-                {/*timeDate={report.timeDate}*/}
-                {/*timePay={report.timePay}*/}
-                {/*investorId={report.investorId}*/}
-                {/*investitionId={report.investitionId}*/}
-                {/*name={report.name}*/}
-                {/*surName={report.surName}*/}
-                {/*powerValue={report.powerValue}*/}
-                {/*cost={report.cost}*/}
-                {/*idAdmAplied={report.idAdmAplied}*/}
-                {/*summ={report.summ}*/}
-                {/*/>*/}
-                {/*);*/}
-                {/*})}*/}
+                {this.props.schemaSettingsIsLoading && <AdminsLoader />}
+                {this.props.schemaSettingsIsLoaded &&
+                  this.props.schemaSettings.map((report, index) => {
+                    return (
+                      <SchemaSettingsMobile
+                        key={index}
+                        minedActually={report.minedActually}
+                        minedForCalculation={report.minedForCalculation}
+                        mineData={report.mineData}
+                        updatedByAdmin={report.updatedByAdmin}
+                      />
+                    );
+                  })}
               </PerfectScrollbar>
             </div>
             <div className="setting-footer">

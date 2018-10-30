@@ -143,6 +143,12 @@
 }
 
 @media screen and (max-width: 991px) {
+  .schema-page .settings-body {
+    height: 600px;
+  }
+  .schema-page .settings-body-mobile {
+    padding: 2px;
+  }
   .schema-page .right .settings-body tr td:first-child {
     padding-left: 7px;
   }
