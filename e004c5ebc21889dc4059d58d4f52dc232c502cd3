@@ -1,0 +1,11 @@
+[ver:1,total:1560]
+src/components/admin/AdminSchema/AdminSchema.scss:495,1540900800:495,m
+src/components/admin/AdminSchema/AdminSchema.js:489,1540900800:489,m
+src/reducer/reports.js:150,1540900800:150,m
+src/backend/mocks.js:105,1540900800:105,m
+src/actions/index.js:90,1540900800:90,m
+src/components/admin/AdminSchema/components/InvestPeriod.js:84,1540900800:84,m
+src/backend/api.js:45,1540900800:45,m
+src/constants/index.js:45,1540900800:45,m
+src/components/admin/AdminPays/components/PaysTable.js:42,1540900800:42,r
+src/components/commmon/CustomInput/CustomInput.js:15,1540900800:15,r
