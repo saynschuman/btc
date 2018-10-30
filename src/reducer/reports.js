@@ -10,7 +10,9 @@ import {
   REQUEST_HISTORY_APPLICATIONS,
   RESPONSE_HISTORY_APPLICATIONS,
   REQUEST_INVEST_PERIOD,
-  RESPONSE_INVEST_PERIOD
+  RESPONSE_INVEST_PERIOD,
+  REQUEST_SCHEMA_SETTINGS,
+  RESPONSE_SCHEMA_SETTINGS
 } from "../constants";
 
 const initialState = {
@@ -31,7 +33,10 @@ const initialState = {
   historyApplications: [],
   investPeriodIsLoading: false,
   investPeriodIsLoaded: false,
-  investPeriod: []
+  investPeriod: [],
+  schemaSettingsIsLoading: false,
+  schemaSettingsIsLoaded: false,
+  schemaSettings: []
 };
 
 export default function(state = initialState, action) {
@@ -109,6 +114,19 @@ export default function(state = initialState, action) {
         investPeriodIsLoading: false,
         investPeriodIsLoaded: true,
         investPeriod: action.investPeriod
+      };
+    case REQUEST_SCHEMA_SETTINGS:
+      return {
+        ...state,
+        schemaSettingsIsLoading: true,
+        schemaSettingsIsLoaded: false
+      };
+    case RESPONSE_SCHEMA_SETTINGS:
+      return {
+        ...state,
+        schemaSettingsIsLoading: false,
+        schemaSettingsIsLoaded: true,
+        schemaSettings: action.schemaSettings
       };
     default:
       return state;

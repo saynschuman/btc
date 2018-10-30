@@ -252,3 +252,48 @@ export const investPeriod = [
     koef: 1.1
   }
 ];
+
+export const schemaSettings = [
+  {
+    minedActually: 1.2452,
+    minedForCalculation: "2.72345",
+    mineData: "05.04.2018 13:42",
+    updatedByAdmin: 623421643
+  },
+  {
+    minedActually: 1.2452,
+    minedForCalculation: "2.72345",
+    mineData: "05.04.2018 13:42",
+    updatedByAdmin: 623421643
+  },
+  {
+    minedActually: 1.2452,
+    minedForCalculation: "2.72345",
+    mineData: "05.04.2018 13:42",
+    updatedByAdmin: 623421643
+  },
+  {
+    minedActually: 1.2452,
+    minedForCalculation: "2.72345",
+    mineData: "05.04.2018 13:42",
+    updatedByAdmin: 623421643
+  },
+  {
+    minedActually: 1.2452,
+    minedForCalculation: "2.72345",
+    mineData: "05.04.2018 13:42",
+    updatedByAdmin: 623421643
+  },
+  {
+    minedActually: 1.2452,
+    minedForCalculation: "2.72345",
+    mineData: "05.04.2018 13:42",
+    updatedByAdmin: 623421643
+  },
+  {
+    minedActually: 1.2452,
+    minedForCalculation: "2.72345",
+    mineData: "05.04.2018 13:42",
+    updatedByAdmin: 623421643
+  }
+];

@@ -69,6 +69,9 @@
     }
   }
   .settings-body {
+    &.no-pad {
+      padding: 0;
+    }
     border-bottom: 1px solid #24158b;
     padding: 56px 47px;
     height: 220px;
@@ -109,12 +112,20 @@
   }
 }
 
-.w-58 {
-  width: 58px;
+.settings-schema-bottom-table {
+  td {
+    padding-left: 17px !important;
+  }
+  input {
+    width: 80% !important;
+  }
 }
 
-.w-84 {
-  width: 84px;
+.schema-save {
+  text-align: center;
+  padding: 13px 23px;
+  padding-top: 11px;
+  height: auto;
 }
 
 @media screen and (max-width: 1600px) {

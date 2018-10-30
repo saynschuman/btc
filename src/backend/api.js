@@ -8,7 +8,8 @@ import {
   ChargeTable,
   HistoryApplications,
   SaleApplications,
-  investPeriod
+  investPeriod,
+  schemaSettings
 } from "./mocks";
 
 export const whoAreYou = data => {
@@ -52,4 +53,8 @@ export const getHistoryApplicationsFromServer = () => {
 
 export const getInvestPeriodFromServer = () => {
   return investPeriod;
+};
+
+export const getSchemaSettingsFromServer = () => {
+  return schemaSettings;
 };
