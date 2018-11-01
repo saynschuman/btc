@@ -1,6 +1,4 @@
 import {
-  admin,
-  investor,
   adminList,
   investorList,
   InvestorReport,
@@ -15,15 +13,10 @@ import {
   portalNews
 } from "./mocks";
 
-export const whoAreYou = data => {
-  if (data.id === admin.id && data.password === admin.password) {
-    return "admin";
-  }
-  if (data.id === investor.id && data.password === investor.password) {
-    return "investor";
-  } else {
-    return false;
-  }
+export const whoAreYou = path => {
+  fetch(`https://atc-bl.nadzor.online/bl198765/admin/exchange/${path}`)
+    .then(res => console.log(res.ok))
+    .catch(res => console.log(res.ok));
 };
 
 export const getAdminsFromServer = () => {

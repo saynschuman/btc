@@ -12,7 +12,7 @@ import AdminSchema from "../AdminSchema/AdminSchema";
 import AdminOther from "../AdminOther/AdminOther";
 import News from "../News/News";
 
-const RootAdmin = () => {
+const RootAdmin = props => {
   return (
     <BrowserRouter>
       <div>
