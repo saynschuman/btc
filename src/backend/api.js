@@ -13,10 +13,21 @@ import {
   portalNews
 } from "./mocks";
 
+export const getHomePageAdminData = token => {
+  fetch("https://atc-bl.nadzor.online/bl198765/admin/platform/", {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+    .then(res => res.json())
+    .then(res => console.log(res));
+};
+
 export const whoAreYou = path => {
   fetch(`https://atc-bl.nadzor.online/bl198765/admin/exchange/${path}`)
-    .then(res => console.log(res.ok))
-    .catch(res => console.log(res.ok));
+    .then(res => res.json())
+    .then(res => getHomePageAdminData(res.jwt))
+    .catch(error => error);
 };
 
 export const getAdminsFromServer = () => {

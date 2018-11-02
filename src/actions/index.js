@@ -40,27 +40,9 @@ import {
   getSchemaSettingsFromServer,
   getYieldListFromServer,
   getArticlesFromServer,
-  getPortalNewsFromServer
+  getPortalNewsFromServer,
+  getHomePageAdminData
 } from "../backend/api";
-
-export const checkWhoAreYou = authData => dispatch => {
-  dispatch({
-    type: REQUEST
-  });
-  const promise = new Promise(resolve => {
-    setTimeout(() => {
-      resolve(whoAreYou(authData));
-    }, 200);
-  });
-
-  promise.then(result => {
-    localStorage.setItem("user", result);
-    return dispatch({
-      type: RESPONSE,
-      whoIsLogged: result
-    });
-  });
-};
 
 export const toggleMobileMenu = () => {
   return {
