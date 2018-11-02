@@ -1,0 +1,10 @@
+[ver:1,total:2400]
+src/backend/api.js:878,1541163600:878,m
+src/actions/index.js:737,1541163600:737,m
+src/App.js:318,1541163600:318,m
+src/reducer/adminHomePageData.js:169,1541163600:169,m
+src/reducer/authData.js:112,1541163600:112,r
+src/reducer/index.js:84,1541163600:84,m
+src/constants/index.js:67,1541163600:67,m
+src/components/AuthForm/AuthForm.js:20,1541163600:20,r
+.idea/workspace.xml:15,1541163600:15,m
