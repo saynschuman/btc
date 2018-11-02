@@ -1,6 +1,4 @@
 import {
-  REQUEST,
-  RESPONSE,
   SHOW_MOBILE_MENU,
   ADMINS_REQUEST,
   ADMINS_RESPONSE,
@@ -25,10 +23,11 @@ import {
   REQEST_ARTICLES_LIST,
   RESPONSE_ARTICLES_LIST,
   REQUEST_PORTAL_NEWS,
-  RESPONSE_PORTAL_NEWS
+  RESPONSE_PORTAL_NEWS,
+  REQUEST_HOMEPAGE_DATA,
+  RESPONSE_HOMEPAGE_DATA
 } from "../constants";
 import {
-  whoAreYou,
   getAdminsFromServer,
   getInvestorsFromServer,
   getInvestorsReportFromServer,
@@ -41,13 +40,36 @@ import {
   getYieldListFromServer,
   getArticlesFromServer,
   getPortalNewsFromServer,
-  getHomePageAdminData
+  getHomePageAdminDataFromServer
 } from "../backend/api";
 
 export const toggleMobileMenu = () => {
   return {
     type: SHOW_MOBILE_MENU
   };
+};
+
+export const getHomePageAdminData = path => dispatch => {
+  dispatch({
+    type: REQUEST_HOMEPAGE_DATA
+  });
+  fetch(`https://atc-bl.nadzor.online/bl198765/admin/exchange/${path}`)
+    .then(res => res.json())
+    .then(res => {
+      return fetch("https://atc-bl.nadzor.online/bl198765/admin/platform/", {
+        headers: {
+          Authorization: `Bearer ${res.jwt}`
+        }
+      })
+        .then(res => res.json())
+        .then(res => res);
+    })
+    .then(res => {
+      return dispatch({
+        type: RESPONSE_HOMEPAGE_DATA,
+        adminHomePageData: res
+      });
+    });
 };
 
 export const getAdmins = () => dispatch => {

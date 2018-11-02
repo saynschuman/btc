@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import AuthForm from "./components/AuthForm/AuthForm";
-import LoginHeader from "./components/commmon/LoginHeader/LoginHeader";
+// import AuthForm from "./components/AuthForm/AuthForm";
+// import LoginHeader from "./components/commmon/LoginHeader/LoginHeader";
 import "./App.css";
 import { connect } from "react-redux";
-import RootAdmin from "./components/admin/RootAdmin";
-// import InvestorHomepage from "./components/investor/investorHomepage/investorHomePage";
-import WrongData from "./components/commmon/WrongData/WrongData";
-import { getHomePageAdminData } from "./backend/api";
+// import RootAdmin from "./components/admin/RootAdmin";
+// // import InvestorHomepage from "./components/investor/investorHomepage/investorHomePage";
+// import WrongData from "./components/commmon/WrongData/WrongData";
+import { getHomePageAdminData } from "./actions";
 
 class App extends Component {
   componentDidMount() {
-    getHomePageAdminData(window.location.pathname.replace("/", ""));
+    this.props.getHomePageAdminData(window.location.pathname.replace("/", ""));
   }
   renderInterface = () => {
     switch (localStorage.getItem("token")) {
@@ -52,8 +52,7 @@ class App extends Component {
   }
 }
 
-export default connect(state => {
-  return {
-    whoIsLogged: state.authData.whoIsLogged
-  };
-})(App);
+export default connect(
+  null,
+  { getHomePageAdminData }
+)(App);

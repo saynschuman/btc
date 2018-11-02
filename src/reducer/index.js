@@ -1,14 +1,14 @@
 import { combineReducers } from "redux";
-import authData from "./authData";
 import toggleMobileMenu from "./toggleMobileMenu";
 import admins from "./admins";
 import investors from "./investors";
 import reports from "./reports";
 import articles from "./articles";
 import portal from "./portal";
+import adminHomePageData from "./adminHomePageData";
 
 export default combineReducers({
-  authData,
+  adminHomePageData,
   toggleMobileMenu,
   admins,
   investors,
