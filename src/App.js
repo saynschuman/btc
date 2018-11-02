@@ -3,7 +3,7 @@ import React, { Component } from "react";
 // import LoginHeader from "./components/commmon/LoginHeader/LoginHeader";
 import "./App.css";
 import { connect } from "react-redux";
-// import RootAdmin from "./components/admin/RootAdmin";
+import RootAdmin from "./components/admin/RootAdmin";
 // // import InvestorHomepage from "./components/investor/investorHomepage/investorHomePage";
 // import WrongData from "./components/commmon/WrongData/WrongData";
 import { getHomePageAdminData } from "./actions";
@@ -48,7 +48,11 @@ class App extends Component {
   //   }
   // };
   render() {
-    return <div>123</div>;
+    return (
+      <div>
+        <RootAdmin />
+      </div>
+    );
   }
 }
 

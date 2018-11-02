@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46566a8a-8112-46f6-98f5-7160b4d67f4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/reducer/adminHomePageData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/AdminHomepage/AdminHomepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/AdminHomepage/AdminHomepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/RootAdmin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/RootAdmin/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,7 +39,7 @@
         <counts>
           <entry key="css" value="1" />
           <entry key="jpeg" value="1" />
-          <entry key="js" value="234" />
+          <entry key="js" value="236" />
           <entry key="json" value="2" />
           <entry key="map" value="1" />
           <entry key="png" value="6" />
@@ -55,7 +53,7 @@
           <entry key="CSS" value="1" />
           <entry key="Image" value="7" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="234" />
+          <entry key="JavaScript" value="236" />
           <entry key="SCSS" value="48" />
           <entry key="SVG" value="2" />
           <entry key="SourceMap" value="1" />
@@ -69,18 +67,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="17891" />
+          <entry key="js" value="18098" />
           <entry key="json" value="19" />
           <entry key="scss" value="8594" />
-          <entry key="txt" value="834" />
+          <entry key="txt" value="860" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="1" />
           <entry key="JSON" value="19" />
-          <entry key="JavaScript" value="17890" />
-          <entry key="PLAIN_TEXT" value="834" />
+          <entry key="JavaScript" value="18097" />
+          <entry key="PLAIN_TEXT" value="860" />
           <entry key="SCSS" value="8594" />
         </counts>
       </usages-collector>
@@ -98,31 +96,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/backend/api.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="18" selection-start-line="18" selection-end-line="24" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#227#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducer/adminHomePageData.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+            <state relative-caret-position="171">
+              <caret line="12" column="50" lean-forward="true" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
               <folding>
                 <element signature="e#175#194#0" expanded="true" />
               </folding>
@@ -131,10 +108,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/admin/RootAdmin/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/admin/AdminHomepage/AdminHomepage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="44" column="41" lean-forward="true" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="69" column="30" lean-forward="true" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+            <state relative-caret-position="124">
+              <caret line="56" column="28" lean-forward="true" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
               <folding>
                 <element signature="e#0#707#0" expanded="true" />
               </folding>
@@ -216,7 +217,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/admin/AdminReports/InvestorReport/InvestorReport.js" />
         <option value="$PROJECT_DIR$/src/components/admin/AdminReports/AdminReports.scss" />
         <option value="$PROJECT_DIR$/src/components/admin/AdminReports/InvestorReportMobile/InvestorReportMobile.js" />
         <option value="$PROJECT_DIR$/src/components/commmon/Header/AdminPageHeader.js" />
@@ -249,7 +249,6 @@
         <option value="$PROJECT_DIR$/src/components/admin/AdminOther/AdminOther.js" />
         <option value="$PROJECT_DIR$/src/components/admin/AdminOther/components/YieldTableMobile.js" />
         <option value="$PROJECT_DIR$/src/components/admin/AdminOther/AdminOther.scss" />
-        <option value="$PROJECT_DIR$/src/components/admin/RootAdmin/index.js" />
         <option value="$PROJECT_DIR$/src/components/commmon/AsideMenu/AsideMenu.js" />
         <option value="$PROJECT_DIR$/src/Mixins/gradient.scss" />
         <option value="$PROJECT_DIR$/src/reducer/articles.js" />
@@ -263,10 +262,12 @@
         <option value="$PROJECT_DIR$/src/components/AuthForm/AuthForm.js" />
         <option value="$PROJECT_DIR$/src/reducer/index.js" />
         <option value="$PROJECT_DIR$/src/constants/index.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/reducer/adminHomePageData.js" />
         <option value="$PROJECT_DIR$/src/backend/api.js" />
+        <option value="$PROJECT_DIR$/src/components/admin/AdminHomepage/AdminHomepage.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/src/components/admin/RootAdmin/index.js" />
       </list>
     </option>
   </component>
@@ -330,6 +331,29 @@
               <item name="btc" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="btc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="btc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="btc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="btc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="AdminHomepage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="btc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="btc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="RootAdmin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="btc" type="b2602c69:ProjectViewProjectNode" />
@@ -441,14 +465,7 @@
       <workItem from="1540876595173" duration="21814000" />
       <workItem from="1540917614912" duration="14328000" />
       <workItem from="1540974910353" duration="432000" />
-      <workItem from="1541160509941" duration="6148000" />
-    </task>
-    <task id="LOCAL-00003" summary="graf">
-      <created>1540475641080</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1540475641080</updated>
+      <workItem from="1541160509941" duration="7284000" />
     </task>
     <task id="LOCAL-00004" summary="mobile homepage admin">
       <created>1540477086049</created>
@@ -786,11 +803,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541164365093</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="get admin homepage data from server by tmp token">
+      <created>1541166727648</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1541166727648</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126669000" />
+    <option name="totallyTimeSpent" value="127805000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -823,7 +847,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modal mobile finished" />
     <MESSAGE value="hide menu onClick" />
     <MESSAGE value="charge table" />
     <MESSAGE value="menu fixed" />
@@ -848,16 +871,10 @@
     <MESSAGE value="desktop news finished" />
     <MESSAGE value="news mobile finished" />
     <MESSAGE value="get admin homepage data" />
-    <option name="LAST_COMMIT_MESSAGE" value="get admin homepage data" />
+    <MESSAGE value="get admin homepage data from server by tmp token" />
+    <option name="LAST_COMMIT_MESSAGE" value="get admin homepage data from server by tmp token" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/admin/Applications/components/ApplicationsTableMobile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/admin/Applications/components/ApplicationsHistoryMobile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1010,13 +1027,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/backend/images/1.jpeg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/admin/RootAdmin/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -1182,6 +1192,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/backend/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-256">
+          <caret line="18" selection-start-line="18" selection-end-line="24" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#227#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducer/adminHomePageData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -1191,30 +1211,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+        <state relative-caret-position="171">
+          <caret line="12" column="50" lean-forward="true" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
           <folding>
             <element signature="e#175#194#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/backend/api.js">
+    <entry file="file://$PROJECT_DIR$/src/components/admin/AdminHomepage/AdminHomepage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="18" selection-start-line="18" selection-end-line="24" selection-end-column="39" />
+        <state relative-caret-position="417">
+          <caret line="44" column="41" lean-forward="true" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
           <folding>
-            <element signature="e#0#227#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="69" column="30" lean-forward="true" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        <state relative-caret-position="124">
+          <caret line="56" column="28" lean-forward="true" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
           <folding>
             <element signature="e#0#707#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/admin/RootAdmin/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

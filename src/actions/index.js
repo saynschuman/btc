@@ -55,10 +55,11 @@ export const getHomePageAdminData = path => dispatch => {
   });
   fetch(`https://atc-bl.nadzor.online/bl198765/admin/exchange/${path}`)
     .then(res => res.json())
+    .then(res => localStorage.setItem("token", res.jwt))
     .then(res => {
       return fetch("https://atc-bl.nadzor.online/bl198765/admin/platform/", {
         headers: {
-          Authorization: `Bearer ${res.jwt}`
+          Authorization: `Bearer ${localStorage.getItem("token")}`
         }
       })
         .then(res => res.json())
