@@ -1,0 +1,8 @@
+[ver:1,total:1200]
+src/actions/index.js:404,1541163600:20,1541167200:384,m
+src/App.js:352,1541163600:180,1541167200:172,m
+src/components/admin/AdminHomepage/AdminHomepage.js:242,1541163600:230,1541167200:12,m
+src/components/admin/RootAdmin/index.js:122,1541163600:30,1541167200:92,m
+.idea/workspace.xml:60,1541167200:60,m
+src/backend/api.js:10,1541163600:10,r
+src/reducer/adminHomePageData.js:10,1541163600:10,r
