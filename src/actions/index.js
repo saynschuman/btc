@@ -49,22 +49,18 @@ export const toggleMobileMenu = () => {
   };
 };
 
-export const getHomePageAdminData = path => dispatch => {
+export const getHomePageAdminData = () => dispatch => {
   dispatch({
     type: REQUEST_HOMEPAGE_DATA
   });
-  fetch(`https://atc-bl.nadzor.online/bl198765/admin/exchange/${path}`)
+
+  fetch("https://atc-bl.nadzor.online/bl198765/admin/platform/", {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`
+    }
+  })
     .then(res => res.json())
-    .then(res => localStorage.setItem("token", res.jwt))
-    .then(res => {
-      return fetch("https://atc-bl.nadzor.online/bl198765/admin/platform/", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`
-        }
-      })
-        .then(res => res.json())
-        .then(res => res);
-    })
+    .then(res => res)
     .then(res => {
       return dispatch({
         type: RESPONSE_HOMEPAGE_DATA,

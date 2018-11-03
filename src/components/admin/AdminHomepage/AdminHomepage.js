@@ -2,6 +2,7 @@ import React from "react";
 import "./AdminHomepage.scss";
 import { Line } from "react-chartjs-2";
 import { connect } from "react-redux";
+import { getHomePageAdminData } from "../../../actions";
 
 const data = {
   labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -31,6 +32,19 @@ const data = {
 };
 
 class AdminHomepage extends React.Component {
+  componentDidMount() {
+    window.location.pathname.length > 10 &&
+      fetch(
+        `https://atc-bl.nadzor.online/bl198765/admin/exchange/${window.location.pathname.replace(
+          "/",
+          ""
+        )}`
+      )
+        .then(res => res.json())
+        .then(res => localStorage.setItem("token", res.jwt))
+        .then(res => this.props.getHomePageAdminData(res));
+    this.props.getHomePageAdminData();
+  }
   render() {
     const totalInvestors = this.props.adminHomePageData.totalInvestors;
     const activeInvestors = this.props.adminHomePageData.activeInvestors;
@@ -109,8 +123,11 @@ class AdminHomepage extends React.Component {
   }
 }
 
-export default connect(state => {
-  return {
-    adminHomePageData: state.adminHomePageData.adminHomePageData
-  };
-})(AdminHomepage);
+export default connect(
+  state => {
+    return {
+      adminHomePageData: state.adminHomePageData.adminHomePageData
+    };
+  },
+  { getHomePageAdminData }
+)(AdminHomepage);

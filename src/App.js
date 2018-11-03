@@ -7,11 +7,10 @@ import RootAdmin from "./components/admin/RootAdmin";
 // // import InvestorHomepage from "./components/investor/investorHomepage/investorHomePage";
 // import WrongData from "./components/commmon/WrongData/WrongData";
 import { getHomePageAdminData } from "./actions";
+import { getAdminsFromServer } from "./backend/api";
+import { ADMINS_RESPONSE } from "./constants";
 
 class App extends Component {
-  componentDidMount() {
-    this.props.getHomePageAdminData(window.location.pathname.replace("/", ""));
-  }
   renderInterface = () => {
     switch (localStorage.getItem("token")) {
     }
@@ -56,7 +55,4 @@ class App extends Component {
   }
 }
 
-export default connect(
-  null,
-  { getHomePageAdminData }
-)(App);
+export default App;
