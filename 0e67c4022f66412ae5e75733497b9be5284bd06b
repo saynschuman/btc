@@ -1,0 +1,7 @@
+[ver:1,total:3780]
+src/components/admin/RootAdmin/index.js:1340,1541167200:180,1541217600:400,1541221200:760,m
+src/App.js:1110,1541217600:60,1541221200:1050,m
+src/actions/index.js:990,1541217600:240,1541221200:750,m
+src/components/admin/AdminHomepage/AdminHomepage.js:260,1541217600:20,1541221200:240,m
+.idea/workspace.xml:60,1541221200:60,m
+src/components/admin/RootAdmin/index.scss:20,1541221200:20,r
