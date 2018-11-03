@@ -1,0 +1,14 @@
+[ver:1,total:7680]
+src/actions/index.js:3569,1541232000:272,1541235600:1675,1541239200:1622,m
+src/App.js:1361,1541232000:322,1541235600:802,1541239200:237,m
+src/components/AuthForm/AuthForm.js:862,1541232000:60,1541235600:600,1541239200:202,m
+src/components/admin/AdminHomepage/AdminHomepage.js:679,1541221200:180,1541232000:333,1541235600:155,1541239200:11,m
+src/components/commmon/WrongData/WrongData.js:323,1541239200:323,m
+src/reducer/authData.js:303,1541235600:75,1541239200:228,m
+src/reducer/adminHomePageData.js:206,1541232000:206,m
+src/constants/index.js:153,1541232000:36,1541235600:102,1541239200:15,m
+src/components/admin/RootAdmin/index.js:68,1541232000:31,1541235600:27,1541239200:10,r
+src/reducer/index.js:54,1541235600:20,1541239200:34,m
+src/components/Root.js:48,1541239200:48,r
+.idea/workspace.xml:30,1541239200:30,m
+src/App.test.js:24,1541235600:24,r
