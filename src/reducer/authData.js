@@ -1,21 +1,28 @@
-import { REQUEST, RESPONSE } from "../constants";
+import { AUTH_REQUEST, AUTH_RESPONSE, AUTH_ERROR } from "../constants";
 
 const initialState = {
   isLoading: false,
   isLoaded: false,
-  whoIsLogged: ""
+  success: null
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case REQUEST:
+    case AUTH_REQUEST:
       return { ...state, isLoading: true, isLoaded: false };
-    case RESPONSE:
+    case AUTH_RESPONSE:
       return {
         ...state,
         isLoading: false,
         isLoaded: true,
-        whoIsLogged: action.whoIsLogged
+        success: action.success
+      };
+    case AUTH_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        isLoaded: true,
+        success: action.success
       };
     default:
       return state;

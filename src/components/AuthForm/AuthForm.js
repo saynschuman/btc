@@ -1,7 +1,7 @@
 import React from "react";
 import "./AuthForm.scss";
-// import { checkWhoAreYou } from "../../actions";
-import { connect } from "react-redux";
+import connect from "react-redux/es/connect/connect";
+import { authData } from "../../actions";
 
 class AuthForm extends React.Component {
   state = {
@@ -20,7 +20,11 @@ class AuthForm extends React.Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    // this.props.checkWhoAreYou(this.state);
+    this.props.authData(this.state);
+    this.setState({
+      id: "",
+      password: ""
+    });
   };
 
   render() {
@@ -45,6 +49,7 @@ class AuthForm extends React.Component {
               component="input"
               type="text"
               autoComplete="off"
+              value={this.state.id}
             />
             <label htmlFor="password">Пароль</label>
             <input
@@ -54,6 +59,7 @@ class AuthForm extends React.Component {
               component="input"
               type="password"
               autoComplete="off"
+              value={this.state.password}
             />
             <input onClick={this.handleSubmit} type="submit" value={"Вход"} />
             {isLoading && !isLoaded && <div className="loader" />}
@@ -67,9 +73,12 @@ class AuthForm extends React.Component {
   }
 }
 
-export default connect(state => {
-  return {
-    isLoading: state.authData.isLoading,
-    isLoaded: state.authData.isLoaded
-  };
-})(AuthForm);
+export default connect(
+  state => {
+    return {
+      isLoading: state.authData.isLoading,
+      isLoaded: state.authData.isLoaded
+    };
+  },
+  { authData }
+)(AuthForm);

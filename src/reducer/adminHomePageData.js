@@ -1,8 +1,13 @@
-import { REQUEST_HOMEPAGE_DATA, RESPONSE_HOMEPAGE_DATA } from "../constants";
+import {
+  REQUEST_HOMEPAGE_DATA,
+  RESPONSE_HOMEPAGE_DATA,
+  ERROR_HOMEPAGE_DATA
+} from "../constants";
 
 const initialState = {
   isLoading: false,
   isLoaded: false,
+  isError: false,
   adminHomePageData: {}
 };
 
@@ -15,7 +20,15 @@ export default function(state = initialState, action) {
         ...state,
         isLoading: false,
         isLoaded: true,
-        adminHomePageData: action.adminHomePageData
+        adminHomePageData: action.payload.adminHomePageData,
+        isError: action.payload.isError
+      };
+    case ERROR_HOMEPAGE_DATA:
+      return {
+        ...state,
+        isLoading: false,
+        isLoaded: true,
+        isError: action.payload.isError
       };
     default:
       return state;

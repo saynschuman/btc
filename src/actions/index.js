@@ -25,7 +25,11 @@ import {
   REQUEST_PORTAL_NEWS,
   RESPONSE_PORTAL_NEWS,
   REQUEST_HOMEPAGE_DATA,
-  RESPONSE_HOMEPAGE_DATA
+  RESPONSE_HOMEPAGE_DATA,
+  ERROR_HOMEPAGE_DATA,
+  AUTH_REQUEST,
+  AUTH_RESPONSE,
+  AUTH_ERROR
 } from "../constants";
 import {
   getAdminsFromServer,
@@ -39,14 +43,57 @@ import {
   getSchemaSettingsFromServer,
   getYieldListFromServer,
   getArticlesFromServer,
-  getPortalNewsFromServer,
-  getHomePageAdminDataFromServer
+  getPortalNewsFromServer
 } from "../backend/api";
 
 export const toggleMobileMenu = () => {
   return {
     type: SHOW_MOBILE_MENU
   };
+};
+
+export const authData = data => dispatch => {
+  dispatch({
+    type: AUTH_REQUEST
+  });
+
+  fetch("https://atc-bl.nadzor.online/bl198765/admin/login", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      login: data.id,
+      password: data.password
+    })
+  })
+    .then(res => {
+      if (res.status < 400) {
+        return dispatch({
+          type: AUTH_RESPONSE,
+          success: true
+        });
+      } else {
+        return dispatch({
+          type: AUTH_ERROR,
+          success: false
+        });
+      }
+    })
+    .catch(error => {
+      console.log(error.status);
+      if (error.status < 400) {
+        return dispatch({
+          type: AUTH_RESPONSE,
+          success: true
+        });
+      } else {
+        return dispatch({
+          type: AUTH_ERROR,
+          success: false
+        });
+      }
+    });
 };
 
 export const getHomePageAdminData = () => dispatch => {
@@ -64,7 +111,19 @@ export const getHomePageAdminData = () => dispatch => {
     .then(res => {
       return dispatch({
         type: RESPONSE_HOMEPAGE_DATA,
-        adminHomePageData: res
+        payload: {
+          adminHomePageData: res,
+          isError: false
+        }
+      });
+    })
+    .catch(error => {
+      console.log(error);
+      return dispatch({
+        type: ERROR_HOMEPAGE_DATA,
+        payload: {
+          isError: true
+        }
       });
     });
 };

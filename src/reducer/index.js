@@ -6,6 +6,7 @@ import reports from "./reports";
 import articles from "./articles";
 import portal from "./portal";
 import adminHomePageData from "./adminHomePageData";
+import authData from "./authData";
 
 export default combineReducers({
   adminHomePageData,
@@ -14,5 +15,6 @@ export default combineReducers({
   investors,
   reports,
   articles,
-  portal
+  portal,
+  authData
 });
