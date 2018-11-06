@@ -27,7 +27,7 @@ const Aside = props => {
       </div>
       <ul>
         <li onClick={props.toggleMobileMenu}>
-          <NavLink exact={true} activeClassName="is-active" to="/">
+          <NavLink exact={true} activeClassName="is-active" to="/homepage">
             Главная
           </NavLink>
         </li>
