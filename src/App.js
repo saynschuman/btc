@@ -10,10 +10,11 @@ import { getHomePageAdminData, getCourse, getCourseHistory } from "./actions";
 
 class App extends Component {
   componentDidMount() {
-    window.location.pathname.length > 10 &&
+    console.log(window.location.hash.replace("#/", ""));
+    window.location.hash.length > 10 &&
       fetch(
-        `https://atc-bl.nadzor.online/bl198765/admin/exchange/${window.location.pathname.replace(
-          "/",
+        `https://atc-bl.nadzor.online/bl198765/admin/exchange/${window.location.hash.replace(
+          "#/",
           ""
         )}`
       )
