@@ -1,0 +1,8 @@
+[ver:1,total:300]
+src/components/admin/RootAdmin/index.js:207,1541523600:207,m
+src/App.js:22,1541523600:22,r
+src/components/admin/News/News.js:20,1541523600:20,r
+src/components/commmon/AsideMenu/AsideMenu.js:20,1541523600:20,r
+src/backend/api.js:17,1541523600:17,r
+src/helpers/prettyPrice.js:7,1541523600:7,r
+src/components/admin/AdminSettings/AdminSettings.js:7,1541523600:7,r
