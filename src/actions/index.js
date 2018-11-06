@@ -29,7 +29,9 @@ import {
   ERROR_HOMEPAGE_DATA,
   AUTH_REQUEST,
   AUTH_RESPONSE,
-  AUTH_ERROR
+  AUTH_ERROR,
+  GET_CORSE_REQUEST,
+  GET_CORSE_RESPONSE
 } from "../constants";
 import {
   getAdminsFromServer,
@@ -164,6 +166,18 @@ export const getInvestors = () => dispatch => {
       investorsList: result
     });
   });
+};
+
+export const getCourse = () => dispatch => {
+  dispatch({
+    type: GET_CORSE_REQUEST
+  });
+  fetch("https://atc-bl.nadzor.online/bl198765/platform/rates")
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .then(res => {
+      return dispatch({ type: GET_CORSE_RESPONSE, course: res });
+    });
 };
 
 export const getInvestorsReport = () => dispatch => {

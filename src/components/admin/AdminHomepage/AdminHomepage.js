@@ -111,6 +111,7 @@ class AdminHomepage extends React.Component {
 
 export default connect(state => {
   return {
-    adminHomePageData: state.adminHomePageData.adminHomePageData
+    adminHomePageData: state.adminHomePageData.adminHomePageData,
+    course: state.course
   };
 })(AdminHomepage);
