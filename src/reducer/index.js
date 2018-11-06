@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import toggleMobileMenu from "./toggleMobileMenu";
+import toggleMobileMenu from "../modules/toggleMobileMenu";
 import admins from "./admins";
 import investors from "./investors";
 import reports from "./reports";

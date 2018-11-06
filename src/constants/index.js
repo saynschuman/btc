@@ -1,6 +1,5 @@
 export const REQUEST = "REQUEST";
 export const RESPONSE = "RESPONSE";
-export const SHOW_MOBILE_MENU = "SHOW_MOBILE_MENU";
 export const ADMINS_RESPONSE = "ADMINS_RESPONSE";
 export const ADMINS_REQUEST = "ADMINS_REQUEST";
 export const INVESTORS_REQUEST = "INVESTORS_REQUEST";
