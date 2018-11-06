@@ -1,0 +1,12 @@
+[ver:1,total:2100]
+src/backend/api.js:720,1541523600:90,1541527200:630,m
+src/components/admin/AdminPays/AdminPays.js:563,1541523600:465,1541527200:98,m
+src/actions/index.js:276,1541523600:261,1541527200:15,m
+src/components/admin/RootAdmin/index.js:253,1541523600:13,1541527200:240,r
+src/App.js:193,1541523600:21,1541527200:172,r
+src/components/admin/Applications/Applications.js:45,1541527200:45,m
+src/components/admin/AdminReports/AdminReports.js:17,1541523600:17,r
+src/helpers/prettyPrice.js:15,1541523600:15,r
+src/components/admin/AdminReports/InvestorReport/InvestorReport.js:6,1541523600:6,r
+src/components/admin/News/News.js:6,1541523600:6,r
+src/components/admin/AdminReports/InvestorReportMobile/InvestorReportMobile.js:6,1541523600:6,r
