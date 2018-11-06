@@ -174,7 +174,6 @@ export const getCourse = () => dispatch => {
   });
   fetch("https://atc-bl.nadzor.online/bl198765/platform/rates")
     .then(res => res.json())
-    .then(res => console.log(res))
     .then(res => {
       return dispatch({ type: GET_CORSE_RESPONSE, course: res });
     });

@@ -2,6 +2,7 @@ import React from "react";
 import "./AdminHomepage.scss";
 import { Line } from "react-chartjs-2";
 import { connect } from "react-redux";
+import prettyPrice from "../../../helpers/prettyPrice";
 
 const data = {
   labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -80,7 +81,11 @@ class AdminHomepage extends React.Component {
             </div>
             <Line data={data} />
             <p className="block-body smaller28">
-              1BTC = 6 952,04$ 1BTC = 399 574P
+              {this.props.courseIsLoading && "Загрузка..."}
+              {this.props.courseIsLoaded &&
+                `1BTC = ${prettyPrice(
+                  this.props.course.course.USD
+                )}$ 1BTC = ${prettyPrice(this.props.course.course.RUB)}P`}
             </p>
           </div>
           <div className="col middle mr">
@@ -112,6 +117,8 @@ class AdminHomepage extends React.Component {
 export default connect(state => {
   return {
     adminHomePageData: state.adminHomePageData.adminHomePageData,
-    course: state.course
+    course: state.course,
+    courseIsLoading: state.course.isLoading,
+    courseIsLoaded: state.course.isLoaded
   };
 })(AdminHomepage);
