@@ -1,0 +1,8 @@
+[ver:1,total:1560]
+src/components/admin/AdminHomepage/AdminHomepage.js:1250,1541494800:770,1541498400:480,m
+src/actions/index.js:210,1541494800:210,m
+src/helpers/prettyPrice.js:50,1541494800:50,m
+src/helpers/prettyPrice.tsx:20,1541494800:20,d
+src/constants/index.js:10,1541494800:10,r
+src/reducer/course.js:10,1541494800:10,r
+src/reducer/index.js:10,1541494800:10,r
