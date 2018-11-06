@@ -54,7 +54,7 @@ class AdminHomepage extends React.Component {
                 Количество активных инвесторов
               </div>
             </div>
-            <p className="block-body">54</p>
+            <p className="block-body">{activeInvestors}</p>
           </div>
           <div className={"admin-block"}>
             <div className="block-header">
@@ -62,7 +62,7 @@ class AdminHomepage extends React.Component {
                 Остаток мощности у проекта
               </div>
             </div>
-            <p className="block-body">1.021 TH/s</p>
+            <p className="block-body">{platformHashRate} TH/s</p>
           </div>
           <div className={"admin-block"}>
             <div className="block-header">
@@ -70,7 +70,7 @@ class AdminHomepage extends React.Component {
                 Текущая стоимость единицы мощности
               </div>
             </div>
-            <p className="block-body smaller38">1 TH/s = 1 BTC</p>
+            <p className="block-body smaller38">{hashRatePrice} TH/s = 1 BTC</p>
           </div>
         </div>
         <div className="col col-right">
@@ -90,7 +90,7 @@ class AdminHomepage extends React.Component {
                   Мощность всех инвесторов
                 </div>
               </div>
-              <p className="block-body smaller38">1.021 TH/s</p>
+              <p className="block-body smaller38">{totalHashRateSold} TH/s</p>
             </div>
           </div>
           <div className="col middle ml">
@@ -100,7 +100,7 @@ class AdminHomepage extends React.Component {
                   Количество активных инвестиций
                 </div>
               </div>
-              <p className="block-body smaller38">70</p>
+              <p className="block-body smaller38">{totalActiveInvestments}</p>
             </div>
           </div>
         </div>
