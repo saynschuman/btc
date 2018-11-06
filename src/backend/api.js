@@ -28,7 +28,11 @@ export const getHomePageAdminDataFromServer = path => {
 };
 
 export const getAdminsFromServer = () => {
-  return adminList;
+  return fetch("https://atc-bl.nadzor.online/bl198765/admin/", {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`
+    }
+  }).then(res => res.json());
 };
 
 export const getInvestorsFromServer = () => {
