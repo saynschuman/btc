@@ -137,9 +137,7 @@ export const getAdmins = () => dispatch => {
     type: ADMINS_REQUEST
   });
   const promise = new Promise(resolve => {
-    setTimeout(() => {
-      resolve(getAdminsFromServer());
-    }, 200);
+    resolve(getAdminsFromServer());
   });
 
   promise.then(result => {
@@ -156,9 +154,7 @@ export const getInvestors = () => dispatch => {
     type: INVESTORS_REQUEST
   });
   const promise = new Promise(resolve => {
-    setTimeout(() => {
-      resolve(getInvestorsFromServer());
-    }, 200);
+    resolve(getInvestorsFromServer());
   });
 
   promise.then(result => {
@@ -197,9 +193,7 @@ export const getInvestorsReport = () => dispatch => {
     type: INVESTORS_REPORT_REQUEST
   });
   const promise = new Promise(resolve => {
-    setTimeout(() => {
-      resolve(getInvestorsReportFromServer());
-    }, 200);
+    resolve(getInvestorsReportFromServer());
   });
 
   promise.then(result => {
@@ -216,9 +210,7 @@ export const getInvestitionsReport = () => dispatch => {
     type: INVESTITIONS_REPORT_REQUEST
   });
   const promise = new Promise(resolve => {
-    setTimeout(() => {
-      resolve(getInvestitionsReportFromServer());
-    }, 200);
+    resolve(getInvestitionsReportFromServer());
   });
 
   promise.then(result => {
@@ -235,18 +227,24 @@ export const getChargeTable = () => dispatch => {
     type: CHARGE_TABLE_REQUEST
   });
   const promise = new Promise(resolve => {
-    setTimeout(() => {
-      resolve(getChargeTableFromServer());
-    }, 200);
+    resolve(getChargeTableFromServer());
   });
 
-  promise.then(result => {
-    console.log(result);
-    return dispatch({
-      type: CHARGE_TABLE_REPORT_RESPONSE,
-      chargeTable: result
+  promise
+    .then(result => {
+      console.log(result);
+      return dispatch({
+        type: CHARGE_TABLE_REPORT_RESPONSE,
+        chargeTable: result
+      });
+    })
+    .catch(result => {
+      console.log(result);
+      return dispatch({
+        type: CHARGE_TABLE_REPORT_RESPONSE,
+        chargeTable: []
+      });
     });
-  });
 };
 
 export const getRequestApplications = () => dispatch => {

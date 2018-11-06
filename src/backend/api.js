@@ -69,23 +69,37 @@ export const getInvestitionsReportFromServer = () => {
 };
 
 export const getChargeTableFromServer = () => {
-  return ChargeTable;
+  return fetch("https://atc-bl.nadzor.online/bl198765/admin/payouts/", {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`
+    }
+  }).then(res => res.json());
 };
 
 export const getRequestApplicationsFromServer = () => {
-  return SaleApplications;
+  return fetch(
+    "https://atc-bl.nadzor.online/bl198765/admin/sellShares/?offset=0&count=30",
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    }
+  ).then(res => res.json());
 };
 
 export const getHistoryApplicationsFromServer = () => {
-  return HistoryApplications;
+  // return HistoryApplications;
+  return [];
 };
 
 export const getInvestPeriodFromServer = () => {
-  return investPeriod;
+  // return investPeriod;
+  return [];
 };
 
 export const getSchemaSettingsFromServer = () => {
-  return schemaSettings;
+  // return schemaSettings;
+  return [];
 };
 
 export const getYieldListFromServer = () => {

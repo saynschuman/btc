@@ -7,6 +7,7 @@ import AdminsLoader from "../AdminSettings/AdminsLoader/AdminsLoader";
 import PaysTable from "./components/PaysTable";
 import PaysTableMobile from "./components/PaysTableMobile";
 import { getChargeTable } from "../../../actions";
+import moment from "moment";
 
 class AdminPays extends React.Component {
   componentDidMount() {
@@ -23,7 +24,7 @@ class AdminPays extends React.Component {
                   Баланс BTC на кошельке платформы
                 </div>
               </div>
-              <p className="block-body">22.4086</p>
+              <p className="block-body">0</p>
             </div>
           </div>
           <div className="col col-50 right">
@@ -33,14 +34,14 @@ class AdminPays extends React.Component {
                   Добытый BTC системой за прошедший период (7 дней)
                 </div>
               </div>
-              <p className="block-body">23.4086</p>
+              <p className="block-body">0</p>
             </div>
           </div>
         </div>
         <div className={"admin-block"}>
           <div className="table-reports report-investors">
             <div className="settings-header">
-              Таблица начислений инвестора за 02.03.2018, 21.45
+              Таблица начислений инвестора за {moment(new Date()).format("l")}
             </div>
             <div className="settings-body settings-body-desktop">
               <PerfectScrollbar className={"edit-admins-desktop"}>
@@ -96,9 +97,7 @@ class AdminPays extends React.Component {
               </PerfectScrollbar>
             </div>
             <div className="setting-footer">
-              <div className="bottom-title-right">
-                Начислено всего: 1.65432 BTC{" "}
-              </div>
+              <div className="bottom-title-right">Начислено всего: 0 BTC</div>
               <div className="buttons-block">
                 <button>Обновить с учетом добытого за день</button>
                 <button>Сохранить расчет</button>

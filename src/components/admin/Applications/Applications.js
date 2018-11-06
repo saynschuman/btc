@@ -12,6 +12,7 @@ import {
 } from "../../../actions";
 import ApplicationsHistory from "./components/ApplicationsHistory";
 import ApplicationsHistoryMobile from "./components/ApplicationsHistoryMobile";
+import moment from "moment";
 
 class Applications extends React.Component {
   componentDidMount() {
@@ -24,7 +25,7 @@ class Applications extends React.Component {
         <div className={"admin-block"}>
           <div className="table-reports report-investors">
             <div className="settings-header">
-              Таблица начислений инвестора за 02.03.2018, 21.45
+              Таблица начислений инвестора за {moment(new Date()).format("l")}
             </div>
             <div className="settings-body settings-body-desktop">
               <PerfectScrollbar className={"edit-admins-desktop"}>
