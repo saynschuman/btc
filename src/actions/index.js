@@ -31,7 +31,9 @@ import {
   AUTH_RESPONSE,
   AUTH_ERROR,
   GET_CORSE_REQUEST,
-  GET_CORSE_RESPONSE
+  GET_CORSE_RESPONSE,
+  GET_CORSE_HISTORY_REQUEST,
+  GET_CORSE_HISTORY_RESPONSE
 } from "../constants";
 import {
   getAdminsFromServer,
@@ -176,6 +178,17 @@ export const getCourse = () => dispatch => {
     .then(res => res.json())
     .then(res => {
       return dispatch({ type: GET_CORSE_RESPONSE, course: res });
+    });
+};
+
+export const getCourseHistory = () => dispatch => {
+  dispatch({
+    type: GET_CORSE_HISTORY_REQUEST
+  });
+  fetch("https://atc-bl.nadzor.online/bl198765/platform/ratesHistory?count=7")
+    .then(res => res.json())
+    .then(res => {
+      return dispatch({ type: GET_CORSE_HISTORY_RESPONSE, courseHistory: res });
     });
 };
 

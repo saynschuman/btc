@@ -3,36 +3,150 @@ import "./AdminHomepage.scss";
 import { Line } from "react-chartjs-2";
 import { connect } from "react-redux";
 import prettyPrice from "../../../helpers/prettyPrice";
-
-const data = {
-  labels: ["January", "February", "March", "April", "May", "June", "July"],
-  datasets: [
-    {
-      label: "bitcoin curse",
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: "rgba(75,192,192,0.4)",
-      borderColor: "rgba(75,192,192,1)",
-      borderCapStyle: "butt",
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: "miter",
-      pointBorderColor: "rgba(75,192,192,1)",
-      pointBackgroundColor: "#fff",
-      pointBorderWidth: 1,
-      pointHoverRadius: 5,
-      pointHoverBackgroundColor: "rgba(75,192,192,1)",
-      pointHoverBorderColor: "rgba(220,220,220,1)",
-      pointHoverBorderWidth: 2,
-      pointRadius: 1,
-      pointHitRadius: 10,
-      data: [65, 59, 80, 81, 56, 55, 40]
-    }
-  ]
-};
+import moment from "moment";
 
 class AdminHomepage extends React.Component {
   render() {
+    const options = {
+      responsive: true,
+      tooltips: {
+        mode: "label"
+      },
+      hover: {
+        mode: "dataset"
+      },
+      scales: {
+        xAxes: [
+          {
+            display: true,
+            scaleLabel: {
+              show: true,
+              labelString: "Month"
+            }
+          }
+        ],
+        yAxes: [
+          {
+            display: false,
+            scaleLabel: {
+              show: false,
+              labelString: "Value"
+            },
+            ticks: {
+              suggestedMin: this.props.courseHistory.map(
+                course => course.RUB
+              )[0],
+              suggestedMax: this.props.courseHistory.map(course => course.RUB)[
+                this.props.courseHistory.map(course => course.RUB).length - 1
+              ]
+            }
+          }
+        ]
+      }
+    };
+    const data = {
+      labels: this.props.courseHistory.map(course =>
+        moment(Date.parse(course.date)).format("MMM Do YY")
+      ),
+      datasets: [
+        {
+          label: "1BTC (RUB)",
+          fill: true,
+          lineTension: 0.1,
+          backgroundColor: "rgba(75,192,192,0.1)",
+          borderColor: "rgba(75,192,192,1)",
+          borderCapStyle: "butt",
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: "miter",
+          pointBorderColor: "rgba(75,192,192,1)",
+          pointBackgroundColor: "#fff",
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: "rgba(75,192,192,1)",
+          pointHoverBorderColor: "rgba(220,220,220,1)",
+          pointHoverBorderWidth: 2,
+          pointRadius: 4,
+          pointHitRadius: 10,
+          data: this.props.courseHistory.map(course => course.RUB)
+        },
+        {
+          label: "1BTC (USD)",
+          hidden: true,
+          fill: true,
+          lineTension: 0.1,
+          backgroundColor: "rgba(75,192,192,0.1)",
+          borderColor: "rgba(75,192,192,1)",
+          borderCapStyle: "butt",
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: "miter",
+          pointBorderColor: "rgba(75,192,192,1)",
+          pointBackgroundColor: "#fff",
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: "rgba(75,192,192,1)",
+          pointHoverBorderColor: "rgba(220,220,220,1)",
+          pointHoverBorderWidth: 2,
+          pointRadius: 4,
+          pointHitRadius: 10,
+          data: this.props.courseHistory.map(course => course.USD)
+        }
+      ]
+    };
+
+    // const data = {
+    //   // this.props.courseHistory.map(course =>
+    //   //   moment(Date.parse(course.date)).format("MMM Do YY")
+    //   // )
+    //   labels: this.props.courseHistory.map(course =>
+    //     moment(Date.parse(course.date)).format("MMM Do YY")
+    //   ),
+    //   datasets: [
+    //     {
+    //       label: "RUB",
+    //       fill: true,
+    //       lineTension: 0.1,
+    //       backgroundColor: "rgba(75,192,192,0.1)",
+    //       borderColor: "rgba(75,192,192,1)",
+    //       borderCapStyle: "butt",
+    //       borderDash: [],
+    //       borderDashOffset: 0.0,
+    //       borderJoinStyle: "miter",
+    //       pointBorderColor: "rgba(75,192,192,1)",
+    //       pointBackgroundColor: "#fff",
+    //       pointBorderWidth: 1,
+    //       pointHoverRadius: 5,
+    //       pointHoverBackgroundColor: "rgba(75,192,192,1)",
+    //       pointHoverBorderColor: "rgba(220,220,220,1)",
+    //       pointHoverBorderWidth: 2,
+    //       pointRadius: 4,
+    //       pointHitRadius: 10,
+    //       data: this.props.courseHistory.map(course => course.RUB)
+    //     },
+    //     {
+    //       label: "USD",
+    // fill: true,
+    // lineTension: 0.1,
+    // backgroundColor: "rgba(75,192,192,0.1)",
+    // borderColor: "rgba(75,192,192,1)",
+    // borderCapStyle: "butt",
+    // borderDash: [],
+    // borderDashOffset: 0.0,
+    // borderJoinStyle: "miter",
+    // pointBorderColor: "rgba(75,192,192,1)",
+    // pointBackgroundColor: "#fff",
+    // pointBorderWidth: 1,
+    // pointHoverRadius: 5,
+    // pointHoverBackgroundColor: "rgba(75,192,192,1)",
+    // pointHoverBorderColor: "rgba(220,220,220,1)",
+    // pointHoverBorderWidth: 2,
+    // pointRadius: 4,
+    // pointHitRadius: 10,
+    //       data: this.props.courseHistory.map(course => course.USD)
+    //     }
+    //   ]
+    // };
     const totalInvestors = this.props.adminHomePageData.totalInvestors;
     const activeInvestors = this.props.adminHomePageData.activeInvestors;
     const totalActiveInvestments = this.props.adminHomePageData
@@ -79,9 +193,8 @@ class AdminHomepage extends React.Component {
             <div className="block-header">
               <div className="header-title">График курса BTC</div>
             </div>
-            <Line data={data} />
+            <Line data={data} options={options} />
             <p className="block-body smaller28">
-              {this.props.courseIsLoading && "Загрузка..."}
               {this.props.courseIsLoaded &&
                 `1BTC = ${prettyPrice(
                   this.props.course.course.USD
@@ -119,6 +232,9 @@ export default connect(state => {
     adminHomePageData: state.adminHomePageData.adminHomePageData,
     course: state.course,
     courseIsLoading: state.course.isLoading,
-    courseIsLoaded: state.course.isLoaded
+    courseIsLoaded: state.course.isLoaded,
+    courseHistory: state.courseHistory.courseHistory,
+    courseHistoryIsLoading: state.courseHistory.isLoading,
+    courseHistoryIsLoaded: state.courseHistory.isLoaded
   };
 })(AdminHomepage);

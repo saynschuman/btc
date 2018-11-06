@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import RootAdmin from "./components/admin/RootAdmin";
 // // import InvestorHomepage from "./components/investor/investorHomepage/investorHomePage";
 import WrongData from "./components/commmon/WrongData/WrongData";
-import { getHomePageAdminData, getCourse } from "./actions";
+import { getHomePageAdminData, getCourse, getCourseHistory } from "./actions";
 
 class App extends Component {
   componentDidMount() {
@@ -24,6 +24,7 @@ class App extends Component {
 
     this.props.getHomePageAdminData();
     this.props.getCourse();
+    this.props.getCourseHistory();
   }
   renderInterface = () => {
     switch (localStorage.getItem("token")) {
@@ -94,5 +95,5 @@ export default connect(
       success: state.authData.success
     };
   },
-  { getHomePageAdminData, getCourse }
+  { getHomePageAdminData, getCourse, getCourseHistory }
 )(App);

@@ -8,6 +8,7 @@ import portal from "./portal";
 import adminHomePageData from "./adminHomePageData";
 import authData from "./authData";
 import course from "./course";
+import courseHistory from "./courseHistory";
 
 export default combineReducers({
   adminHomePageData,
@@ -18,5 +19,6 @@ export default combineReducers({
   articles,
   portal,
   authData,
-  course
+  course,
+  courseHistory
 });
