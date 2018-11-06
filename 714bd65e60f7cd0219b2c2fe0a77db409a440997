@@ -1,0 +1,12 @@
+[ver:1,total:7440]
+src/components/admin/AdminHomepage/AdminHomepage.js:6219,1541498400:1559,1541502000:3460,1541505600:1200,m
+src/actions/index.js:595,1541498400:595,m
+src/reducer/courseHistory.js:212,1541498400:212,m
+src/App.js:110,1541498400:110,m
+src/Mixins/gradient.scss:102,1541498400:102,r
+package.json:80,1541502000:80,m
+src/constants/index.js:40,1541498400:40,m
+src/reducer/index.js:36,1541498400:36,m
+.prettierrc:20,1541498400:20,r
+src/reducer/course.js:16,1541498400:16,r
+src/components/admin/RootAdmin/index.js:10,1541498400:10,r
