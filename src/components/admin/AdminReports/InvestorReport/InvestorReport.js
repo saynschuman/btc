@@ -17,13 +17,17 @@ class InvestorReport extends React.Component {
   render() {
     return (
       <tr>
-        <td>{this.props.id}</td>
+        <td>
+          <div className="long-id">{this.props.id}</div>
+        </td>
         <td>{this.props.name}</td>
         <td>{this.props.surName}</td>
         <td className={"green"}>{this.props.power}</td>
         <td className={"blue"}>{this.props.payed}</td>
         <td>{this.props.phone}</td>
-        <td>{this.props.email}</td>
+        <td>
+          <div className="long-id">{this.props.email}</div>
+        </td>
         <td>
           <button className={"edit-admin-button"} onClick={this.showReport}>
             Посмотреть
@@ -36,7 +40,7 @@ class InvestorReport extends React.Component {
                 </div>
                 <div className="header">
                   <div className="title">
-                    Инвестор: Сергей Сергеевич <span>ID: 3423123</span>
+                    Инвестор: {this.props.name} <span>ID: {this.props.id}</span>
                   </div>
                 </div>
                 <div className="body">
@@ -51,7 +55,7 @@ class InvestorReport extends React.Component {
                         <th>Объем операции (BTC)</th>
                         <th>Стоимость операции (BTC)</th>
                       </tr>
-                      <tr>
+                      {/* <tr>
                         <td className={"empty-char"} />
                         <td>05.06.2018 </td>
                         <td>Продажа</td>
@@ -68,7 +72,7 @@ class InvestorReport extends React.Component {
                         <td>32315</td>
                         <td className={"blue"}>4.135342113</td>
                         <td className={"green"}>4.135342113</td>
-                      </tr>
+                      </tr> */}
                     </tbody>
                   </table>
                 </div>
@@ -78,14 +82,14 @@ class InvestorReport extends React.Component {
                       <div className="footer-title title-light">
                         Общая мощность инвестора на текущий момент
                       </div>
-                      <div className="footer-bottom">224312</div>
+                      <div className="footer-bottom">{this.props.power}</div>
                     </div>
                   </div>
                   <div className="col col-50">
                     <div className="footer-title title-money">
-                      Общая мощность инвестора на текущий момент
+                      Выплачено всего (BTC)
                     </div>
-                    <div className="footer-bottom">224312</div>
+                    <div className="footer-bottom">{this.props.payed}</div>
                   </div>
                 </div>
               </div>

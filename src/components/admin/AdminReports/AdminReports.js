@@ -37,7 +37,7 @@ class AdminReports extends React.Component {
                   Количество зарегистрированных инвесторов в проекте
                 </div>
               </div>
-              <p className="block-body">22431234</p>
+              <p className="block-body">{this.props.investorsCount}</p>
             </div>
           </div>
           <div className="col col-50 right">
@@ -47,7 +47,7 @@ class AdminReports extends React.Component {
                   Сумма инвестиций в проекте
                 </div>
               </div>
-              <p className="block-body">22431234</p>
+              <p className="block-body">{this.props.investmentsCount}</p>
             </div>
           </div>
         </div>
@@ -221,7 +221,10 @@ export default connect(
       isLoaded: state.reports.isLoaded,
       investitions: state.reports.investitionsReports,
       investitionsIsLoading: state.reports.investitionsIsLoading,
-      investitionsIsLoaded: state.reports.investitionsIsLoaded
+      investitionsIsLoaded: state.reports.investitionsIsLoaded,
+      investorsCount: state.adminHomePageData.adminHomePageData.totalInvestors,
+      investmentsCount:
+        state.adminHomePageData.adminHomePageData.totalActiveInvestments
     };
   },
   { getInvestorsReport, getInvestitionsReport }

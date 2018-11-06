@@ -47,11 +47,25 @@ export const getInvestorsFromServer = () => {
 };
 
 export const getInvestorsReportFromServer = () => {
-  return InvestorReport;
+  return fetch(
+    "https://atc-bl.nadzor.online/bl198765/admin/reports/investors/",
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    }
+  ).then(res => res.json());
 };
 
 export const getInvestitionsReportFromServer = () => {
-  return InvestitionReport;
+  return fetch(
+    "https://atc-bl.nadzor.online/bl198765/admin/reports/investments/?active=true",
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    }
+  ).then(res => res.json());
 };
 
 export const getChargeTableFromServer = () => {
