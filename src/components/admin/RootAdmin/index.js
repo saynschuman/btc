@@ -54,7 +54,7 @@ const RootAdmin = () => {
             path="/other"
             component={AdminOther}
           />
-          <Route path="*" component={AdminHomepage} />
+          <Route path="*" component={News} />
           <Route activeClassName={"is-active"} path="/news" component={News} />
         </Switch>
       </div>
