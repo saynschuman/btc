@@ -1,0 +1,12 @@
+[ver:1,total:1800]
+src/components/admin/AdminReports/AdminReports.js:730,1541516400:730,m
+src/components/admin/AdminReports/InvestorReport/InvestorReport.js:347,1541516400:347,m
+src/components/admin/AdminReports/InvestorReportMobile/InvestorReportMobile.js:325,1541516400:325,m
+src/components/admin/AdminReports/AdminReports.scss:150,1541516400:150,m
+src/backend/api.js:102,1541516400:102,m
+src/App.js:42,1541516400:42,r
+src/components/admin/AdminSettings/AdminSettings.js:40,1541516400:40,r
+src/components/admin/AdminHomepage/AdminHomepage.js:20,1541516400:20,r
+src/components/admin/AdminSettings/EditAdmins/EditAdmins.js:20,1541516400:20,r
+src/actions/index.js:12,1541516400:12,r
+src/components/admin/AdminReports/InvestitionsReport/InvestitionsReport.js:12,1541516400:12,r
