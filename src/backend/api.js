@@ -36,7 +36,14 @@ export const getAdminsFromServer = () => {
 };
 
 export const getInvestorsFromServer = () => {
-  return investorList;
+  return fetch(
+    "https://atc-bl.nadzor.online/bl198765/admin/reports/investors/",
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    }
+  ).then(res => res.json());
 };
 
 export const getInvestorsReportFromServer = () => {
