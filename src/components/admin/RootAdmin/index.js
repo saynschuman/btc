@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.scss";
 import AdminHomepage from "../AdminHomepage/AdminHomepage";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Switch, HashRouter } from "react-router-dom";
 import AsideMenu from "../../commmon/AsideMenu/AsideMenu";
 import AdminPageHeader from "../../commmon/Header/AdminPageHeader";
 import AdminSettings from "../../admin/AdminSettings/AdminSettings";
@@ -14,7 +14,7 @@ import News from "../News/News";
 
 const RootAdmin = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div>
         <AdminPageHeader whoAreYou={"admin"} />
         <AsideMenu />
@@ -58,7 +58,7 @@ const RootAdmin = () => {
           <Route activeClassName={"is-active"} path="/news" component={News} />
         </Switch>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
