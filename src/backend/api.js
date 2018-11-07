@@ -126,3 +126,18 @@ export const delSingleArticleOnServer = id => {
     }
   }).then(res => console.log(res))
 }
+
+export const updateArticleOnServer = (id, title, image, body) => {
+  return fetch(`https://atc-bl.nadzor.online/bl198765/admin/news/${id}`, {
+    method: 'put',
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      title: title,
+      body: body,
+      pictureBase64: image
+    })
+  }).then(res => console.log(res))
+}

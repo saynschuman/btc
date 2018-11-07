@@ -1,0 +1,10 @@
+PUT https://atc-bl.nadzor.online/bl198765/admin/news/5be32da5cbaee260df87d14a HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQxNjE4NjEyLCJleHAiOjE1NDE2MjIyMTJ9.h_Hm7HcJ6rh0-BJavtg6BGZbuCLGouZ4E82PAmVXPkM  
+Content-Type: application/json
+
+{
+	"title": "Измененная",
+	"body": "lorem ipsum dolor",
+	"pictureBase64": "https://via.placeholder.com/100x200",
+	"isPinned": true
+}

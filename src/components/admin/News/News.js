@@ -1,7 +1,8 @@
 import React from 'react'
 import './News.scss'
-import { article } from '../../../backend/mocks'
+import moment from 'moment'
 import { getArticles, getPortalNews } from '../../../actions'
+import { updateArticle, changeTitle, changeBody } from '../../../modules/editArticle'
 import { connect } from 'react-redux'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import AdminsLoader from '../AdminSettings/AdminsLoader/AdminsLoader'
@@ -14,6 +15,21 @@ class News extends React.Component {
   componentDidMount() {
     !this.props.isLoaded && this.props.getArticles()
     !this.props.portalNewsIsLoaded && this.props.getPortalNews()
+  }
+  handleChangeTitle = e => {
+    this.props.changeTitle(e)
+  }
+  handleChangeBody = e => {
+    this.props.changeBody(e)
+  }
+  handleUpdateArticle = () => {
+    this.props.updateArticle(
+      this.props.editArticle.id,
+      this.props.editArticle.title,
+      this.props.editArticle.image,
+      this.props.editArticle.body
+    )
+    this.props.getArticles()
   }
   render() {
     return (
@@ -36,6 +52,7 @@ class News extends React.Component {
                           title={article.title}
                           date={article.date}
                           image={article.pictureBase64}
+                          body={article.body}
                         />
                       ))}
                   </div>
@@ -50,7 +67,14 @@ class News extends React.Component {
             <div className="admin-block">
               <div className="block-header">
                 <div className="header-title edit-news-title">
-                  Редактор: Новость 1 <span className={'date'}>20.08.2018</span>
+                  Редактор:
+                  <input
+                    type={'text'}
+                    className="article-header-title"
+                    onChange={e => this.handleChangeTitle(e.target.value)}
+                    value={this.props.editArticle.title}
+                  />
+                  <span className={'date'}>{moment(new Date()).format('l')}</span>
                 </div>
               </div>
               <div className="news-body">
@@ -58,32 +82,34 @@ class News extends React.Component {
                   <div className="article-inner">
                     <div
                       className="featured-image"
-                      style={{ backgroundImage: `url(${article.image})` }}
+                      style={{ backgroundImage: `url(${this.props.editArticle.image})` }}
                     />
                     <article>
-                      <div className="article-title">Редактируемый заголовок</div>
-                      <p>
-                        Повседневная практика показывает, что курс на социально-ориентированный
-                        национальный проект требует определения и уточнения системы обучения кадров,
-                        соответствующей насущным потребностям. Повседневная практика показывает, что
-                        курс на социально-ориентированный национальный проект требует определения и
-                        уточнения системы обучения кадров, соответствующей насущным потребностям.
-                      </p>
-
-                      <p>
-                        Показывает, что курс на социально-ориентированный национальный проект
-                        требует определения и уточнения системы обучения кадров, соответствующей
-                        насущным потребностям. Повседневная практика показывает, что курс на
-                        социально-ориентированный национальный проект требует определения и
-                        уточнения системы обучения кадров, соответствующей насущным потребностям.
-                      </p>
+                      <input
+                        type={'text'}
+                        className="article-title-body"
+                        onChange={e => this.handleChangeTitle(e.target.value)}
+                        value={this.props.editArticle.title}
+                      />
+                      <textarea
+                        type={'text'}
+                        className="article-body-textarea"
+                        onChange={e => this.handleChangeBody(e.target.value)}
+                        value={this.props.editArticle.body}
+                      />
+                      {/* <textarea
+                        onChange={e => this.handleChangeBody(e.target.value)}
+                        value={this.props.editArticle.body}
+                      /> */}
                     </article>
                   </div>
                 </PerfectScrollbar>
               </div>
 
               <div className="news-footer">
-                <div className="settings-save schema-save">Опубликовать</div>
+                <div onClick={this.handleUpdateArticle} className="settings-save schema-save">
+                  Опубликовать
+                </div>
               </div>
             </div>
           </div>
@@ -149,8 +175,9 @@ export default connect(
       articles: state.articles.articlesList,
       portalNewsIsLoading: state.portal.isLoading,
       portalNewsIsLoaded: state.portal.isLoaded,
-      portalNews: state.portal.portalNews
+      portalNews: state.portal.portalNews,
+      editArticle: state.editArticle
     }
   },
-  { getArticles, getPortalNews }
+  { getArticles, getPortalNews, changeTitle, changeBody, updateArticle }
 )(News)

@@ -2,11 +2,15 @@ import React from 'react'
 import CustomCheckbox from '../../../commmon/CustomCheckbox/CustomCheckbox'
 import { connect } from 'react-redux'
 import { delArticle } from '../../../../actions'
+import { editArticle } from '../../../../modules/editArticle'
 
 const Article = props => {
   const title = props.title.slice(0, 15)
   const handleDeleteArticle = () => {
     props.delArticle(props.id)
+  }
+  const handleEditArticle = () => {
+    props.editArticle(props.id, props.title, props.image, props.body)
   }
   return (
     <div className="news-item">
@@ -14,7 +18,7 @@ const Article = props => {
         <div className={'news-buttons'}>
           <div className={'new-title'}>{title}</div>
           <div className="mask-image" />
-          <div className={'news-edit'}>
+          <div onClick={handleEditArticle} className={'news-edit'}>
             <div className="icon" />
           </div>
           <div onClick={handleDeleteArticle} className={'news-delete'}>
@@ -31,5 +35,5 @@ const Article = props => {
 
 export default connect(
   null,
-  { delArticle }
+  { delArticle, editArticle }
 )(Article)

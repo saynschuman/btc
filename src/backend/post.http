@@ -1,0 +1,10 @@
+POST https://atc-bl.nadzor.online/bl198765/admin/news/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQxNjE4NjEyLCJleHAiOjE1NDE2MjIyMTJ9.h_Hm7HcJ6rh0-BJavtg6BGZbuCLGouZ4E82PAmVXPkM  
+Content-Type: application/json
+
+{
+	"title": "123",
+	"body": "lorem ipsum dolor",
+	"pictureBase64": "https://via.placeholder.com/100x200",
+	"isPinned": true
+}
