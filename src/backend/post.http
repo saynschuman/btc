@@ -1,10 +1,10 @@
 POST https://atc-bl.nadzor.online/bl198765/admin/news/ HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQxNjE4NjEyLCJleHAiOjE1NDE2MjIyMTJ9.h_Hm7HcJ6rh0-BJavtg6BGZbuCLGouZ4E82PAmVXPkM  
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQxNjIyMjU1LCJleHAiOjE1NDE2MjU4NTV9.JRmPSx6zCfllFvoagqrf-73r_wqt78_QPLY9wulnI7E  
 Content-Type: application/json
 
 {
-	"title": "123",
-	"body": "lorem ipsum dolor",
-	"pictureBase64": "https://via.placeholder.com/100x200",
+	"title": "Новость 6",
+	"body": "lorem ipsum dolor sit emmet",
+	"pictureBase64": "",
 	"isPinned": true
 }

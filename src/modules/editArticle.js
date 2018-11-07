@@ -4,6 +4,8 @@ const EDIT_ARTICLE = 'EDIT_ARTICLE'
 const UPDATE_ARTICLE = 'UPDATE_ARTICLE'
 const CHANGE_TITLE = 'CHANGE_TITLE'
 const CHANGE_BODY = 'CHANGE_BODY'
+const CHANGE_IMAGE = 'CHANGE_IMAGE'
+const DELETE_IMAGE = 'DELETE_IMAGE'
 
 const initialState = {
   id: '',
@@ -39,6 +41,16 @@ export default function(state = initialState, action) {
       return {
         ...state,
         body: action.body
+      }
+    case CHANGE_IMAGE:
+      return {
+        ...state,
+        image: action.image
+      }
+    case DELETE_IMAGE:
+      return {
+        ...state,
+        image: ''
       }
     default:
       return state
@@ -87,5 +99,18 @@ export const changeBody = body => dispatch => {
   dispatch({
     type: CHANGE_BODY,
     body
+  })
+}
+
+export const changeImage = image => dispatch => {
+  dispatch({
+    type: CHANGE_IMAGE,
+    image
+  })
+}
+
+export const deleteImage = image => dispatch => {
+  dispatch({
+    type: DELETE_IMAGE
   })
 }

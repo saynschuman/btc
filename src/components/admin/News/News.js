@@ -2,7 +2,13 @@ import React from 'react'
 import './News.scss'
 import moment from 'moment'
 import { getArticles, getPortalNews } from '../../../actions'
-import { updateArticle, changeTitle, changeBody } from '../../../modules/editArticle'
+import {
+  updateArticle,
+  changeTitle,
+  changeBody,
+  changeImage,
+  deleteImage
+} from '../../../modules/editArticle'
 import { connect } from 'react-redux'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import AdminsLoader from '../AdminSettings/AdminsLoader/AdminsLoader'
@@ -10,6 +16,7 @@ import ReportsLoader from '../AdminReports/ReportsLoader/ReportsLoader'
 import Article from './components/Article'
 import PortalNews from './components/PortalNews'
 import PortalNewsMobile from './components/PortalNewsMobile'
+import ReactFileReader from 'react-file-reader'
 
 class News extends React.Component {
   componentDidMount() {
@@ -21,6 +28,13 @@ class News extends React.Component {
   }
   handleChangeBody = e => {
     this.props.changeBody(e)
+  }
+  handleChangeImage = e => {
+    this.props.changeImage(e.base64[0])
+    // console.log(e.base64[0])
+  }
+  handleDeleteImage = () => {
+    this.props.deleteImage()
   }
   handleUpdateArticle = () => {
     this.props.updateArticle(
@@ -83,7 +97,19 @@ class News extends React.Component {
                     <div
                       className="featured-image"
                       style={{ backgroundImage: `url(${this.props.editArticle.image})` }}
-                    />
+                    >
+                      <div>
+                        <ReactFileReader
+                          fileTypes={['.jpg', '.png']}
+                          base64={true}
+                          multipleFiles={true}
+                          handleFiles={this.handleChangeImage}
+                        >
+                          <div className="uppload-image" />
+                        </ReactFileReader>
+                        <div className="delete-image" onClick={this.handleDeleteImage} />
+                      </div>
+                    </div>
                     <article>
                       <input
                         type={'text'}
@@ -179,5 +205,5 @@ export default connect(
       editArticle: state.editArticle
     }
   },
-  { getArticles, getPortalNews, changeTitle, changeBody, updateArticle }
+  { getArticles, getPortalNews, changeTitle, changeBody, updateArticle, changeImage, deleteImage }
 )(News)
