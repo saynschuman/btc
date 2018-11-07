@@ -1,0 +1,11 @@
+[ver:1,total:2760]
+src/components/admin/News/News.js:932,1541620800:890,1541624400:42,m
+src/backend/post.http:665,1541620800:380,1541624400:285,m
+src/modules/editArticle.js:356,1541620800:329,1541624400:27,m
+src/backend/api.js:248,1541620800:240,1541624400:8,r
+src/components/admin/News/News.scss:247,1541620800:235,1541624400:12,m
+src/App.js:95,1541620800:35,1541624400:60,r
+src/components/admin/News/components/Article.js:87,1541620800:75,1541624400:12,r
+src/reducer/articles.js:65,1541620800:8,1541624400:57,r
+src/actions/index.js:35,1541620800:8,1541624400:27,r
+src/backend/put.http:30,1541620800:20,1541624400:10,r
