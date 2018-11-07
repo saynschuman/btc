@@ -1,14 +1,15 @@
-import { combineReducers } from "redux";
-import toggleMobileMenu from "../modules/toggleMobileMenu";
-import admins from "./admins";
-import investors from "./investors";
-import reports from "./reports";
-import articles from "./articles";
-import portal from "./portal";
-import adminHomePageData from "./adminHomePageData";
-import authData from "./authData";
-import course from "./course";
-import courseHistory from "./courseHistory";
+import { combineReducers } from 'redux'
+import toggleMobileMenu from '../modules/toggleMobileMenu'
+import admins from './admins'
+import investors from './investors'
+import reports from './reports'
+import articles from './articles'
+import portal from './portal'
+import adminHomePageData from './adminHomePageData'
+import authData from './authData'
+import course from './course'
+import courseHistory from './courseHistory'
+import agreement from './agreement'
 
 export default combineReducers({
   adminHomePageData,
@@ -20,5 +21,6 @@ export default combineReducers({
   portal,
   authData,
   course,
-  courseHistory
-});
+  courseHistory,
+  agreement
+})

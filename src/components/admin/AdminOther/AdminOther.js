@@ -1,20 +1,21 @@
-import React from "react";
-import "./AdminOther.scss";
-import PerfectScrollbar from "react-perfect-scrollbar";
-import { getYieldList } from "../../../actions";
-import { connect } from "react-redux";
-import ReportsLoader from "../AdminReports/ReportsLoader/ReportsLoader";
-import AdminsLoader from "../AdminSettings/AdminsLoader/AdminsLoader";
-import YieldTable from "./components/YieldTable";
-import YieldTableMobile from "./components/YieldTableMobile";
+import React from 'react'
+import './AdminOther.scss'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import { getYieldList, getAgreement } from '../../../actions'
+import { connect } from 'react-redux'
+import ReportsLoader from '../AdminReports/ReportsLoader/ReportsLoader'
+import AdminsLoader from '../AdminSettings/AdminsLoader/AdminsLoader'
+import YieldTable from './components/YieldTable'
+import YieldTableMobile from './components/YieldTableMobile'
 
 class AdminOther extends React.Component {
   componentDidMount() {
-    !this.props.isLoaded && this.props.getYieldList();
+    !this.props.isLoaded && this.props.getYieldList()
+    !this.agreementIsLoaded && this.props.getAgreement()
   }
   render() {
     return (
-      <div className={"admin-body other-page"}>
+      <div className={'admin-body other-page'}>
         <div className="clearfix">
           <div className="col col-50 left">
             <div className="admin-block">
@@ -26,37 +27,8 @@ class AdminOther extends React.Component {
               <div className="other-body">
                 <PerfectScrollbar>
                   <div className="body-inner">
-                    <p>
-                      Повседневная практика показывает, что курс на
-                      социально-ориентированный национальный проект требует
-                      определения и уточнения системы обучения кадров,
-                      соответствующей насущным потребностям.
-                    </p>
-
-                    <p>
-                      Задача организации, в особенности же дальнейшее развитие
-                      различных форм деятельности влечет за собой процесс
-                      внедрения и модернизации дальнейших направлений развитая
-                      системы массового участия!
-                    </p>
-
-                    <p>Разнообразный и богатый опыт рамки и место обучения.</p>
-
-                    <p>
-                      Повседневная практика показывает, что курс на
-                      социально-ориентированный национальный проект требует
-                      определения и уточнения системы обучения кадров,
-                      соответствующей насущным потребностям.
-                    </p>
-
-                    <p>Разнообразный и богатый опыт рамки и место обучения.</p>
-
-                    <p>
-                      Задача организации, в особенности же дальнейшее развитие
-                      различных форм деятельности влечет за собой процесс
-                      внедрения и модернизации дальнейших направлений развитая
-                      системы массового участия!
-                    </p>
+                    {this.props.agreementIsLoading && 'Загружается...'}
+                    {this.props.agreementIsLoadув && this.props.agreement}
                   </div>
                 </PerfectScrollbar>
               </div>
@@ -75,7 +47,7 @@ class AdminOther extends React.Component {
               </div>
               <div className="other-body">
                 <div className="settings-body-desktop">
-                  <PerfectScrollbar className={"no-ver-scrl"}>
+                  <PerfectScrollbar className={'no-ver-scrl'}>
                     <div className="right-body-inner">
                       <table className="settings-table">
                         <tbody>
@@ -95,7 +67,7 @@ class AdminOther extends React.Component {
                   </PerfectScrollbar>
                 </div>
                 <div className="settings-body-mobile">
-                  <PerfectScrollbar className={"edit-admins-mobile"}>
+                  <PerfectScrollbar className={'edit-admins-mobile'}>
                     {this.props.isLoading && <AdminsLoader />}
                     {this.props.isLoaded &&
                       this.props.yieldList.map((report, index) => {
@@ -106,7 +78,7 @@ class AdminOther extends React.Component {
                             month={report.month}
                             yield={report.yield}
                           />
-                        );
+                        )
                       })}
                   </PerfectScrollbar>
                 </div>
@@ -118,17 +90,24 @@ class AdminOther extends React.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
 export default connect(
   state => {
+    const yieldListNormalized = Object.keys(state.reports.yieldList).map(item => ({
+      month: item,
+      yield: state.reports.yieldList[item]
+    }))
     return {
       isLoading: state.reports.yieldListIsLoading,
       isLoaded: state.reports.yieldListIsLoaded,
-      yieldList: state.reports.yieldList
-    };
+      yieldList: yieldListNormalized,
+      agreementIsLoaded: state.agreement.isLoaded,
+      agreementIsLoading: state.agreement.isLoading,
+      agreement: state.agreement.agreement
+    }
   },
-  { getYieldList }
-)(AdminOther);
+  { getYieldList, getAgreement }
+)(AdminOther)
