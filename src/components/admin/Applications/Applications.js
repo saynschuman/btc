@@ -1,37 +1,32 @@
-import React from "react";
-import "./Applications.scss";
-import PerfectScrollbar from "react-perfect-scrollbar";
-import ReportsLoader from "../AdminReports/ReportsLoader/ReportsLoader";
-import ApplicationsTable from "./components/ApplicationsTable";
-import AdminsLoader from "../AdminSettings/AdminsLoader/AdminsLoader";
-import ApplicationsTableMobile from "./components/ApplicationsTableMobile";
-import connect from "react-redux/es/connect/connect";
-import {
-  getRequestApplications,
-  getHistoryApplications
-} from "../../../actions";
-import ApplicationsHistory from "./components/ApplicationsHistory";
-import ApplicationsHistoryMobile from "./components/ApplicationsHistoryMobile";
-import moment from "moment";
+import React from 'react'
+import './Applications.scss'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import ReportsLoader from '../AdminReports/ReportsLoader/ReportsLoader'
+import ApplicationsTable from './components/ApplicationsTable'
+import AdminsLoader from '../AdminSettings/AdminsLoader/AdminsLoader'
+import ApplicationsTableMobile from './components/ApplicationsTableMobile'
+import connect from 'react-redux/es/connect/connect'
+import { getRequestApplications, getHistoryApplications } from '../../../actions'
+import ApplicationsHistory from './components/ApplicationsHistory'
+import ApplicationsHistoryMobile from './components/ApplicationsHistoryMobile'
+import moment from 'moment'
 
 class Applications extends React.Component {
   componentDidMount() {
-    !this.props.isLoaded && this.props.getRequestApplications();
-    !this.props.isLoaded && this.props.getHistoryApplications();
+    !this.props.isLoaded && this.props.getRequestApplications()
+    !this.props.isLoaded && this.props.getHistoryApplications()
   }
   render() {
     return (
-      <div className={"admin-body"}>
-        <div className={"admin-block"}>
+      <div className={'admin-body'}>
+        <div className={'admin-block'}>
           <div className="table-reports report-investors">
             <div className="settings-header">
-              Таблица начислений инвестора за {moment(new Date()).format("l")}
+              Таблица начислений инвестора за {moment(new Date()).format('l')}
             </div>
             <div className="settings-body settings-body-desktop">
-              <PerfectScrollbar className={"edit-admins-desktop"}>
-                <table
-                  className={"settings-table reports-table applications-table"}
-                >
+              <PerfectScrollbar className={'edit-admins-desktop'}>
+                <table className={'settings-table reports-table applications-table'}>
                   <tbody>
                     <tr>
                       <th>Дата и время заявки</th>
@@ -65,14 +60,14 @@ class Applications extends React.Component {
                             idAdmAplied={report.idAdmAplied}
                             accept={report.accept}
                           />
-                        );
+                        )
                       })}
                   </tbody>
                 </table>
               </PerfectScrollbar>
             </div>
             <div className="settings-body settings-body-mobile">
-              <PerfectScrollbar className={"edit-admins-mobile"}>
+              <PerfectScrollbar className={'edit-admins-mobile'}>
                 {this.props.isLoading && <AdminsLoader />}
                 {this.props.isLoaded &&
                   this.props.requestApplications.map(report => {
@@ -91,25 +86,21 @@ class Applications extends React.Component {
                         idAdmAplied={report.idAdmAplied}
                         accept={report.accept}
                       />
-                    );
+                    )
                   })}
               </PerfectScrollbar>
             </div>
             <div className="setting-footer">
-              <button className={"save-applies settings-save"}>
-                Сохранить одобрения
-              </button>
+              <button className={'save-applies settings-save'}>Сохранить одобрения</button>
             </div>
           </div>
         </div>
-        <div className={"admin-block"}>
+        <div className={'admin-block'}>
           <div className="table-reports report-investors">
             <div className="settings-header">История одобренных заявок</div>
             <div className="settings-body settings-body-desktop">
-              <PerfectScrollbar className={"edit-admins-desktop"}>
-                <table
-                  className={"settings-table reports-table applications-table"}
-                >
+              <PerfectScrollbar className={'edit-admins-desktop'}>
+                <table className={'settings-table reports-table applications-table'}>
                   <tbody>
                     <tr>
                       <th>Дата и время заявки</th>
@@ -123,9 +114,7 @@ class Applications extends React.Component {
                       <th>ID админ., одобривших заявку</th>
                       <th>Сумма к выплате, BTC</th>
                     </tr>
-                    {this.props.historyApplicationsIsLoading && (
-                      <ReportsLoader />
-                    )}
+                    {this.props.historyApplicationsIsLoading && <ReportsLoader />}
                     {this.props.historyApplicationsIsLoaded &&
                       this.props.historyApplications.map(report => {
                         return (
@@ -142,14 +131,14 @@ class Applications extends React.Component {
                             idAdmAplied={report.idAdmAplied}
                             summ={report.summ}
                           />
-                        );
+                        )
                       })}
                   </tbody>
                 </table>
               </PerfectScrollbar>
             </div>
             <div className="settings-body settings-body-mobile">
-              <PerfectScrollbar className={"edit-admins-mobile"}>
+              <PerfectScrollbar className={'edit-admins-mobile'}>
                 {this.props.historyApplicationsIsLoading && <AdminsLoader />}
                 {this.props.historyApplicationsIsLoaded &&
                   this.props.historyApplications.map(report => {
@@ -167,7 +156,7 @@ class Applications extends React.Component {
                         idAdmAplied={report.idAdmAplied}
                         summ={report.summ}
                       />
-                    );
+                    )
                   })}
               </PerfectScrollbar>
             </div>
@@ -175,7 +164,7 @@ class Applications extends React.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -187,8 +176,8 @@ export default connect(
       requestApplications: state.reports.requestApplications,
       historyApplicationsIsLoading: state.reports.historyApplicationsIsLoading,
       historyApplicationsIsLoaded: state.reports.historyApplicationsIsLoaded,
-      historyApplications: state.reports.historyApplications
-    };
+      historyApplications: state.reports.historyApplications,
+    }
   },
   { getRequestApplications, getHistoryApplications }
-)(Applications);
+)(Applications)

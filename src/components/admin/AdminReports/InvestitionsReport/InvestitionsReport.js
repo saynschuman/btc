@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 class InvestitionsReport extends React.Component {
   render() {
@@ -9,14 +9,14 @@ class InvestitionsReport extends React.Component {
         <td>{this.props.investorId}</td>
         <td>{this.props.name}</td>
         <td> {this.props.surName}</td>
-        <td className={"green"}>{this.props.startSumm}</td>
-        <td className={"blue"}>{this.props.leftInv}</td>
+        <td className={'green'}>{this.props.startSumm}</td>
+        <td className={'blue'}>{this.props.leftInv}</td>
         <td>{this.props.koef}</td>
         <td>{this.props.dateEnd}</td>
-        <td className={"green"}>{this.props.alreadyPayed}</td>
+        <td className={'green'}>{this.props.alreadyPayed}</td>
       </tr>
-    );
+    )
   }
 }
 
-export default InvestitionsReport;
+export default InvestitionsReport

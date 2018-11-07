@@ -1,37 +1,37 @@
-import React from "react";
-import "./AdminReports.scss";
-import classNames from "classnames";
-import PerfectScrollbar from "react-perfect-scrollbar";
-import InvestorReport from "./InvestorReport/InvestorReport";
-import { connect } from "react-redux";
-import { getInvestorsReport, getInvestitionsReport } from "../../../actions";
-import ReportsLoader from "../AdminReports/ReportsLoader/ReportsLoader";
-import AdminsLoader from "../AdminSettings/AdminsLoader/AdminsLoader";
-import InvestorReportMobile from "./InvestorReportMobile/InvestorReportMobile";
-import InvestitionsReport from "./InvestitionsReport/InvestitionsReport";
-import InvestitionsReportMobile from "./InvestitionsReportMobile/InvestitionsReportMobile";
+import React from 'react'
+import './AdminReports.scss'
+import classNames from 'classnames'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import InvestorReport from './InvestorReport/InvestorReport'
+import { connect } from 'react-redux'
+import { getInvestorsReport, getInvestitionsReport } from '../../../actions'
+import ReportsLoader from '../AdminReports/ReportsLoader/ReportsLoader'
+import AdminsLoader from '../AdminSettings/AdminsLoader/AdminsLoader'
+import InvestorReportMobile from './InvestorReportMobile/InvestorReportMobile'
+import InvestitionsReport from './InvestitionsReport/InvestitionsReport'
+import InvestitionsReportMobile from './InvestitionsReportMobile/InvestitionsReportMobile'
 
 class AdminReports extends React.Component {
   componentDidMount() {
-    this.props.getInvestorsReport();
-    this.props.getInvestitionsReport();
+    this.props.getInvestorsReport()
+    this.props.getInvestitionsReport()
   }
   state = {
     investors: true,
-    investitions: false
-  };
+    investitions: false,
+  }
   handleTabs = () => {
     this.setState({
       investors: !this.state.investors,
-      investitions: !this.state.investitions
-    });
-  };
+      investitions: !this.state.investitions,
+    })
+  }
   render() {
     return (
       <div className="admin-body">
         <div className="clearfix">
           <div className="col col-50 left">
-            <div className={"admin-block"}>
+            <div className={'admin-block'}>
               <div className="block-header">
                 <div className="header-title title-report">
                   Количество зарегистрированных инвесторов в проекте
@@ -41,23 +41,21 @@ class AdminReports extends React.Component {
             </div>
           </div>
           <div className="col col-50 right">
-            <div className={"admin-block"}>
+            <div className={'admin-block'}>
               <div className="block-header">
-                <div className="header-title title-report">
-                  Сумма инвестиций в проекте
-                </div>
+                <div className="header-title title-report">Сумма инвестиций в проекте</div>
               </div>
               <p className="block-body">{this.props.investmentsCount}</p>
             </div>
           </div>
         </div>
-        <div className={"admin-block"}>
+        <div className={'admin-block'}>
           <div className="nav-tabs">
             <ul>
               <li
                 onClick={this.handleTabs}
                 className={classNames({
-                  "not-active": !this.state.investors
+                  'not-active': !this.state.investors,
                 })}
               >
                 Отчеты по инвесторам
@@ -65,7 +63,7 @@ class AdminReports extends React.Component {
               <li
                 onClick={this.handleTabs}
                 className={classNames({
-                  "not-active": !this.state.investitions
+                  'not-active': !this.state.investitions,
                 })}
               >
                 Отчеты по инвестициям
@@ -73,17 +71,13 @@ class AdminReports extends React.Component {
             </ul>
           </div>
           <div className="search">
-            <input
-              className={"search-reports"}
-              type="text"
-              placeholder={"Введите данные"}
-            />
+            <input className={'search-reports'} type="text" placeholder={'Введите данные'} />
           </div>
           {this.state.investors && (
             <div className="table-reports report-investors">
               <div className="settings-body settings-body-desktop">
-                <PerfectScrollbar className={"edit-admins-desktop"}>
-                  <table className={"settings-table reports-table"}>
+                <PerfectScrollbar className={'edit-admins-desktop'}>
+                  <table className={'settings-table reports-table'}>
                     <tbody>
                       <tr>
                         <th>ID инвестора</th>
@@ -109,14 +103,14 @@ class AdminReports extends React.Component {
                               phone={report.phone}
                               email={report.email}
                             />
-                          );
+                          )
                         })}
                     </tbody>
                   </table>
                 </PerfectScrollbar>
               </div>
               <div className="settings-body settings-body-mobile">
-                <PerfectScrollbar className={"edit-admins-mobile"}>
+                <PerfectScrollbar className={'edit-admins-mobile'}>
                   {this.props.isLoading && <AdminsLoader />}
                   {this.props.isLoaded &&
                     this.props.investorsReports.map(report => {
@@ -131,7 +125,7 @@ class AdminReports extends React.Component {
                           phone={report.phone}
                           email={report.email}
                         />
-                      );
+                      )
                     })}
                 </PerfectScrollbar>
               </div>
@@ -140,12 +134,8 @@ class AdminReports extends React.Component {
           {this.state.investitions && (
             <div className="table-reports report-investitions">
               <div className="settings-body settings-body-desktop">
-                <PerfectScrollbar className={"edit-admins-desktop"}>
-                  <table
-                    className={
-                      "settings-table reports-table investitions-table-desk"
-                    }
-                  >
+                <PerfectScrollbar className={'edit-admins-desktop'}>
+                  <table className={'settings-table reports-table investitions-table-desk'}>
                     <tbody>
                       <tr>
                         <th>ID инвестиции</th>
@@ -176,14 +166,14 @@ class AdminReports extends React.Component {
                               dateEnd={report.dateEnd}
                               alreadyPayed={report.alreadyPayed}
                             />
-                          );
+                          )
                         })}
                     </tbody>
                   </table>
                 </PerfectScrollbar>
               </div>
               <div className="settings-body settings-body-mobile">
-                <PerfectScrollbar className={"edit-admins-mobile"}>
+                <PerfectScrollbar className={'edit-admins-mobile'}>
                   {this.props.isLoading && <AdminsLoader />}
                   {this.props.isLoaded &&
                     this.props.investitions.map(report => {
@@ -201,7 +191,7 @@ class AdminReports extends React.Component {
                           dateEnd={report.dateEnd}
                           alreadyPayed={report.alreadyPayed}
                         />
-                      );
+                      )
                     })}
                 </PerfectScrollbar>
               </div>
@@ -209,7 +199,7 @@ class AdminReports extends React.Component {
           )}
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -223,9 +213,8 @@ export default connect(
       investitionsIsLoading: state.reports.investitionsIsLoading,
       investitionsIsLoaded: state.reports.investitionsIsLoaded,
       investorsCount: state.adminHomePageData.adminHomePageData.totalInvestors,
-      investmentsCount:
-        state.adminHomePageData.adminHomePageData.totalActiveInvestments
-    };
+      investmentsCount: state.adminHomePageData.adminHomePageData.totalActiveInvestments,
+    }
   },
   { getInvestorsReport, getInvestitionsReport }
-)(AdminReports);
+)(AdminReports)

@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 
 class InvestitionsReportMobile extends React.Component {
   render() {
     return (
-      <div className={"settings-table-mobile investitions-mobile"}>
-        <table className={"settings-table reports-table"}>
+      <div className={'settings-table-mobile investitions-mobile'}>
+        <table className={'settings-table reports-table'}>
           <tbody>
             <tr>
               <td>ID инвестиции</td>
@@ -49,8 +49,8 @@ class InvestitionsReportMobile extends React.Component {
           </tbody>
         </table>
       </div>
-    );
+    )
   }
 }
 
-export default InvestitionsReportMobile;
+export default InvestitionsReportMobile

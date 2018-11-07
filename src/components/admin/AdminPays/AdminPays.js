@@ -1,34 +1,32 @@
-import React from "react";
-import "./AdminPays.scss";
-import PerfectScrollbar from "react-perfect-scrollbar";
-import { connect } from "react-redux";
-import ReportsLoader from "../AdminReports/ReportsLoader/ReportsLoader";
-import AdminsLoader from "../AdminSettings/AdminsLoader/AdminsLoader";
-import PaysTable from "./components/PaysTable";
-import PaysTableMobile from "./components/PaysTableMobile";
-import { getChargeTable } from "../../../actions";
-import moment from "moment";
+import React from 'react'
+import './AdminPays.scss'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import { connect } from 'react-redux'
+import ReportsLoader from '../AdminReports/ReportsLoader/ReportsLoader'
+import AdminsLoader from '../AdminSettings/AdminsLoader/AdminsLoader'
+import PaysTable from './components/PaysTable'
+import PaysTableMobile from './components/PaysTableMobile'
+import { getChargeTable } from '../../../actions'
+import moment from 'moment'
 
 class AdminPays extends React.Component {
   componentDidMount() {
-    !this.props.isLoaded && this.props.getChargeTable();
+    !this.props.isLoaded && this.props.getChargeTable()
   }
   render() {
     return (
       <div className="admin-body">
         <div className="clearfix">
           <div className="col col-50 left">
-            <div className={"admin-block"}>
+            <div className={'admin-block'}>
               <div className="block-header">
-                <div className="header-title title-report">
-                  Баланс BTC на кошельке платформы
-                </div>
+                <div className="header-title title-report">Баланс BTC на кошельке платформы</div>
               </div>
               <p className="block-body">0</p>
             </div>
           </div>
           <div className="col col-50 right">
-            <div className={"admin-block"}>
+            <div className={'admin-block'}>
               <div className="block-header">
                 <div className="header-title title-report">
                   Добытый BTC системой за прошедший период (7 дней)
@@ -38,14 +36,14 @@ class AdminPays extends React.Component {
             </div>
           </div>
         </div>
-        <div className={"admin-block"}>
+        <div className={'admin-block'}>
           <div className="table-reports report-investors">
             <div className="settings-header">
-              Таблица начислений инвестора за {moment(new Date()).format("l")}
+              Таблица начислений инвестора за {moment(new Date()).format('l')}
             </div>
             <div className="settings-body settings-body-desktop">
-              <PerfectScrollbar className={"edit-admins-desktop"}>
-                <table className={"settings-table reports-table"}>
+              <PerfectScrollbar className={'edit-admins-desktop'}>
+                <table className={'settings-table reports-table'}>
                   <tbody>
                     <tr>
                       <th>ID инвестора</th>
@@ -70,14 +68,14 @@ class AdminPays extends React.Component {
                             koef={report.koef}
                             payed={report.payed}
                           />
-                        );
+                        )
                       })}
                   </tbody>
                 </table>
               </PerfectScrollbar>
             </div>
             <div className="settings-body settings-body-mobile">
-              <PerfectScrollbar className={"edit-admins-mobile"}>
+              <PerfectScrollbar className={'edit-admins-mobile'}>
                 {this.props.isLoading && <AdminsLoader />}
                 {this.props.isLoaded &&
                   this.props.chargeTable.map(report => {
@@ -92,7 +90,7 @@ class AdminPays extends React.Component {
                         koef={report.koef}
                         payed={report.payed}
                       />
-                    );
+                    )
                   })}
               </PerfectScrollbar>
             </div>
@@ -107,7 +105,7 @@ class AdminPays extends React.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -116,8 +114,8 @@ export default connect(
     return {
       isLoading: state.reports.chargeTableIsLoading,
       isLoaded: state.reports.chargeTableIsLoaded,
-      chargeTable: state.reports.chargeTable
-    };
+      chargeTable: state.reports.chargeTable,
+    }
   },
   { getChargeTable }
-)(AdminPays);
+)(AdminPays)

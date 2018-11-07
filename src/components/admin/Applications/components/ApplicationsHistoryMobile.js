@@ -1,14 +1,10 @@
-import React from "react";
+import React from 'react'
 
 class ApplicationsHistoryMobile extends React.Component {
   render() {
     return (
-      <div
-        className={
-          "settings-table-mobile application-mobile-settings investitions-mobile"
-        }
-      >
-        <table className={"settings-table reports-table"}>
+      <div className={'settings-table-mobile application-mobile-settings investitions-mobile'}>
+        <table className={'settings-table reports-table'}>
           <tbody>
             <tr>
               <td>Дата и время заявки</td>
@@ -53,8 +49,8 @@ class ApplicationsHistoryMobile extends React.Component {
           </tbody>
         </table>
       </div>
-    );
+    )
   }
 }
 
-export default ApplicationsHistoryMobile;
+export default ApplicationsHistoryMobile

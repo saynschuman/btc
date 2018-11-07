@@ -1,15 +1,11 @@
-import React from "react";
-import CustomCheckbox from "../../../commmon/CustomCheckbox/CustomCheckbox";
+import React from 'react'
+import CustomCheckbox from '../../../commmon/CustomCheckbox/CustomCheckbox'
 
 class ApplicationsTableMobile extends React.Component {
   render() {
     return (
-      <div
-        className={
-          "settings-table-mobile application-mobile-settings investitions-mobile"
-        }
-      >
-        <table className={"settings-table reports-table"}>
+      <div className={'settings-table-mobile application-mobile-settings investitions-mobile'}>
+        <table className={'settings-table reports-table'}>
           <tbody>
             <tr>
               <td>Дата и время заявки</td>
@@ -61,8 +57,8 @@ class ApplicationsTableMobile extends React.Component {
         </table>
         <div className="close-button-admin-moblie">Удалить</div>
       </div>
-    );
+    )
   }
 }
 
-export default ApplicationsTableMobile;
+export default ApplicationsTableMobile

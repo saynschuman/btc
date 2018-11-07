@@ -33,8 +33,8 @@ import {
   GET_CORSE_REQUEST,
   GET_CORSE_RESPONSE,
   GET_CORSE_HISTORY_REQUEST,
-  GET_CORSE_HISTORY_RESPONSE
-} from "../constants";
+  GET_CORSE_HISTORY_RESPONSE,
+} from '../constants'
 import {
   getAdminsFromServer,
   getInvestorsFromServer,
@@ -47,62 +47,62 @@ import {
   getSchemaSettingsFromServer,
   getYieldListFromServer,
   getArticlesFromServer,
-  getPortalNewsFromServer
-} from "../backend/api";
+  getPortalNewsFromServer,
+} from '../backend/api'
 
 export const authData = data => dispatch => {
   dispatch({
-    type: AUTH_REQUEST
-  });
+    type: AUTH_REQUEST,
+  })
 
-  fetch("https://atc-bl.nadzor.online/bl198765/admin/login", {
-    method: "post",
+  fetch('https://atc-bl.nadzor.online/bl198765/admin/login', {
+    method: 'post',
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       login: data.id,
-      password: data.password
-    })
+      password: data.password,
+    }),
   })
     .then(res => {
       if (res.status < 400) {
         return dispatch({
           type: AUTH_RESPONSE,
-          success: true
-        });
+          success: true,
+        })
       } else {
         return dispatch({
           type: AUTH_ERROR,
-          success: false
-        });
+          success: false,
+        })
       }
     })
     .catch(error => {
-      console.log(error.status);
+      console.log(error.status)
       if (error.status < 400) {
         return dispatch({
           type: AUTH_RESPONSE,
-          success: true
-        });
+          success: true,
+        })
       } else {
         return dispatch({
           type: AUTH_ERROR,
-          success: false
-        });
+          success: false,
+        })
       }
-    });
-};
+    })
+}
 
 export const getHomePageAdminData = () => dispatch => {
   dispatch({
-    type: REQUEST_HOMEPAGE_DATA
-  });
+    type: REQUEST_HOMEPAGE_DATA,
+  })
 
-  fetch("https://atc-bl.nadzor.online/bl198765/admin/platform/", {
+  fetch('https://atc-bl.nadzor.online/bl198765/admin/platform/', {
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`
-    }
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
   })
     .then(res => res.json())
     .then(res => res)
@@ -111,265 +111,265 @@ export const getHomePageAdminData = () => dispatch => {
         type: RESPONSE_HOMEPAGE_DATA,
         payload: {
           adminHomePageData: res,
-          isError: false
-        }
-      });
+          isError: false,
+        },
+      })
     })
     .catch(error => {
-      console.log(error);
+      console.log(error)
       return dispatch({
         type: ERROR_HOMEPAGE_DATA,
         payload: {
-          isError: true
-        }
-      });
-    });
-};
+          isError: true,
+        },
+      })
+    })
+}
 
 export const getAdmins = () => dispatch => {
   dispatch({
-    type: ADMINS_REQUEST
-  });
+    type: ADMINS_REQUEST,
+  })
   const promise = new Promise(resolve => {
-    resolve(getAdminsFromServer());
-  });
+    resolve(getAdminsFromServer())
+  })
 
   promise.then(result => {
-    console.log(result);
+    console.log(result)
     return dispatch({
       type: ADMINS_RESPONSE,
-      adminList: result
-    });
-  });
-};
+      adminList: result,
+    })
+  })
+}
 
 export const getInvestors = () => dispatch => {
   dispatch({
-    type: INVESTORS_REQUEST
-  });
+    type: INVESTORS_REQUEST,
+  })
   const promise = new Promise(resolve => {
-    resolve(getInvestorsFromServer());
-  });
+    resolve(getInvestorsFromServer())
+  })
 
   promise.then(result => {
-    console.log(result);
+    console.log(result)
     return dispatch({
       type: INVESTORS_RESPONSE,
-      investorsList: result
-    });
-  });
-};
+      investorsList: result,
+    })
+  })
+}
 
 export const getCourse = () => dispatch => {
   dispatch({
-    type: GET_CORSE_REQUEST
-  });
-  fetch("https://atc-bl.nadzor.online/bl198765/platform/rates")
+    type: GET_CORSE_REQUEST,
+  })
+  fetch('https://atc-bl.nadzor.online/bl198765/platform/rates')
     .then(res => res.json())
     .then(res => {
-      return dispatch({ type: GET_CORSE_RESPONSE, course: res });
-    });
-};
+      return dispatch({ type: GET_CORSE_RESPONSE, course: res })
+    })
+}
 
 export const getCourseHistory = () => dispatch => {
   dispatch({
-    type: GET_CORSE_HISTORY_REQUEST
-  });
-  fetch("https://atc-bl.nadzor.online/bl198765/platform/ratesHistory?count=7")
+    type: GET_CORSE_HISTORY_REQUEST,
+  })
+  fetch('https://atc-bl.nadzor.online/bl198765/platform/ratesHistory?count=7')
     .then(res => res.json())
     .then(res => {
-      return dispatch({ type: GET_CORSE_HISTORY_RESPONSE, courseHistory: res });
-    });
-};
+      return dispatch({ type: GET_CORSE_HISTORY_RESPONSE, courseHistory: res })
+    })
+}
 
 export const getInvestorsReport = () => dispatch => {
   dispatch({
-    type: INVESTORS_REPORT_REQUEST
-  });
+    type: INVESTORS_REPORT_REQUEST,
+  })
   const promise = new Promise(resolve => {
-    resolve(getInvestorsReportFromServer());
-  });
+    resolve(getInvestorsReportFromServer())
+  })
 
   promise.then(result => {
-    console.log(result);
+    console.log(result)
     return dispatch({
       type: INVESTORS_REPORT_RESPONSE,
-      investorsReports: result
-    });
-  });
-};
+      investorsReports: result,
+    })
+  })
+}
 
 export const getInvestitionsReport = () => dispatch => {
   dispatch({
-    type: INVESTITIONS_REPORT_REQUEST
-  });
+    type: INVESTITIONS_REPORT_REQUEST,
+  })
   const promise = new Promise(resolve => {
-    resolve(getInvestitionsReportFromServer());
-  });
+    resolve(getInvestitionsReportFromServer())
+  })
 
   promise.then(result => {
-    console.log(result);
+    console.log(result)
     return dispatch({
       type: INVESTITIONS_REPORT_RESPONSE,
-      investitionsReports: result
-    });
-  });
-};
+      investitionsReports: result,
+    })
+  })
+}
 
 export const getChargeTable = () => dispatch => {
   dispatch({
-    type: CHARGE_TABLE_REQUEST
-  });
+    type: CHARGE_TABLE_REQUEST,
+  })
   const promise = new Promise(resolve => {
-    resolve(getChargeTableFromServer());
-  });
+    resolve(getChargeTableFromServer())
+  })
 
   promise
     .then(result => {
-      console.log(result);
+      console.log(result)
       return dispatch({
         type: CHARGE_TABLE_REPORT_RESPONSE,
-        chargeTable: result
-      });
+        chargeTable: result,
+      })
     })
     .catch(result => {
-      console.log(result);
+      console.log(result)
       return dispatch({
         type: CHARGE_TABLE_REPORT_RESPONSE,
-        chargeTable: []
-      });
-    });
-};
+        chargeTable: [],
+      })
+    })
+}
 
 export const getRequestApplications = () => dispatch => {
   dispatch({
-    type: REQUEST_REQUEST_APPLICATIONS
-  });
+    type: REQUEST_REQUEST_APPLICATIONS,
+  })
   const promise = new Promise(resolve => {
     setTimeout(() => {
-      resolve(getRequestApplicationsFromServer());
-    }, 200);
-  });
+      resolve(getRequestApplicationsFromServer())
+    }, 200)
+  })
 
   promise.then(result => {
-    console.log(result);
+    console.log(result)
     return dispatch({
       type: RESPONSE_REQUEST_APPLICATIONS,
-      requestApplications: result
-    });
-  });
-};
+      requestApplications: result,
+    })
+  })
+}
 
 export const getHistoryApplications = () => dispatch => {
   dispatch({
-    type: REQUEST_HISTORY_APPLICATIONS
-  });
+    type: REQUEST_HISTORY_APPLICATIONS,
+  })
   const promise = new Promise(resolve => {
     setTimeout(() => {
-      resolve(getHistoryApplicationsFromServer());
-    }, 200);
-  });
+      resolve(getHistoryApplicationsFromServer())
+    }, 200)
+  })
 
   promise.then(result => {
-    console.log(result);
+    console.log(result)
     return dispatch({
       type: RESPONSE_HISTORY_APPLICATIONS,
-      historyApplications: result
-    });
-  });
-};
+      historyApplications: result,
+    })
+  })
+}
 
 export const getInvestPeriod = () => dispatch => {
   dispatch({
-    type: REQUEST_INVEST_PERIOD
-  });
+    type: REQUEST_INVEST_PERIOD,
+  })
   const promise = new Promise(resolve => {
     setTimeout(() => {
-      resolve(getInvestPeriodFromServer());
-    }, 200);
-  });
+      resolve(getInvestPeriodFromServer())
+    }, 200)
+  })
 
   promise.then(result => {
-    console.log(result);
+    console.log(result)
     return dispatch({
       type: RESPONSE_INVEST_PERIOD,
-      investPeriod: result
-    });
-  });
-};
+      investPeriod: result,
+    })
+  })
+}
 
 export const getSchemaSettings = () => dispatch => {
   dispatch({
-    type: REQUEST_SCHEMA_SETTINGS
-  });
+    type: REQUEST_SCHEMA_SETTINGS,
+  })
   const promise = new Promise(resolve => {
     setTimeout(() => {
-      resolve(getSchemaSettingsFromServer());
-    }, 200);
-  });
+      resolve(getSchemaSettingsFromServer())
+    }, 200)
+  })
 
   promise.then(result => {
-    console.log(result);
+    console.log(result)
     return dispatch({
       type: RESPONSE_SCHEMA_SETTINGS,
-      schemaSettings: result
-    });
-  });
-};
+      schemaSettings: result,
+    })
+  })
+}
 
 export const getYieldList = () => dispatch => {
   dispatch({
-    type: REQUEST_YIELD_LIST
-  });
+    type: REQUEST_YIELD_LIST,
+  })
   const promise = new Promise(resolve => {
     setTimeout(() => {
-      resolve(getYieldListFromServer());
-    }, 200);
-  });
+      resolve(getYieldListFromServer())
+    }, 200)
+  })
 
   promise.then(result => {
-    console.log(result);
+    console.log(result)
     return dispatch({
       type: RESPONSE_YIELD_LIST,
-      schemaSettings: result
-    });
-  });
-};
+      schemaSettings: result,
+    })
+  })
+}
 
 export const getArticles = () => dispatch => {
   dispatch({
-    type: REQEST_ARTICLES_LIST
-  });
+    type: REQEST_ARTICLES_LIST,
+  })
   const promise = new Promise(resolve => {
     setTimeout(() => {
-      resolve(getArticlesFromServer());
-    }, 200);
-  });
+      resolve(getArticlesFromServer())
+    }, 200)
+  })
 
   promise.then(result => {
-    console.log(result);
+    console.log(result)
     return dispatch({
       type: RESPONSE_ARTICLES_LIST,
-      articlesList: result
-    });
-  });
-};
+      articlesList: result,
+    })
+  })
+}
 
 export const getPortalNews = () => dispatch => {
   dispatch({
-    type: REQUEST_PORTAL_NEWS
-  });
+    type: REQUEST_PORTAL_NEWS,
+  })
   const promise = new Promise(resolve => {
     setTimeout(() => {
-      resolve(getPortalNewsFromServer());
-    }, 200);
-  });
+      resolve(getPortalNewsFromServer())
+    }, 200)
+  })
 
   promise.then(result => {
-    console.log(result);
+    console.log(result)
     return dispatch({
       type: RESPONSE_PORTAL_NEWS,
-      portalNews: result
-    });
-  });
-};
+      portalNews: result,
+    })
+  })
+}

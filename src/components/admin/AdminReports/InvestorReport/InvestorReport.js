@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react'
 
 class InvestorReport extends React.Component {
   state = {
-    singleReportVisible: false
-  };
+    singleReportVisible: false,
+  }
   showReport = () => {
     this.setState({
-      singleReportVisible: true
-    });
-  };
+      singleReportVisible: true,
+    })
+  }
   closeReport = () => {
     this.setState({
-      singleReportVisible: false
-    });
-  };
+      singleReportVisible: false,
+    })
+  }
   render() {
     return (
       <tr>
@@ -22,14 +22,14 @@ class InvestorReport extends React.Component {
         </td>
         <td>{this.props.name}</td>
         <td>{this.props.surName}</td>
-        <td className={"green"}>{this.props.power}</td>
-        <td className={"blue"}>{this.props.payed}</td>
+        <td className={'green'}>{this.props.power}</td>
+        <td className={'blue'}>{this.props.payed}</td>
         <td>{this.props.phone}</td>
         <td>
           <div className="long-id">{this.props.email}</div>
         </td>
         <td>
-          <button className={"edit-admin-button"} onClick={this.showReport}>
+          <button className={'edit-admin-button'} onClick={this.showReport}>
             Посмотреть
           </button>
           {this.state.singleReportVisible && (
@@ -47,7 +47,7 @@ class InvestorReport extends React.Component {
                   <table className="settings-table popup-table">
                     <tbody>
                       <tr>
-                        <th className={"empty-char"} />
+                        <th className={'empty-char'} />
                         <th>Дата операции</th>
                         <th>Тип</th>
                         <th>Курс BTC в момент операции</th>
@@ -86,9 +86,7 @@ class InvestorReport extends React.Component {
                     </div>
                   </div>
                   <div className="col col-50">
-                    <div className="footer-title title-money">
-                      Выплачено всего (BTC)
-                    </div>
+                    <div className="footer-title title-money">Выплачено всего (BTC)</div>
                     <div className="footer-bottom">{this.props.payed}</div>
                   </div>
                 </div>
@@ -97,8 +95,8 @@ class InvestorReport extends React.Component {
           )}
         </td>
       </tr>
-    );
+    )
   }
 }
 
-export default InvestorReport;
+export default InvestorReport

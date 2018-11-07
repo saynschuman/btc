@@ -1,7 +1,7 @@
-import React from "react";
-import CustomInput from "../../../commmon/CustomInput/CustomInput";
-import CustomCheckbox from "../../../commmon/CustomCheckbox/CustomCheckbox";
-import classNames from "classnames";
+import React from 'react'
+import CustomInput from '../../../commmon/CustomInput/CustomInput'
+import CustomCheckbox from '../../../commmon/CustomCheckbox/CustomCheckbox'
+import classNames from 'classnames'
 
 class EditInvestors extends React.Component {
   render() {
@@ -9,9 +9,9 @@ class EditInvestors extends React.Component {
       <tr>
         <td>
           <CustomInput
-            type={"text"}
-            className={classNames("id", {
-              cantEdit: true
+            type={'text'}
+            className={classNames('id', {
+              cantEdit: true,
             })}
             value={this.props.id}
             disabled={true}
@@ -19,9 +19,9 @@ class EditInvestors extends React.Component {
         </td>
         <td>
           <CustomInput
-            type={"text"}
+            type={'text'}
             className={classNames({
-              cantEdit: true
+              cantEdit: true,
             })}
             value={this.props.name}
             disabled={true}
@@ -29,9 +29,9 @@ class EditInvestors extends React.Component {
         </td>
         <td>
           <CustomInput
-            type={"text"}
+            type={'text'}
             className={classNames({
-              cantEdit: true
+              cantEdit: true,
             })}
             value={this.props.surName}
             disabled={true}
@@ -44,8 +44,8 @@ class EditInvestors extends React.Component {
           <div className="close-button-admin" />
         </td>
       </tr>
-    );
+    )
   }
 }
 
-export default EditInvestors;
+export default EditInvestors
