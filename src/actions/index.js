@@ -34,7 +34,9 @@ import {
   GET_CORSE_HISTORY_REQUEST,
   GET_CORSE_HISTORY_RESPONSE,
   REQUEST_AGREEMENT,
-  RESPONSE_AGREEMENT
+  RESPONSE_AGREEMENT,
+  REQUEST_DELETE_ARTICLE,
+  RESPONSE_DELETE_ARTICLE
 } from '../constants'
 import {
   getAdminsFromServer,
@@ -49,7 +51,8 @@ import {
   getYieldListFromServer,
   getArticlesFromServer,
   getPortalNewsFromServer,
-  getAgreementfromServer
+  getAgreementfromServer,
+  delSingleArticleOnServer
 } from '../backend/api'
 
 export const authData = data => dispatch => {
@@ -370,6 +373,23 @@ export const getArticles = () => dispatch => {
     return dispatch({
       type: RESPONSE_ARTICLES_LIST,
       articlesList: result
+    })
+  })
+}
+
+export const delArticle = id => dispatch => {
+  dispatch({
+    type: REQUEST_DELETE_ARTICLE
+  })
+  const promise = new Promise(resolve => {
+    resolve(delSingleArticleOnServer(id))
+  })
+
+  promise.then(result => {
+    console.log(result, id)
+    return dispatch({
+      type: RESPONSE_DELETE_ARTICLE,
+      deleted: id
     })
   })
 }

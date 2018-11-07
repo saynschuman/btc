@@ -98,7 +98,12 @@ export const getYieldListFromServer = () => {
 }
 
 export const getArticlesFromServer = () => {
-  return articleList
+  // return articleList
+  return fetch('https://atc-bl.nadzor.online/bl198765/platform/news?offset=0&limit=10', {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+    }
+  }).then(res => res.json())
 }
 
 export const getPortalNewsFromServer = () => {
@@ -111,4 +116,13 @@ export const getAgreementfromServer = () => {
       Authorization: `Bearer ${localStorage.getItem('token')}`
     }
   }).then(res => res.json())
+}
+
+export const delSingleArticleOnServer = id => {
+  return fetch(`https://atc-bl.nadzor.online/bl198765/admin/news/${id}`, {
+    method: 'delete',
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+    }
+  }).then(res => console.log(res))
 }

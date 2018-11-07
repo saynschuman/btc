@@ -1,2 +1,6 @@
-GET https://atc-bl.nadzor.online/bl198765/admin/other/platformProfit HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQxNTkyMzU4LCJleHAiOjE1NDE1OTU5NTh9.hnkzqaDuvILwq7Bm8S4Tu7bgyQxrq24BlvjdVGUCozI 
+POST https://atc-bl.nadzor.online/bl198765/admin/news/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQxNTk2NjAwLCJleHAiOjE1NDE2MDAyMDB9.5XJOnE5skeBbklHujX8NqBy-antwiSC-ogiP18UZBwI 
+
+title: моя новая новость
+body: текст текст текст текст текст
+isPinned: true

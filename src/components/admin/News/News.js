@@ -1,23 +1,23 @@
-import React from "react";
-import "./News.scss";
-import { article } from "../../../backend/mocks";
-import { getArticles, getPortalNews } from "../../../actions";
-import { connect } from "react-redux";
-import PerfectScrollbar from "react-perfect-scrollbar";
-import AdminsLoader from "../AdminSettings/AdminsLoader/AdminsLoader";
-import ReportsLoader from "../AdminReports/ReportsLoader/ReportsLoader";
-import Article from "./components/Article";
-import PortalNews from "./components/PortalNews";
-import PortalNewsMobile from "./components/PortalNewsMobile";
+import React from 'react'
+import './News.scss'
+import { article } from '../../../backend/mocks'
+import { getArticles, getPortalNews } from '../../../actions'
+import { connect } from 'react-redux'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import AdminsLoader from '../AdminSettings/AdminsLoader/AdminsLoader'
+import ReportsLoader from '../AdminReports/ReportsLoader/ReportsLoader'
+import Article from './components/Article'
+import PortalNews from './components/PortalNews'
+import PortalNewsMobile from './components/PortalNewsMobile'
 
 class News extends React.Component {
   componentDidMount() {
-    !this.props.isLoaded && this.props.getArticles();
-    !this.props.portalNewsIsLoaded && this.props.getPortalNews();
+    !this.props.isLoaded && this.props.getArticles()
+    !this.props.portalNewsIsLoaded && this.props.getPortalNews()
   }
   render() {
     return (
-      <div className={"admin-body"}>
+      <div className={'admin-body'}>
         <div className="clearfix">
           <div className="col col-30 left">
             <div className="admin-block news-block-static-mobile">
@@ -31,10 +31,11 @@ class News extends React.Component {
                     {this.props.isLoaded &&
                       this.props.articles.map((article, index) => (
                         <Article
-                          key={index}
+                          key={article.id + 'desc'}
+                          id={article.id}
                           title={article.title}
                           date={article.date}
-                          image={article.smallImage}
+                          image={article.pictureBase64}
                         />
                       ))}
                   </div>
@@ -49,7 +50,7 @@ class News extends React.Component {
             <div className="admin-block">
               <div className="block-header">
                 <div className="header-title edit-news-title">
-                  Редактор: Новость 1 <span className={"date"}>20.08.2018</span>
+                  Редактор: Новость 1 <span className={'date'}>20.08.2018</span>
                 </div>
               </div>
               <div className="news-body">
@@ -60,28 +61,21 @@ class News extends React.Component {
                       style={{ backgroundImage: `url(${article.image})` }}
                     />
                     <article>
-                      <div className="article-title">
-                        Редактируемый заголовок
-                      </div>
+                      <div className="article-title">Редактируемый заголовок</div>
                       <p>
-                        Повседневная практика показывает, что курс на
-                        социально-ориентированный национальный проект требует
-                        определения и уточнения системы обучения кадров,
-                        соответствующей насущным потребностям. Повседневная
-                        практика показывает, что курс на
-                        социально-ориентированный национальный проект требует
-                        определения и уточнения системы обучения кадров,
-                        соответствующей насущным потребностям.
+                        Повседневная практика показывает, что курс на социально-ориентированный
+                        национальный проект требует определения и уточнения системы обучения кадров,
+                        соответствующей насущным потребностям. Повседневная практика показывает, что
+                        курс на социально-ориентированный национальный проект требует определения и
+                        уточнения системы обучения кадров, соответствующей насущным потребностям.
                       </p>
 
                       <p>
-                        Показывает, что курс на социально-ориентированный
-                        национальный проект требует определения и уточнения
-                        системы обучения кадров, соответствующей насущным
-                        потребностям. Повседневная практика показывает, что курс
-                        на социально-ориентированный национальный проект требует
-                        определения и уточнения системы обучения кадров,
-                        соответствующей насущным потребностям.
+                        Показывает, что курс на социально-ориентированный национальный проект
+                        требует определения и уточнения системы обучения кадров, соответствующей
+                        насущным потребностям. Повседневная практика показывает, что курс на
+                        социально-ориентированный национальный проект требует определения и
+                        уточнения системы обучения кадров, соответствующей насущным потребностям.
                       </p>
                     </article>
                   </div>
@@ -125,7 +119,7 @@ class News extends React.Component {
             </PerfectScrollbar>
           </div>
           <div className="news-body settings-body-mobile">
-            <PerfectScrollbar className={"edit-admins-mobile"}>
+            <PerfectScrollbar className={'edit-admins-mobile'}>
               {this.props.portalNewsIsLoading && <AdminsLoader />}
               {this.props.portalNewsIsLoaded &&
                 this.props.portalNews.map((portal, index) => (
@@ -139,13 +133,11 @@ class News extends React.Component {
             </PerfectScrollbar>
           </div>
           <div className="news-footer">
-            <div className="settings-save schema-save news-save-portal">
-              Сохранить одобрения
-            </div>
+            <div className="settings-save schema-save news-save-portal">Сохранить одобрения</div>
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -158,7 +150,7 @@ export default connect(
       portalNewsIsLoading: state.portal.isLoading,
       portalNewsIsLoaded: state.portal.isLoaded,
       portalNews: state.portal.portalNews
-    };
+    }
   },
   { getArticles, getPortalNews }
-)(News);
+)(News)
