@@ -1,4 +1,4 @@
-export default (str) => {
+export default str => {
   switch (str) {
     case 'true':
       return true

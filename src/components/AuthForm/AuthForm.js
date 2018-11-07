@@ -1,39 +1,39 @@
-import React from "react";
-import "./AuthForm.scss";
-import connect from "react-redux/es/connect/connect";
-import { authData } from "../../actions";
+import React from 'react'
+import './AuthForm.scss'
+import connect from 'react-redux/es/connect/connect'
+import { authData } from '../../actions'
 
 class AuthForm extends React.Component {
   state = {
-    id: "",
-    password: ""
-  };
+    id: '',
+    password: '',
+  }
   handleId = value => {
     this.setState({
-      id: value
-    });
-  };
+      id: value,
+    })
+  }
   handlePassword = value => {
     this.setState({
-      password: value
-    });
-  };
+      password: value,
+    })
+  }
   handleSubmit = e => {
-    e.preventDefault();
-    this.props.authData(this.state);
+    e.preventDefault()
+    this.props.authData(this.state)
     this.setState({
-      id: "",
-      password: ""
-    });
-  };
+      id: '',
+      password: '',
+    })
+  }
 
   render() {
-    const { isLoaded, isLoading } = this.props;
+    const { isLoaded, isLoading } = this.props
     return (
       <div className="loginWrapper">
         <div className="logintop">
           <div className="container">
-            Войдите в свой профиль ниже{" "}
+            Войдите в свой профиль ниже{' '}
             <span className="regLink">
               или <a href="/">Регистрация</a>
             </span>
@@ -61,7 +61,7 @@ class AuthForm extends React.Component {
               autoComplete="off"
               value={this.state.password}
             />
-            <input onClick={this.handleSubmit} type="submit" value={"Вход"} />
+            <input onClick={this.handleSubmit} type="submit" value={'Вход'} />
             {isLoading && !isLoaded && <div className="loader" />}
             <a className="forgotLink" href="/">
               Забыли пароль?
@@ -69,7 +69,7 @@ class AuthForm extends React.Component {
           </form>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -77,8 +77,8 @@ export default connect(
   state => {
     return {
       isLoading: state.authData.isLoading,
-      isLoaded: state.authData.isLoaded
-    };
+      isLoaded: state.authData.isLoaded,
+    }
   },
   { authData }
-)(AuthForm);
+)(AuthForm)

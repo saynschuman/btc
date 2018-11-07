@@ -1,44 +1,44 @@
-import React from "react";
-import CustomInput from "../../../commmon/CustomInput/CustomInput";
-import CustomSelect from "../../../commmon/CustomSelect/CustomSelect";
-import classNames from "classnames";
+import React from 'react'
+import CustomInput from '../../../commmon/CustomInput/CustomInput'
+import CustomSelect from '../../../commmon/CustomSelect/CustomSelect'
+import classNames from 'classnames'
 
 const rules = [
-  { value: "admin", label: "Админ" },
-  { value: "moderator", label: "Модератор" },
-  { value: "investor", label: "Инвестор" }
-];
+  { value: 'admin', label: 'Админ' },
+  { value: 'moderator', label: 'Модератор' },
+  { value: 'investor', label: 'Инвестор' },
+]
 
 class EditAdminsMobile extends React.Component {
   state = {
     cantEdit: true,
-    editButton: "Редактировать"
-  };
+    editButton: 'Редактировать',
+  }
   handleEdit = () => {
     if (this.state.cantEdit) {
       this.setState({
         cantEdit: false,
-        editButton: "Сохранить"
-      });
+        editButton: 'Сохранить',
+      })
     } else {
       this.setState({
         cantEdit: true,
-        editButton: "Редактировать"
-      });
+        editButton: 'Редактировать',
+      })
     }
-  };
+  }
   render() {
     return (
-      <div className={"settings-table-mobile"}>
-        <table className={"settings-table"}>
+      <div className={'settings-table-mobile'}>
+        <table className={'settings-table'}>
           <tbody>
             <tr>
               <td>ID</td>
               <td>
                 <CustomInput
-                  type={"text"}
-                  className={classNames("id", {
-                    cantEdit: this.state.cantEdit
+                  type={'text'}
+                  className={classNames('id', {
+                    cantEdit: this.state.cantEdit,
                   })}
                   value={this.props.id}
                   disabled={this.state.cantEdit}
@@ -49,9 +49,9 @@ class EditAdminsMobile extends React.Component {
               <td>Пароль</td>
               <td>
                 <CustomInput
-                  type={"password"}
-                  className={classNames("password", {
-                    cantEdit: this.state.cantEdit
+                  type={'password'}
+                  className={classNames('password', {
+                    cantEdit: this.state.cantEdit,
                   })}
                   value={this.props.password}
                   disabled={this.state.cantEdit}
@@ -68,7 +68,7 @@ class EditAdminsMobile extends React.Component {
               <td>Email</td>
               <td>
                 <CustomInput
-                  type={"text"}
+                  type={'text'}
                   className={classNames({ cantEdit: this.state.cantEdit })}
                   value={this.props.email}
                   disabled={this.state.cantEdit}
@@ -80,8 +80,8 @@ class EditAdminsMobile extends React.Component {
               <td>
                 <button
                   onClick={this.handleEdit}
-                  className={classNames("edit-admin-button", {
-                    saveButton: !this.state.cantEdit
+                  className={classNames('edit-admin-button', {
+                    saveButton: !this.state.cantEdit,
                   })}
                 >
                   {this.state.editButton}
@@ -92,8 +92,8 @@ class EditAdminsMobile extends React.Component {
         </table>
         <div className="close-button-admin-moblie">Удалить</div>
       </div>
-    );
+    )
   }
 }
 
-export default EditAdminsMobile;
+export default EditAdminsMobile

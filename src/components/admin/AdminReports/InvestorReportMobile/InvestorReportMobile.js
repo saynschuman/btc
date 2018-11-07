@@ -1,23 +1,23 @@
-import React from "react";
+import React from 'react'
 
 class InvestorReportMobile extends React.Component {
   state = {
-    singleReportMobileVisible: false
-  };
+    singleReportMobileVisible: false,
+  }
   showReport = () => {
     this.setState({
-      singleReportMobileVisible: !this.state.singleReportMobileVisible
-    });
-  };
+      singleReportMobileVisible: !this.state.singleReportMobileVisible,
+    })
+  }
   closeReport = () => {
     this.setState({
-      singleReportMobileVisible: false
-    });
-  };
+      singleReportMobileVisible: false,
+    })
+  }
   render() {
     return (
-      <div className={"settings-table-mobile"}>
-        <table className={"settings-table reports-table"}>
+      <div className={'settings-table-mobile'}>
+        <table className={'settings-table reports-table'}>
           <tbody>
             <tr>
               <td>ID инвестора</td>
@@ -49,7 +49,7 @@ class InvestorReportMobile extends React.Component {
             </tr>
           </tbody>
         </table>
-        <button className={"edit-admin-button"} onClick={this.showReport}>
+        <button className={'edit-admin-button'} onClick={this.showReport}>
           Посмотреть
         </button>
         {this.state.singleReportMobileVisible && (
@@ -65,8 +65,8 @@ class InvestorReportMobile extends React.Component {
                 </div>
               </div>
               <div className="body">
-                <div className={"settings-table-mobile"}>
-                  <table className={"settings-table reports-table"}>
+                <div className={'settings-table-mobile'}>
+                  <table className={'settings-table reports-table'}>
                     <tbody>
                       <tr>
                         <td>Дата операции</td>
@@ -106,9 +106,7 @@ class InvestorReportMobile extends React.Component {
                   </div>
                 </div>
                 <div className="col col-50">
-                  <div className="footer-title title-money">
-                    Выплачено всего (BTC)
-                  </div>
+                  <div className="footer-title title-money">Выплачено всего (BTC)</div>
                   <div className="footer-bottom">{this.props.payed}</div>
                 </div>
               </div>
@@ -116,8 +114,8 @@ class InvestorReportMobile extends React.Component {
           </div>
         )}
       </div>
-    );
+    )
   }
 }
 
-export default InvestorReportMobile;
+export default InvestorReportMobile

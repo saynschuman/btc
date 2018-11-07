@@ -1,21 +1,21 @@
-import React from "react";
-import CustomInput from "../../../commmon/CustomInput/CustomInput";
-import classNames from "classnames";
-import CustomCheckbox from "../../../commmon/CustomCheckbox/CustomCheckbox";
+import React from 'react'
+import CustomInput from '../../../commmon/CustomInput/CustomInput'
+import classNames from 'classnames'
+import CustomCheckbox from '../../../commmon/CustomCheckbox/CustomCheckbox'
 
 class EditInvestorsMobile extends React.Component {
   render() {
     return (
-      <div className={"settings-table-mobile"}>
-        <table className={"settings-table"}>
+      <div className={'settings-table-mobile'}>
+        <table className={'settings-table'}>
           <tbody>
             <tr>
               <td>ID</td>
               <td>
                 <CustomInput
-                  type={"text"}
-                  className={classNames("id", {
-                    cantEdit: true
+                  type={'text'}
+                  className={classNames('id', {
+                    cantEdit: true,
                   })}
                   value={this.props.id}
                   disabled={true}
@@ -26,9 +26,9 @@ class EditInvestorsMobile extends React.Component {
               <td>Имя</td>
               <td>
                 <CustomInput
-                  type={"text"}
+                  type={'text'}
                   className={classNames({
-                    cantEdit: true
+                    cantEdit: true,
                   })}
                   value={this.props.name}
                   disabled={true}
@@ -39,9 +39,9 @@ class EditInvestorsMobile extends React.Component {
               <td>Фамилия</td>
               <td>
                 <CustomInput
-                  type={"text"}
+                  type={'text'}
                   className={classNames({
-                    cantEdit: true
+                    cantEdit: true,
                   })}
                   value={this.props.surName}
                   disabled={true}
@@ -58,8 +58,8 @@ class EditInvestorsMobile extends React.Component {
         </table>
         <div className="close-button-admin-moblie">Удалить</div>
       </div>
-    );
+    )
   }
 }
 
-export default EditInvestorsMobile;
+export default EditInvestorsMobile

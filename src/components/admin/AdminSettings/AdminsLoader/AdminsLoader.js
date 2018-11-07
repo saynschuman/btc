@@ -1,6 +1,6 @@
-import React from "react";
-import "./AdminsLoader.scss";
+import React from 'react'
+import './AdminsLoader.scss'
 
 export default () => {
-  return <div className={"admins-loader"}>Загрузка...</div>;
-};
+  return <div className={'admins-loader'}>Загрузка...</div>
+}
