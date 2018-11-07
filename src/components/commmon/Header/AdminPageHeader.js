@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./AdminPageHeader.scss";
 import AdminHeader from "./components/AdminHeader";
 import { connect } from "react-redux";
-import { toggleMobileMenu } from "../../../actions";
+import { toggleMobileMenu } from "../../../modules/toggleMobileMenu";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
 

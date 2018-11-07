@@ -26,7 +26,9 @@
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.5",
     "redux-form": "^7.4.2",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "node-sass": "^4.9.4",
+    "sass-loader": "^7.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,9 +44,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "node-sass": "^4.9.4",
-    "sass-loader": "^7.1.0"
-  }
+  ]
 }

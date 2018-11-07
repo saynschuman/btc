@@ -50,12 +50,6 @@ import {
   getPortalNewsFromServer
 } from "../backend/api";
 
-export const toggleMobileMenu = () => {
-  return {
-    type: SHOW_MOBILE_MENU
-  };
-};
-
 export const authData = data => dispatch => {
   dispatch({
     type: AUTH_REQUEST

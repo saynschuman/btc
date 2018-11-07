@@ -2,7 +2,7 @@ import React from "react";
 import "./AsideMenu.scss";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import { connect } from "react-redux";
-import { toggleMobileMenu } from "../../../actions";
+import { toggleMobileMenu } from "../../../modules/toggleMobileMenu";
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 
