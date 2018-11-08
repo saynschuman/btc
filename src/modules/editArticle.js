@@ -1,17 +1,20 @@
 import { updateArticleOnServer } from '../backend/api'
 
 const EDIT_ARTICLE = 'EDIT_ARTICLE'
+const START_UPDATE_ARTICLE = 'START_UPDATE_ARTICLE'
 const UPDATE_ARTICLE = 'UPDATE_ARTICLE'
 const CHANGE_TITLE = 'CHANGE_TITLE'
 const CHANGE_BODY = 'CHANGE_BODY'
 const CHANGE_IMAGE = 'CHANGE_IMAGE'
 const DELETE_IMAGE = 'DELETE_IMAGE'
+const PIN = 'PIN'
 
 const initialState = {
   id: '',
   title: '',
   image: '',
-  body: ''
+  body: '',
+  isPinned: ''
 }
 
 export default function(state = initialState, action) {
@@ -24,13 +27,26 @@ export default function(state = initialState, action) {
         image: action.payload.image,
         body: action.payload.body
       }
+    case START_UPDATE_ARTICLE:
+      return {
+        ...state,
+        articleIsUpdating: true,
+        articleIsUpdated: false
+      }
     case UPDATE_ARTICLE:
       return {
         ...state,
+        articleIsUpdating: false,
+        articleIsUpdated: true,
         id: action.payload.id,
         title: action.payload.title,
         image: action.payload.image,
         body: action.payload.body
+      }
+    case PIN:
+      return {
+        ...state,
+        isPinned: !state.isPinned
       }
     case CHANGE_TITLE:
       return {
@@ -70,6 +86,9 @@ export const editArticle = (id, title, image, body) => dispatch => {
 }
 
 export const updateArticle = (id, title, image, body) => dispatch => {
+  dispatch({
+    type: 'START_UPDATE_ARTICLE'
+  })
   const promise = new Promise(resolve => {
     resolve(updateArticleOnServer(id, title, image, body))
   })
@@ -112,5 +131,22 @@ export const changeImage = image => dispatch => {
 export const deleteImage = image => dispatch => {
   dispatch({
     type: DELETE_IMAGE
+  })
+}
+
+export const pin = (id, pin) => dispatch => {
+  fetch(`https://atc-bl.nadzor.online/bl198765/admin/news/${id}`, {
+    method: 'put',
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      isPinned: pin
+    })
+  }).then(res => console.log(res))
+  return dispatch({
+    type: PIN,
+    id
   })
 }

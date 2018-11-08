@@ -363,9 +363,7 @@ export const getArticles = () => dispatch => {
     type: REQEST_ARTICLES_LIST
   })
   const promise = new Promise(resolve => {
-    setTimeout(() => {
-      resolve(getArticlesFromServer())
-    }, 200)
+    resolve(getArticlesFromServer())
   })
 
   promise.then(result => {

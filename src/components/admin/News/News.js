@@ -23,6 +23,7 @@ class News extends React.Component {
     !this.props.isLoaded && this.props.getArticles()
     !this.props.portalNewsIsLoaded && this.props.getPortalNews()
   }
+  componentWillReceiveProps() {}
   handleChangeTitle = e => {
     this.props.changeTitle(e)
   }
@@ -43,7 +44,9 @@ class News extends React.Component {
       this.props.editArticle.image,
       this.props.editArticle.body
     )
-    this.props.getArticles()
+    setTimeout(() => {
+      this.props.getArticles()
+    }, 1000)
   }
   render() {
     return (
@@ -61,19 +64,22 @@ class News extends React.Component {
                     {this.props.isLoaded &&
                       this.props.articles.map((article, index) => (
                         <Article
-                          key={article.id + 'desc'}
+                          key={article.id}
                           id={article.id}
                           title={article.title}
                           date={article.date}
                           image={article.pictureBase64}
                           body={article.body}
+                          isPinned={article.isPinned}
                         />
                       ))}
                   </div>
                 </PerfectScrollbar>
               </div>
               <div className="news-footer">
-                <div className="settings-save schema-save">Добавить</div>
+                <div onClick={this.handleUpdateArticle} className="settings-save schema-save">
+                  Добавить
+                </div>
               </div>
             </div>
           </div>
