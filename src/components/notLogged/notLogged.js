@@ -9,6 +9,10 @@ const notLogged = props => {
   return (
     <div>
       {props.success !== null && <WongData success={props.success} />}
+      {props.investorSuccess !== null && props.investorSuccess !== true && (
+        <WongData success={props.investorSuccess} />
+      )}
+      {props.investorSuccess !== null && props.investorSuccess && window.location.reload()}
       <HashRouter>
         <Switch>
           <Route path="/admin-login" component={AdminAuth} />
@@ -21,6 +25,7 @@ const notLogged = props => {
 
 export default connect(state => {
   return {
-    success: state.authData.success
+    success: state.authData.success,
+    investorSuccess: state.authData.investorSuccess
   }
 })(notLogged)

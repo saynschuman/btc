@@ -1,13 +1,15 @@
 import React from 'react'
 import RootAdmin from '../../admin/RootAdmin'
 import NotLogged from '../../notLogged/notLogged'
+import InvestorHomePage from '../../investor/investorHomepage/investorHomePage'
+
 export default props => {
   const renderInterface = role => {
     switch (role) {
       case 'admin':
         return <RootAdmin />
       case 'investor':
-        return 'investor'
+        return <InvestorHomePage />
       default:
         return <NotLogged />
     }

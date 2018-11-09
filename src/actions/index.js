@@ -38,7 +38,9 @@ import {
   REQUEST_DELETE_ARTICLE,
   RESPONSE_DELETE_ARTICLE,
   AUTH_INVESTOR_REQUEST,
-  REQUEST_INVESTOR_DATA
+  AUTH_INVESTOR_RESPONSE,
+  REQUEST_INVESTOR_DATA,
+  AUTH_INVESTOR_ERROR
   // RESPONSE_INVESTOR_DATA
 } from '../constants'
 import {
@@ -121,6 +123,10 @@ export const authDataInvestor = data => dispatch => {
   })
     .then(res => res.json())
     .then(res => {
+      dispatch({
+        type: AUTH_INVESTOR_RESPONSE,
+        investorSuccess: true
+      })
       console.log(res)
       localStorage.setItem('token', res.jwt)
       dispatch({
@@ -139,6 +145,10 @@ export const authDataInvestor = data => dispatch => {
     })
     .catch(error => {
       console.log(error)
+      dispatch({
+        type: AUTH_INVESTOR_ERROR,
+        investorSuccess: false
+      })
     })
 }
 

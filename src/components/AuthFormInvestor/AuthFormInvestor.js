@@ -25,6 +25,7 @@ class AuthFormInvestor extends React.Component {
       id: '',
       password: ''
     })
+    // setTimeout(window.location.reload(), 1000)
   }
 
   render() {
@@ -71,8 +72,8 @@ class AuthFormInvestor extends React.Component {
 export default connect(
   state => {
     return {
-      isLoading: state.authData.isLoading,
-      isLoaded: state.authData.isLoaded
+      isLoading: state.authData.investorLogIsloading,
+      isLoaded: state.authData.investorLogIsloaded
     }
   },
   { authDataInvestor }
