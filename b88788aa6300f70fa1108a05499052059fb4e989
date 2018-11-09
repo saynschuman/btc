@@ -1,0 +1,8 @@
+[ver:1,total:1200]
+src/components/notLogged/notLogged.js:632,1541761200:632,m
+src/App.js:263,1541761200:263,m
+src/components/commmon/RenderInterface/RenderInterface.js:149,1541761200:149,m
+src/components/admin/RootAdmin/index.js:88,1541761200:88,r
+src/components/Root.js:25,1541761200:25,r
+src/components/commmon/WrongData/WrongData.js:23,1541761200:23,r
+src/components/admin/AdminOther/AdminOther.js:20,1541761200:20,r
