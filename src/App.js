@@ -1,36 +1,28 @@
-import React, { Component } from "react";
-import AuthForm from "./components/AuthForm/AuthForm";
-import LoginHeader from "./components/commmon/LoginHeader/LoginHeader";
-import "./App.css";
-import { connect } from "react-redux";
-import RootAdmin from "./components/admin/RootAdmin";
+import React, { Component } from 'react'
+import './App.css'
+import { connect } from 'react-redux'
+import RootAdmin from './components/admin/RootAdmin'
 // // import InvestorHomepage from "./components/investor/investorHomepage/investorHomePage";
-import WrongData from "./components/commmon/WrongData/WrongData";
-import { getHomePageAdminData, getCourse, getCourseHistory } from "./actions";
+import WrongData from './components/commmon/WrongData/WrongData'
+import { getHomePageAdminData, getCourse, getCourseHistory } from './actions'
+import { authenticate } from './helpers/authenticate'
+import { parseJwt } from './helpers/parseJwt'
+import RenderInterface from './components/commmon/RenderInterface/RenderInterface'
+import { Route, Switch, HashRouter } from 'react-router-dom'
+import AdminAuth from './components/admin/AdminAuth/AdminAuth'
 
 class App extends Component {
   componentDidMount() {
-    console.log(window.location.hash.replace("#/", ""));
-    window.location.hash.length > 10 &&
-      fetch(
-        `https://atc-bl.nadzor.online/bl198765/admin/exchange/${window.location.hash.replace(
-          "#/",
-          ""
-        )}`
-      )
-        .then(res => res.json())
-        .then(res => localStorage.setItem("token", res.jwt))
-        .then(res => this.props.getHomePageAdminData(res))
-        .catch(() => this.props.getHomePageAdminData());
-
-    this.props.getHomePageAdminData();
-    this.props.getCourse();
-    this.props.getCourseHistory();
+    authenticate(window.location.hash)
+    this.props.getHomePageAdminData()
+    this.props.getCourse()
+    this.props.getCourseHistory()
   }
   renderInterface = () => {
-    switch (localStorage.getItem("token")) {
+    switch (localStorage.getItem('token')) {
     }
-  };
+  }
+
   //   if (localStorage.getItem("user") !== null) {
   //     switch (localStorage.getItem("user")) {
   //       case "admin":
@@ -63,27 +55,34 @@ class App extends Component {
   //   }
   // };
   render() {
-    const { isLoaded, isLoading, success } = this.props;
+    const userInfo = parseJwt(localStorage.getItem('token'))
+    const { isLoaded, isLoading, success } = this.props
     return (
       <div>
         {this.props.isError ? (
           <div>
-            {isLoading && !isLoaded && "Loading"}
+            {isLoading && !isLoaded && 'Loading'}
             {isLoaded && (
               <div>
-                <LoginHeader />
-                <AuthForm />
+                'login investor'
                 {success !== null && <WrongData success={success} />}
               </div>
             )}
           </div>
         ) : isLoading && !isLoaded ? (
-          "Loading"
+          'Loading'
         ) : (
-          <RootAdmin />
+          <RenderInterface userinfo={userInfo} />
         )}
+        <HashRouter>
+          <div>
+            <Switch>
+              <Route path="/admin-login" component={AdminAuth} />
+            </Switch>
+          </div>
+        </HashRouter>
       </div>
-    );
+    )
   }
 }
 
@@ -94,7 +93,7 @@ export default connect(
       isLoading: state.adminHomePageData.isLoading,
       isLoaded: state.adminHomePageData.isLoaded,
       success: state.authData.success
-    };
+    }
   },
   { getHomePageAdminData, getCourse, getCourseHistory }
-)(App);
+)(App)

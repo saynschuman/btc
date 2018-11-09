@@ -54,6 +54,7 @@ import {
   getAgreementfromServer,
   delSingleArticleOnServer
 } from '../backend/api'
+import { parseJwt } from '../helpers/parseJwt'
 
 export const authData = data => dispatch => {
   dispatch({
@@ -103,6 +104,7 @@ export const getHomePageAdminData = () => dispatch => {
   dispatch({
     type: REQUEST_HOMEPAGE_DATA
   })
+  console.log(parseJwt(localStorage.getItem('token')))
 
   fetch('https://atc-bl.nadzor.online/bl198765/admin/platform/', {
     headers: {

@@ -1,10 +1,8 @@
-POST https://atc-bl.nadzor.online/bl198765/admin/news/ HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQxNjY3MTc3LCJleHAiOjE1NDE2NzA3Nzd9.qm7AQWcam5GmHNSSYMQJSyJNNXYI_ekt81l8OztTp6w  
+POST https://atc-bl.nadzor.online/bl198765/investor/login HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQxNzQ4ODgzLCJleHAiOjE1NDE3NTI0ODN9.CYyIUeQ6ebxKf0uf2Tq1QGXYrnGcyvr0cYDpR-v9r-A  
 Content-Type: application/json
 
 {
-	"title": "8",
-	"body": "lorem ipsum dolor sit emmet",
-	"pictureBase64": "",
-	"isPinned": true
+	"email": "saynschuman@gmail.com",
+	"password": "saynschuman"
 }
