@@ -1,0 +1,17 @@
+[ver:1,total:1080]
+src/components/admin/RootAdmin/index.js:370,1541761200:60,1541764800:310,m
+src/components/commmon/Header/AdminPageHeader.js:210,1541764800:210,m
+src/components/commmon/AsideMenu/AsideMenu.js:150,1541761200:150,m
+src/backend/del.http:80,1541764800:80,r
+src/App.js:60,1541761200:60,r
+src/components/notLogged/notLogged.js:60,1541761200:60,r
+src/components/commmon/RenderInterface/RenderInterface.js:30,1541761200:30,r
+src/components/admin/AdminHomepage/AdminHomepage.js:20,1541764800:20,r
+src/backend/put.http:20,1541764800:20,r
+src/backend/post.http:20,1541764800:20,r
+src/components/admin/News/News.js:15,1541761200:15,r
+src/modules/editArticle.js:15,1541761200:15,r
+src/reducer/index.js:9,1541761200:9,r
+src/modules/pin.js:7,1541761200:7,r
+src/components/admin/News/components/Article.js:7,1541761200:7,r
+src/reducer/articles.js:7,1541761200:7,r
