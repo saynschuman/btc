@@ -1,0 +1,17 @@
+[ver:1,total:2460]
+src/actions/index.js:710,1541764800:710,m
+src/components/notLogged/notLogged.js:445,1541764800:445,m
+src/components/AuthFormInvestor/AuthFormInvestor.js:394,1541764800:394,m
+src/reducer/authData.js:296,1541764800:296,m
+src/components/investor/investorHomepage/investorHomePage.js:158,1541764800:158,r
+src/components/commmon/RenderInterface/RenderInterface.js:148,1541764800:148,m
+src/components/commmon/Header/Header.jsx:84,1541764800:84,m
+src/constants/index.js:45,1541764800:45,m
+src/components/commmon/WrongData/WrongData.js:40,1541764800:40,r
+src/components/admin/RootAdmin/index.js:39,1541764800:39,r
+src/components/commmon/Header/AdminPageHeader.js:24,1541764800:24,r
+src/reducer/articles.js:20,1541764800:20,r
+src/App.js:15,1541764800:15,r
+src/components/Root.js:15,1541764800:15,r
+src/components/investor/InvestorAuth/InvestorAuth.js:15,1541764800:15,r
+src/components/commmon/AsideMenu/AsideMenu.js:12,1541764800:12,r
