@@ -1,16 +1,17 @@
 import {
-  adminList,
-  investorList,
-  InvestorReport,
-  InvestitionReport,
-  ChargeTable,
-  HistoryApplications,
-  SaleApplications,
-  investPeriod,
-  schemaSettings,
-  yieldList,
-  articleList,
-  portalNews
+  // adminList,
+  // investorList,
+  // InvestorReport,
+  // InvestitionReport,
+  // ChargeTable,
+  // HistoryApplications,
+  // SaleApplications,
+  // investPeriod,
+  // schemaSettings,
+  // yieldList,
+  // articleList,
+  portalNews,
+  investorDataFromServer
 } from './mocks'
 
 export const getHomePageAdminDataFromServer = path => {
@@ -140,4 +141,11 @@ export const updateArticleOnServer = (id, title, image, body) => {
       pictureBase64: image
     })
   }).then(res => console.log(res))
+}
+
+// investor
+
+export const getInvestorDataFromServer = token => {
+  console.log(token)
+  return investorDataFromServer
 }

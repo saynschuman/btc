@@ -1,6 +1,6 @@
 import React from 'react'
 import RootAdmin from '../../admin/RootAdmin'
-
+import InvestorAuth from '../../../components/investor/InvestorAuth/InvestorAuth'
 export default props => {
   const renderInterface = role => {
     switch (role) {

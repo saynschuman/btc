@@ -16,9 +16,9 @@ const Article = props => {
   const cl = () => {
     console.log(props.id)
   }
-  const handlePin = () => {
-    props.pin(props.id, !props.isPinned)
-  }
+  // const handlePin = () => {
+  //   props.pin(props.id, !props.isPinned)
+  // }
   return (
     <div className="news-item">
       <div className={'news-image'} style={{ backgroundImage: `url(${props.image})` }}>

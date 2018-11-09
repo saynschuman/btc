@@ -36,7 +36,10 @@ import {
   REQUEST_AGREEMENT,
   RESPONSE_AGREEMENT,
   REQUEST_DELETE_ARTICLE,
-  RESPONSE_DELETE_ARTICLE
+  RESPONSE_DELETE_ARTICLE,
+  AUTH_INVESTOR_REQUEST,
+  REQUEST_INVESTOR_DATA
+  // RESPONSE_INVESTOR_DATA
 } from '../constants'
 import {
   getAdminsFromServer,
@@ -52,7 +55,8 @@ import {
   getArticlesFromServer,
   getPortalNewsFromServer,
   getAgreementfromServer,
-  delSingleArticleOnServer
+  delSingleArticleOnServer,
+  getInvestorDataFromServer
 } from '../backend/api'
 import { parseJwt } from '../helpers/parseJwt'
 
@@ -100,6 +104,44 @@ export const authData = data => dispatch => {
     })
 }
 
+export const authDataInvestor = data => dispatch => {
+  dispatch({
+    type: AUTH_INVESTOR_REQUEST
+  })
+
+  fetch('https://atc-bl.nadzor.online/bl198765/investor/login', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email: data.id,
+      password: data.password
+    })
+  })
+    .then(res => res.json())
+    .then(res => {
+      console.log(res)
+      localStorage.setItem('token', res.jwt)
+      dispatch({
+        type: REQUEST_INVESTOR_DATA
+      })
+    })
+    .then(() => getInvestorDataFromServer(localStorage.getItem('token')))
+    .then(res => {
+      return dispatch({
+        type: 'RESPONSE_iNVESTOR_DATA',
+        payload: {
+          investorHomePageData: res,
+          isError: false
+        }
+      })
+    })
+    .catch(error => {
+      console.log(error)
+    })
+}
+
 export const getHomePageAdminData = () => dispatch => {
   dispatch({
     type: REQUEST_HOMEPAGE_DATA
@@ -112,7 +154,6 @@ export const getHomePageAdminData = () => dispatch => {
     }
   })
     .then(res => res.json())
-    .then(res => res)
     .then(res => {
       return dispatch({
         type: RESPONSE_HOMEPAGE_DATA,

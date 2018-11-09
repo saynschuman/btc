@@ -1,0 +1,2 @@
+GET https://atc-bl.nadzor.online/bl198765/investor/reports/investments/?active=true HTTP/1.1
+Authorization: Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZTU0MGQ3OTc3OWQxNmViMTU3ZWY3MyIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImludmVzdG9yIiwiaWF0IjoxNTQxNzU3MTk2LCJleHAiOjE1NDE3NjA3OTZ9.grIYd5NiOQO7eNippFoTn5yfdJ1MqBJdYPI-fEycmss"
