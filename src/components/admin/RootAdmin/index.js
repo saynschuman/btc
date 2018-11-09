@@ -15,12 +15,12 @@ import News from '../News/News'
 
 const RootAdmin = () => {
   return (
-    <div>
-      <AdminPageHeader whoAreYou={'admin'} />
-      <AsideMenu />
-      <AdminHomepage />
-      <HashRouter>
+    <HashRouter>
+      <div>
+        <AdminPageHeader whoAreYou={'admin'} />
+        <AsideMenu />
         <Switch>
+          <Route activeClassName={'is-active'} exact path="/" component={AdminHomepage} />
           <Route activeClassName={'is-active'} path="/settings" component={AdminSettings} />
           <Route activeClassName={'is-active'} path="/reports" component={AdminReports} />
           <Route activeClassName={'is-active'} path="/pays" component={AdminPays} />
@@ -28,9 +28,11 @@ const RootAdmin = () => {
           <Route activeClassName={'is-active'} path="/schema" component={AdminSchema} />
           <Route activeClassName={'is-active'} path="/other" component={AdminOther} />
           <Route activeClassName={'is-active'} path="/news" component={News} />
+          <Route activeClassName={'is-active'} path="/homepage" component={AdminHomepage} />
+          <Route activeClassName={'is-active'} path="*" component={AdminHomepage} />
         </Switch>
-      </HashRouter>
-    </div>
+      </div>
+    </HashRouter>
   )
 }
 
