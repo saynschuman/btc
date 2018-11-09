@@ -1,0 +1,16 @@
+[ver:1,total:6000]
+src/App.js:2357,1541746800:1274,1541750400:943,1541754000:140,m
+src/components/commmon/RenderInterface/RenderInterface.js:1018,1541746800:234,1541750400:784,m
+src/helpers/authenticate.js:530,1541746800:460,1541750400:70,m
+src/helpers/parseJwt.js:469,1541746800:40,1541750400:429,m
+src/backend/post.http:401,1541750400:401,m
+src/components/admin/AdminAuth/AdminAuth.js:370,1541750400:350,1541754000:20,m
+src/actions/index.js:283,1541746800:32,1541750400:231,1541754000:20,m
+src/components/Root.js:190,1541746800:30,1541750400:160,r
+src/components/admin/News/News.js:180,1541671200:180,r
+src/components/admin/RootAdmin/index.js:65,1541750400:45,1541754000:20,r
+src/components/AuthForm/AuthForm.js:47,1541750400:7,1541754000:40,r
+src/backend/del.http:30,1541746800:30,r
+src/reducer/index.js:20,1541746800:20,r
+src/reducer/articles.js.js:20,1541746800:20,d
+src/components/admin/News/components/Article.jsckbox.js:20,1541746800:20,d
