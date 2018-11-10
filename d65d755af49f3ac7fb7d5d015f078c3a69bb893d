@@ -1,0 +1,15 @@
+[ver:1,total:2280]
+src/components/investor/investorHomepage/investorHomePage.js:606,1541775600:270,1541836800:336,m
+src/components/commmon/RenderInterface/RenderInterface.js:300,1541775600:300,r
+src/components/investor/common/MainContainer/MainContainer.module.css:238,1541836800:238,m
+src/components/investor/common/MainContainer/MainContainer.js:218,1541836800:218,m
+src/components/investor/common/aside/aside.js:160,1541836800:160,m
+src/actions/index.js:150,1541775600:150,r
+src/App.js:120,1541775600:120,m
+src/components/investor/common/main/main.js:108,1541836800:108,m
+src/components/investor/common/main/main.module.css:95,1541836800:95,m
+src/components/investor/common/aside/aside.module.css:87,1541836800:87,m
+src/components/admin/AdminHomepage/AdminHomepage.js:75,1541775600:75,r
+src/components/investor/common/block/index.js:72,1541836800:72,m
+src/components/commmon/Header/Header.jsx:45,1541775600:45,r
+src/components/investor/common/block/index.module.css:6,1541836800:6,m
