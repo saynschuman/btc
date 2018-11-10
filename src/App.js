@@ -7,6 +7,7 @@ import RenderInterface from './components/commmon/RenderInterface/RenderInterfac
 class App extends Component {
   componentDidMount() {
     window.location.hash.length > 30 && authenticate(window.location.hash)
+    console.log('home')
   }
   render() {
     const userInfo = parseJwt(localStorage.getItem('token'))

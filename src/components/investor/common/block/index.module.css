@@ -2,21 +2,3 @@
     background-color: #000060;
     color: #fff;
 }
-
-.header {
-    border-bottom: 1px solid #003284;
-    padding: 20px 0;
-    padding-left: 45px;
-    position: relative
-}
-
-/* .header::after {
-    content: '';
-    position: absolute;
-    background-image: url('./img/icon.png');
-}  */
-
-.body {
-    padding: 20px 0;
-    padding-left: 45px;
-}
