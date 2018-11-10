@@ -1,0 +1,16 @@
+[ver:1,total:4140]
+src/components/investor/investorHomepage/investorHomePage.js:1080,1541836800:535,1541840400:545,m
+src/components/investor/common/ButtonViolet/ButtonViolet.module.css:874,1541840400:874,m
+src/components/investor/common/block/index.js:628,1541836800:555,1541840400:73,m
+src/components/investor/common/ButtonViolet/ButtonViolet.js:462,1541840400:462,m
+src/components/investor/common/block/index.module.css:363,1541836800:45,1541840400:318,m
+src/components/investor/investorHomepage/img/export.js:253,1541836800:245,1541840400:8,m
+src/components/investor/common/blockNom/index.module.css:125,1541840400:125,m
+src/components/investor/common/Numbers/Numbers.js:111,1541840400:111,m
+src/components/investor/common/Numbers/Numbers.module.css:59,1541840400:59,m
+src/components/investor/common/MainContainer/MainContainer.js:57,1541840400:57,r
+src/components/investor/common/blockNom/index.js:56,1541840400:56,m
+src/components/admin/AdminPays/AdminPays.scss:30,1541840400:30,r
+src/components/admin/AdminSettings/AdminSettings.scss:21,1541840400:21,r
+src/components/investor/common/aside/aside.js:15,1541840400:15,r
+src/components/investor/common/main/main.js:6,1541840400:6,r
