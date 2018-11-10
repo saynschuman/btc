@@ -5,8 +5,7 @@ import { toggleMobileMenu } from '../../../../modules/toggleMobileMenu'
 import { connect } from 'react-redux'
 
 const mobileMenu = props => {
-  const exit = e => {
-    e.preventDefault()
+  const exit = () => {
     localStorage.clear()
     window.location.href = '/'
   }
@@ -44,6 +43,14 @@ const mobileMenu = props => {
           </NavLink>
         </li>
       </ul>
+      <hr className={css.hr} />
+      <div className={css.lang}>
+        Язык: <span className={css.langtoggle}>ru</span>
+      </div>
+      <hr className={css.hr} />
+      <div onClick={exit} className={css.exitBtn}>
+        Выход
+      </div>
     </div>
   )
 }

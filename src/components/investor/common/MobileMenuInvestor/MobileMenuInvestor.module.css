@@ -1,5 +1,5 @@
 .mobileMenu {
-  position: fixed;
+  position: absolute;
   top: 89px;
   left: 0px;
   background-color: #09093c;
@@ -35,4 +35,50 @@
   display: block;
   padding: 20px 0;
   font-size: 22px;
+}
+
+.hr {
+  width: 80%;
+  height: 1px;
+  background-color: #2e1871;
+  border: none;
+  margin: 40px auto;
+}
+
+.langtoggle {
+  text-transform: uppercase;
+}
+
+.lang {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 19px;
+}
+
+.exitBtn {
+  display: block;
+  width: 115px;
+  color: #fff;
+  border: 1px solid #3070fd;
+  border-radius: 30px;
+  padding: 13px;
+  text-align: left;
+  padding-left: 30px;
+  margin: 0 auto;
+  font-size: 21px;
+  position: relative;
+}
+
+.exitBtn::after {
+  content: '';
+  height: 21px;
+  width: 21px;
+  background-image: url('./img/logOut.png');
+  background-size: 100%;
+  display: block;
+  position: absolute;
+  right: 22px;
+  top: 15px;
+  cursor: pointer;
 }
