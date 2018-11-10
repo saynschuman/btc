@@ -10,14 +10,13 @@ import Numbers from '../common/Numbers/Numbers'
 import ButtonViolet from '../common/ButtonViolet/ButtonViolet'
 import ButtonBlue from '../common/ButtonBlue/ButtonBlue'
 import CommonLink from '../common/CommonLink/CommonLink'
-import BigBlock from '../common/bigBlock'
-import ChartCourse from '../common/ChartCourse/ChartCourse'
-import ChartIncome from '../common/ChartIncome/ChartIncome'
 import MobileMenuInvestor from '../common/MobileMenuInvestor/MobileMenuInvestor'
 import { connect } from 'react-redux'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 import InvestorHomePage from '../investorHomepage/investorHomePage'
 import css from './RootInvestor.module.css'
+import InvestorSettings from '../InvestorSettings/InvestorSettings'
+import InvestorPrivateSettings from '../InvestorPrivateSettings/InvestorPrivateSettings'
 
 const RootInvestor = props => {
   return (
@@ -48,7 +47,10 @@ const RootInvestor = props => {
           </Aside>
           <Main>
             <Switch>
-              <Route activeClassName={'is-active'} exact path="/" component={InvestorHomePage} />
+              <Route exact path="/investor-home" component={InvestorHomePage} />
+              <Route path="/investor-buy" component={InvestorSettings} />
+              <Route path="/investor-settings" component={InvestorPrivateSettings} />
+              <Route path="*" component={InvestorHomePage} />
             </Switch>
           </Main>
           {props.menuIsOpen && <MobileMenuInvestor />}

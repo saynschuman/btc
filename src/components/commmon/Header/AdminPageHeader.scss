@@ -123,6 +123,12 @@
   }
 }
 
+.admin-page-header {
+  .mobile-menu-button {
+    right: 40px; 
+  }
+}
+
 .clearfix {
   &::after {
     display: block;
@@ -250,4 +256,12 @@
     left: 0;
     transition: 0.3s;
   }
+}
+
+@media screen and (max-width: 480px) { 
+.admin-page-header {
+  .mobile-menu-button {
+    right: 15px; 
+  }
+}
 }

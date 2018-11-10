@@ -1,23 +1,33 @@
-import React from "react";
+import React from 'react'
+import css from './Nav.module.css'
+import { NavLink, HashRouter } from 'react-router-dom'
 
-class Nav extends React.Component {
-  render() {
-    return (
-      <nav>
+const Nav = props => {
+  // render() {
+  return (
+    <nav>
+      <HashRouter>
         <ul>
           <li>
-            <a href="/">Главная</a>
+            <NavLink exact={true} activeClassName={css.isActiveNavLink} to="/investor-home">
+              Главная
+            </NavLink>
           </li>
           <li>
-            <a href="/">Покупка-продажа</a>
+            <NavLink exact={true} activeClassName={css.isActiveNavLink} to="/investor-buy">
+              Покупка-продажа
+            </NavLink>
           </li>
-          <li className="active">
-            <a href="/">Настройки</a>
+          <li>
+            <NavLink exact={true} activeClassName={css.isActiveNavLink} to="/investor-settings">
+              Настройки
+            </NavLink>
           </li>
         </ul>
-      </nav>
-    );
-  }
+      </HashRouter>
+    </nav>
+  )
+  // }
 }
 
-export default Nav;
+export default Nav

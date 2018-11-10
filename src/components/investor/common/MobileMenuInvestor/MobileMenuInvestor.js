@@ -17,7 +17,7 @@ const mobileMenu = props => {
             onClick={props.toggleMobileMenu}
             exact={true}
             activeClassName={css.isActive}
-            to="/"
+            to="/investor-home"
           >
             Главная
           </NavLink>
@@ -27,7 +27,7 @@ const mobileMenu = props => {
             onClick={props.toggleMobileMenu}
             exact={true}
             activeClassName={css.isActive}
-            to="/buy"
+            to="/investor-buy"
           >
             Покупка/Продажа
           </NavLink>
@@ -37,7 +37,7 @@ const mobileMenu = props => {
             onClick={props.toggleMobileMenu}
             exact={true}
             activeClassName={css.isActive}
-            to="/settings"
+            to="/investor-settings"
           >
             Настройки
           </NavLink>

@@ -2,6 +2,8 @@
     float: left;
     width: calc(30% - 15px);
     margin-right: 15px;
+    position: relative;
+    z-index: 99;
 }
 
 @media screen and (max-width: 1250px) {

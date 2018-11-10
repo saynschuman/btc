@@ -14,7 +14,7 @@ class AdminPageHeader extends Component {
   }
   render() {
     return (
-      <div className="header-wrapper">
+      <div className="header-wrapper admin-page-header">
         <div className="header-inner">
           <div className="left item">
             <Link to={'/'}>
@@ -32,13 +32,13 @@ class AdminPageHeader extends Component {
                 </a>
               </li>
             </ul>
-            <div
-              onClick={this.props.toggleMobileMenu}
-              className={classNames('mobile-menu-button', {
-                openedMenu: this.props.menuIsOpen
-              })}
-            />
           </div>
+          <div
+            onClick={this.props.toggleMobileMenu}
+            className={classNames('mobile-menu-button', {
+              openedMenu: this.props.menuIsOpen
+            })}
+          />
         </div>
       </div>
     )
