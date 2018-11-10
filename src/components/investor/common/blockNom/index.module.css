@@ -27,3 +27,13 @@
     border-bottom: 1px solid #003284;
     font-size: 20px;
 }
+
+@media screen and (max-width: 1250px) {
+    .header {
+        padding: 15px;
+    }
+    .img {
+        right: 5px;
+        top: 7px;
+    }
+}

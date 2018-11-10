@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import './Header.scss'
 import Nav from './components/Nav'
+import { toggleMobileMenu } from '../../../modules/toggleMobileMenu'
+import { connect } from 'react-redux'
+import classNames from 'classnames'
 class Header extends Component {
   exit = e => {
     e.preventDefault()
@@ -9,7 +12,7 @@ class Header extends Component {
   }
   render() {
     return (
-      <div className="header-wrapper">
+      <div className="header-wrapper investor-page">
         <div className="header-inner">
           <div className="left item">
             <div className="logo" />
@@ -27,10 +30,23 @@ class Header extends Component {
               </li>
             </ul>
           </div>
+          <div
+            onClick={this.props.toggleMobileMenu}
+            className={classNames('mobile-menu-button', {
+              openedMenu: this.props.menuIsOpen
+            })}
+          />
         </div>
       </div>
     )
   }
 }
 
-export default Header
+export default connect(
+  state => {
+    return {
+      menuIsOpen: state.toggleMobileMenu.mobileMenuIsOpen
+    }
+  },
+  { toggleMobileMenu }
+)(Header)

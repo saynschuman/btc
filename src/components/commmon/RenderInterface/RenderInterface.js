@@ -1,7 +1,7 @@
 import React from 'react'
 import RootAdmin from '../../admin/RootAdmin'
 import NotLogged from '../../notLogged/notLogged'
-import InvestorHomePage from '../../investor/investorHomepage/investorHomePage'
+import RootInvestor from '../../investor/RootInvestor/RootInvestor'
 
 export default props => {
   const renderInterface = role => {
@@ -9,7 +9,7 @@ export default props => {
       case 'admin':
         return <RootAdmin />
       case 'investor':
-        return <InvestorHomePage />
+        return <RootInvestor />
       default:
         return <NotLogged />
     }

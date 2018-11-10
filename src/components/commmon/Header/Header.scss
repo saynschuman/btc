@@ -168,10 +168,40 @@
   }
 }
 
+.investor-page .mobile-menu-button {
+  right: 15px;
+}
+
 @media screen and (max-width: 1640px) {
   .header-wrapper .header-inner {
     width: 100%;
     display: block;
     margin: 0 auto;
+  }
+}
+
+
+@media screen and (max-width: 1320px) {
+  .header-wrapper .header-inner .item nav ul li a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .header-wrapper .header-inner .item.menu {
+    display: none;
+  }
+  .header-wrapper .header-inner .item.right {
+    display: none;
+  }
+  .header-wrapper .header-inner .item .logo {
+    height: 59px;
+    width: 144px;
+  }
+  .header-wrapper {
+    height: 89px;
   }
 }

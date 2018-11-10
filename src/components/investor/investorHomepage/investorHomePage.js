@@ -8,31 +8,23 @@ import MainContainer from '../common/MainContainer/MainContainer'
 import { flash, btc, wallet, course } from './img/export'
 import Numbers from '../common/Numbers/Numbers'
 import ButtonViolet from '../common/ButtonViolet/ButtonViolet'
+import ButtonBlue from '../common/ButtonBlue/ButtonBlue'
+import CommonLink from '../common/CommonLink/CommonLink'
+import css from './InvestorHomaPage.module.css'
+import BigBlock from '../common/bigBlock'
+import ChartCourse from '../common/ChartCourse/ChartCourse'
+import ChartIncome from '../common/ChartIncome/ChartIncome'
+import MobileMenuInvestor from '../common/MobileMenuInvestor/MobileMenuInvestor'
 
-const InvestorHomepage = () => {
+const InvestorHomepage = props => {
   return (
     <div>
-      {/* <Header whoAreYou={'investor'} /> */}
-      <MainContainer>
-        <Aside>
-          <Block title={'Ваша мощность (?)'} icon={flash}>
-            <Numbers data={'1.201 TH/s'} />
-          </Block>
-          <BlockNom title={'Полученный доход (?)'} icon={btc}>
-            <Numbers data={'1.201 BTC'} />
-            <ButtonViolet info text={'Инвестировать'} />
-          </BlockNom>
-          <Block title={'Баланс кошелька'} icon={wallet}>
-            123
-          </Block>
-          <Block title={'Курс'} icon={course}>
-            123
-          </Block>
-        </Aside>
-        <Main>
-          <Block title={'График курса'}>123</Block>
-        </Main>
-      </MainContainer>
+      <BigBlock title={'График курса BTC'} courseBtcUSD={'6 952,04'} courseBtcRUB={'399 574'}>
+        <ChartCourse />
+      </BigBlock>
+      <Block title={'График доходности проекта, % '}>
+        <ChartIncome />
+      </Block>
     </div>
   )
 }
