@@ -3,7 +3,7 @@ const SUCCESS_LOGIN_ADMIN = 'SUCCESS_LOGIN_ADMIN'
 const ERROR_LOGIN_ADMIN = 'ERROR_LOGIN_ADMIN'
 
 const initialState = {
-  successLoginAdmin: false,
+  successLoginAdmin: null,
 }
 
 export default function(state = initialState, action) {
@@ -11,7 +11,7 @@ export default function(state = initialState, action) {
     case SUCCESS_LOGIN_ADMIN:
       return { ...state, successLoginAdmin: true }
     case ERROR_LOGIN_ADMIN:
-      return { ...state, successLoginAdmin: null }
+      return { ...state, successLoginAdmin: false }
     default:
       return state
   }

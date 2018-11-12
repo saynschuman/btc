@@ -1,5 +1,4 @@
 import React from 'react'
-import css from './Nav.module.css'
 import { Link } from '@reach/router'
 
 const Nav = props => {

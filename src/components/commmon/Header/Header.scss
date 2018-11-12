@@ -185,6 +185,15 @@
     display: block;
     margin: 0 auto;
   }
+  .header-wrapper .header-inner .item.menu {
+    width: 55% !important;
+    padding: 25px 0 !important;
+}
+.header-wrapper .header-inner .item.right {
+  float: right;
+  text-align: right;
+  width: 20% !important;
+}
 }
 
 

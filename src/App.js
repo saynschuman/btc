@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <Router primary={false}>
-        <Login path="/login" />
+        <Login default />
         <LoginAdmin path="/login-admin" />
         <LoginAdmin path="/auth/:token" />
         <RootInvestor path="investor">

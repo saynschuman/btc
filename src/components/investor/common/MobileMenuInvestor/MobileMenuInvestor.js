@@ -1,6 +1,6 @@
 import React from 'react'
 import css from './MobileMenuInvestor.module.css'
-import { NavLink } from 'react-router-dom'
+import { Link } from '@reach/router'
 import { toggleMobileMenu } from '../../../../modules/toggleMobileMenu'
 import { connect } from 'react-redux'
 
@@ -13,34 +13,19 @@ const mobileMenu = props => {
     <div className={css.mobileMenu}>
       <ul className={css.menu}>
         <li>
-          <NavLink
-            onClick={props.toggleMobileMenu}
-            exact={true}
-            activeClassName={css.isActive}
-            to="/investor-home"
-          >
+          <Link onClick={props.toggleMobileMenu} to="investor-home">
             Главная
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink
-            onClick={props.toggleMobileMenu}
-            exact={true}
-            activeClassName={css.isActive}
-            to="/investor-buy"
-          >
+          <Link onClick={props.toggleMobileMenu} to="investor-buy">
             Покупка/Продажа
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink
-            onClick={props.toggleMobileMenu}
-            exact={true}
-            activeClassName={css.isActive}
-            to="/investor-settings"
-          >
+          <Link onClick={props.toggleMobileMenu} to="investor-settings">
             Настройки
-          </NavLink>
+          </Link>
         </li>
       </ul>
       <hr className={css.hr} />
@@ -58,6 +43,6 @@ const mobileMenu = props => {
 export default connect(
   null,
   {
-    toggleMobileMenu
+    toggleMobileMenu,
   }
 )(mobileMenu)
