@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 // import { authenticate } from './helpers/authenticate'
+import AdminAuth from '../../components/admin/AdminAuth/AdminAuth'
+import InvestorAuth from '../../components/investor/InvestorAuth/InvestorAuth'
 import { Router, Link } from '@reach/router'
 import { parseJwt } from './helpers/parseJwt'
 import RenderInterface from './components/commmon/RenderInterface/RenderInterface'
@@ -14,7 +16,7 @@ class App extends Component {
     // return <div>{<RenderInterface userinfo={userInfo} />}</div>
     return (
       <Router>
-        <AdminLogin path="/admin-login">
+        <AdminAuth path="/admin-login">
           <AdminHomepage exact path="/" />
           <AdminSettings path="/settings" />
           <AdminReports path="/reports" />
@@ -25,7 +27,7 @@ class App extends Component {
           <News path="/news" />
           <AdminHomepage path="/homepage" />
           <AdminHomepage default />
-        </AdminLogin>
+        </AdminAuth>
         <Login path="/login">
           <InvestorHomePage exact path="/investor-home" />
           <InvestorSettings path="/investor-buy" />
