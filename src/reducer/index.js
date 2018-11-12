@@ -12,6 +12,7 @@ import courseHistory from './courseHistory'
 import agreement from './agreement'
 import editArticle from '../modules/editArticle'
 import investorHomePageData from './investorHomePageData'
+import successLoginAdmin from '../modules/successLoginAdmin'
 
 export default combineReducers({
   adminHomePageData,
@@ -26,5 +27,6 @@ export default combineReducers({
   courseHistory,
   agreement,
   editArticle,
-  investorHomePageData
+  investorHomePageData,
+  successLoginAdmin,
 })

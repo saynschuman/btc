@@ -4,7 +4,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css'
 import { connect } from 'react-redux'
 import { toggleMobileMenu } from '../../../modules/toggleMobileMenu'
 import classNames from 'classnames'
-import { NavLink } from 'react-router-dom'
+import { Link } from '@reach/router'
 
 const Aside = props => {
   const exit = e => {
@@ -27,44 +27,28 @@ const Aside = props => {
       </div>
       <ul>
         <li onClick={props.toggleMobileMenu}>
-          <NavLink exact={true} activeClassName="is-active" to="/homepage">
-            Главная
-          </NavLink>
+          <Link to="homepage">Главная</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <NavLink to={'/settings'} activeClassName="is-active">
-            Настройка прав администратора
-          </NavLink>
+          <Link to={'settings'}>Настройка прав администратора</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <NavLink to={'/reports'} activeClassName="is-active">
-            Отчеты
-          </NavLink>
+          <Link to={'reports'}>Отчеты</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <NavLink to={'/pays'} activeClassName="is-active">
-            Выплаты начислений инвесторам
-          </NavLink>
+          <Link to={'pays'}>Выплаты начислений инвесторам</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <NavLink to={'/applications'} activeClassName="is-active">
-            Заявки инвесторов на продажу
-          </NavLink>
+          <Link to={'applications'}>Заявки инвесторов на продажу</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <NavLink to={'/schema'} activeClassName="is-active">
-            Настройка схемы расчета
-          </NavLink>
+          <Link to={'schema'}>Настройка схемы расчета</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <NavLink to={'/other'} activeClassName="is-active">
-            Прочее
-          </NavLink>
+          <Link to={'other'}>Прочее</Link>
         </li>
         <li onClick={props.toggleMobileMenu}>
-          <NavLink to={'/news'} activeClassName="is-active">
-            Новости
-          </NavLink>
+          <Link to={'news'}>Новости</Link>
         </li>
       </ul>
     </aside>
@@ -74,7 +58,7 @@ const Aside = props => {
 export default connect(
   state => {
     return {
-      menuIsOpen: state.toggleMobileMenu.mobileMenuIsOpen
+      menuIsOpen: state.toggleMobileMenu.mobileMenuIsOpen,
     }
   },
   { toggleMobileMenu }

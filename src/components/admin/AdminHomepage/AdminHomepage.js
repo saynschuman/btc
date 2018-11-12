@@ -4,7 +4,11 @@ import { Line } from 'react-chartjs-2'
 import { connect } from 'react-redux'
 import prettyPrice from '../../../helpers/prettyPrice'
 import moment from 'moment'
-import { getHomePageAdminData, getCourse, getCourseHistory } from '../../../actions'
+import {
+  getHomePageAdminData,
+  getCourse,
+  getCourseHistory,
+} from '../../../actions'
 
 class AdminHomepage extends React.Component {
   componentDidMount() {
@@ -16,10 +20,10 @@ class AdminHomepage extends React.Component {
     const options = {
       responsive: true,
       tooltips: {
-        mode: 'label'
+        mode: 'label',
       },
       hover: {
-        mode: 'dataset'
+        mode: 'dataset',
       },
       scales: {
         xAxes: [
@@ -27,26 +31,28 @@ class AdminHomepage extends React.Component {
             display: true,
             scaleLabel: {
               show: true,
-              labelString: 'Month'
-            }
-          }
+              labelString: 'Month',
+            },
+          },
         ],
         yAxes: [
           {
             display: false,
             scaleLabel: {
               show: false,
-              labelString: 'Value'
+              labelString: 'Value',
             },
             ticks: {
-              suggestedMin: this.props.courseHistory.map(course => course.RUB)[0],
+              suggestedMin: this.props.courseHistory.map(
+                course => course.RUB
+              )[0],
               suggestedMax: this.props.courseHistory.map(course => course.RUB)[
                 this.props.courseHistory.map(course => course.RUB).length - 1
-              ]
-            }
-          }
-        ]
-      }
+              ],
+            },
+          },
+        ],
+      },
     }
     const data = {
       labels: this.props.courseHistory.map(course =>
@@ -72,7 +78,7 @@ class AdminHomepage extends React.Component {
           pointHoverBorderWidth: 2,
           pointRadius: 4,
           pointHitRadius: 10,
-          data: this.props.courseHistory.map(course => course.RUB)
+          data: this.props.courseHistory.map(course => course.RUB),
         },
         {
           label: '1BTC (USD)',
@@ -94,18 +100,19 @@ class AdminHomepage extends React.Component {
           pointHoverBorderWidth: 2,
           pointRadius: 4,
           pointHitRadius: 10,
-          data: this.props.courseHistory.map(course => course.USD)
-        }
-      ]
+          data: this.props.courseHistory.map(course => course.USD),
+        },
+      ],
     }
     const totalInvestors = this.props.adminHomePageData.totalInvestors
     const activeInvestors = this.props.adminHomePageData.activeInvestors
-    const totalActiveInvestments = this.props.adminHomePageData.totalActiveInvestments
+    const totalActiveInvestments = this.props.adminHomePageData
+      .totalActiveInvestments
     const totalHashRateSold = this.props.adminHomePageData.totalHashRateSold
     const platformHashRate = this.props.adminHomePageData.platformHashRate
     const hashRatePrice = this.props.adminHomePageData.hashRatePrice
     return (
-      <div className="admin-body">
+      <div>
         <div className="col col-left">
           <div className={'admin-block'}>
             <div className="block-header">
@@ -115,19 +122,25 @@ class AdminHomepage extends React.Component {
           </div>
           <div className={'admin-block'}>
             <div className="block-header">
-              <div className="header-title users">Количество активных инвесторов</div>
+              <div className="header-title users">
+                Количество активных инвесторов
+              </div>
             </div>
             <p className="block-body">{activeInvestors}</p>
           </div>
           <div className={'admin-block'}>
             <div className="block-header">
-              <div className="header-title light">Остаток мощности у проекта</div>
+              <div className="header-title light">
+                Остаток мощности у проекта
+              </div>
             </div>
             <p className="block-body">{platformHashRate} TH/s</p>
           </div>
           <div className={'admin-block'}>
             <div className="block-header">
-              <div className="header-title graph">Текущая стоимость единицы мощности</div>
+              <div className="header-title graph">
+                Текущая стоимость единицы мощности
+              </div>
             </div>
             <p className="block-body smaller38">{hashRatePrice} TH/s = 1 BTC</p>
           </div>
@@ -140,15 +153,17 @@ class AdminHomepage extends React.Component {
             <Line data={data} options={options} />
             <p className="block-body smaller28">
               {this.props.courseIsLoaded &&
-                `1BTC = ${prettyPrice(this.props.course.course.USD)}$ 1BTC = ${prettyPrice(
-                  this.props.course.course.RUB
-                )}P`}
+                `1BTC = ${prettyPrice(
+                  this.props.course.course.USD
+                )}$ 1BTC = ${prettyPrice(this.props.course.course.RUB)}P`}
             </p>
           </div>
           <div className="col middle mr">
             <div className={'admin-block'}>
               <div className="block-header">
-                <div className="header-title hand">Мощность всех инвесторов</div>
+                <div className="header-title hand">
+                  Мощность всех инвесторов
+                </div>
               </div>
               <p className="block-body smaller38">{totalHashRateSold} TH/s</p>
             </div>
@@ -156,7 +171,9 @@ class AdminHomepage extends React.Component {
           <div className="col middle ml">
             <div className={'admin-block'}>
               <div className="block-header">
-                <div className="header-title money">Количество активных инвестиций</div>
+                <div className="header-title money">
+                  Количество активных инвестиций
+                </div>
               </div>
               <p className="block-body smaller38">{totalActiveInvestments}</p>
             </div>
@@ -176,7 +193,7 @@ export default connect(
       courseIsLoaded: state.course.isLoaded,
       courseHistory: state.courseHistory.courseHistory,
       courseHistoryIsLoading: state.courseHistory.isLoading,
-      courseHistoryIsLoaded: state.courseHistory.isLoaded
+      courseHistoryIsLoaded: state.courseHistory.isLoaded,
     }
   },
   { getHomePageAdminData, getCourse, getCourseHistory }

@@ -15,7 +15,7 @@ class AdminOther extends React.Component {
   }
   render() {
     return (
-      <div className={'admin-body other-page'}>
+      <div className={'other-page'}>
         <div className="clearfix">
           <div className="col col-50 left">
             <div className="admin-block">
@@ -96,17 +96,19 @@ class AdminOther extends React.Component {
 
 export default connect(
   state => {
-    const yieldListNormalized = Object.keys(state.reports.yieldList).map(item => ({
-      month: item,
-      yield: state.reports.yieldList[item]
-    }))
+    const yieldListNormalized = Object.keys(state.reports.yieldList).map(
+      item => ({
+        month: item,
+        yield: state.reports.yieldList[item],
+      })
+    )
     return {
       isLoading: state.reports.yieldListIsLoading,
       isLoaded: state.reports.yieldListIsLoaded,
       yieldList: yieldListNormalized,
       agreementIsLoaded: state.agreement.isLoaded,
       agreementIsLoading: state.agreement.isLoading,
-      agreement: state.agreement.agreement
+      agreement: state.agreement.agreement,
     }
   },
   { getYieldList, getAgreement }

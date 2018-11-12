@@ -1,30 +1,22 @@
 import React from 'react'
 import css from './Nav.module.css'
-import { NavLink, HashRouter } from 'react-router-dom'
+import { Link } from '@reach/router'
 
 const Nav = props => {
   // render() {
   return (
     <nav>
-      <HashRouter>
-        <ul>
-          <li>
-            <NavLink exact={true} activeClassName={css.isActiveNavLink} to="/investor-home">
-              Главная
-            </NavLink>
-          </li>
-          <li>
-            <NavLink exact={true} activeClassName={css.isActiveNavLink} to="/investor-buy">
-              Покупка-продажа
-            </NavLink>
-          </li>
-          <li>
-            <NavLink exact={true} activeClassName={css.isActiveNavLink} to="/investor-settings">
-              Настройки
-            </NavLink>
-          </li>
-        </ul>
-      </HashRouter>
+      <ul>
+        <li>
+          <Link to="">Главная</Link>
+        </li>
+        <li>
+          <Link to="buy">Покупка-продажа</Link>
+        </li>
+        <li>
+          <Link to="settings">Настройки</Link>
+        </li>
+      </ul>
     </nav>
   )
   // }

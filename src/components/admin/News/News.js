@@ -7,7 +7,7 @@ import {
   changeTitle,
   changeBody,
   changeImage,
-  deleteImage
+  deleteImage,
 } from '../../../modules/editArticle'
 import { connect } from 'react-redux'
 import PerfectScrollbar from 'react-perfect-scrollbar'
@@ -50,7 +50,7 @@ class News extends React.Component {
   }
   render() {
     return (
-      <div className={'admin-body'}>
+      <div>
         <div className="clearfix">
           <div className="col col-30 left">
             <div className="admin-block news-block-static-mobile">
@@ -77,7 +77,10 @@ class News extends React.Component {
                 </PerfectScrollbar>
               </div>
               <div className="news-footer">
-                <div onClick={this.handleUpdateArticle} className="settings-save schema-save">
+                <div
+                  onClick={this.handleUpdateArticle}
+                  className="settings-save schema-save"
+                >
                   Добавить
                 </div>
               </div>
@@ -94,7 +97,9 @@ class News extends React.Component {
                     onChange={e => this.handleChangeTitle(e.target.value)}
                     value={this.props.editArticle.title}
                   />
-                  <span className={'date'}>{moment(new Date()).format('l')}</span>
+                  <span className={'date'}>
+                    {moment(new Date()).format('l')}
+                  </span>
                 </div>
               </div>
               <div className="news-body">
@@ -102,7 +107,9 @@ class News extends React.Component {
                   <div className="article-inner">
                     <div
                       className="featured-image"
-                      style={{ backgroundImage: `url(${this.props.editArticle.image})` }}
+                      style={{
+                        backgroundImage: `url(${this.props.editArticle.image})`,
+                      }}
                     >
                       <div>
                         <ReactFileReader
@@ -113,7 +120,10 @@ class News extends React.Component {
                         >
                           <div className="uppload-image" />
                         </ReactFileReader>
-                        <div className="delete-image" onClick={this.handleDeleteImage} />
+                        <div
+                          className="delete-image"
+                          onClick={this.handleDeleteImage}
+                        />
                       </div>
                     </div>
                     <article>
@@ -139,7 +149,10 @@ class News extends React.Component {
               </div>
 
               <div className="news-footer">
-                <div onClick={this.handleUpdateArticle} className="settings-save schema-save">
+                <div
+                  onClick={this.handleUpdateArticle}
+                  className="settings-save schema-save"
+                >
                   Опубликовать
                 </div>
               </div>
@@ -191,7 +204,9 @@ class News extends React.Component {
             </PerfectScrollbar>
           </div>
           <div className="news-footer">
-            <div className="settings-save schema-save news-save-portal">Сохранить одобрения</div>
+            <div className="settings-save schema-save news-save-portal">
+              Сохранить одобрения
+            </div>
           </div>
         </div>
       </div>
@@ -208,8 +223,16 @@ export default connect(
       portalNewsIsLoading: state.portal.isLoading,
       portalNewsIsLoaded: state.portal.isLoaded,
       portalNews: state.portal.portalNews,
-      editArticle: state.editArticle
+      editArticle: state.editArticle,
     }
   },
-  { getArticles, getPortalNews, changeTitle, changeBody, updateArticle, changeImage, deleteImage }
+  {
+    getArticles,
+    getPortalNews,
+    changeTitle,
+    changeBody,
+    updateArticle,
+    changeImage,
+    deleteImage,
+  }
 )(News)

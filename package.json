@@ -5,6 +5,7 @@
   "module": "dist/react-select.esm.js",
   "proxy": "https://atc-bl.nadzor.online/",
   "dependencies": {
+    "@reach/router": "^1.2.1",
     "axios": "^0.18.0",
     "chart.js": "^2.7.3",
     "classnames": "^2.2.6",

@@ -2,8 +2,15 @@ import React from 'react'
 import './AuthForm.scss'
 import connect from 'react-redux/es/connect/connect'
 import { authData } from '../../actions'
+import { successLoginAdmin } from '../../modules/successLoginAdmin'
 
 class AuthForm extends React.Component {
+  componentDidMount() {
+    this.props.token && this.props.successLoginAdmin(this.props.token)
+  }
+  componentDidUpdate() {
+    this.props.success && window.location.replace('/admin')
+  }
   state = {
     id: '',
     password: '',
@@ -78,7 +85,8 @@ export default connect(
     return {
       isLoading: state.authData.isLoading,
       isLoaded: state.authData.isLoaded,
+      success: state.successLoginAdmin.successLoginAdmin,
     }
   },
-  { authData }
+  { authData, successLoginAdmin }
 )(AuthForm)

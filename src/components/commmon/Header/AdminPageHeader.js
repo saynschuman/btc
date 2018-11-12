@@ -4,7 +4,6 @@ import AdminHeader from './components/AdminHeader'
 import { connect } from 'react-redux'
 import { toggleMobileMenu } from '../../../modules/toggleMobileMenu'
 import classNames from 'classnames'
-import { Link } from 'react-router-dom'
 
 class AdminPageHeader extends Component {
   exit = e => {
@@ -17,9 +16,9 @@ class AdminPageHeader extends Component {
       <div className="header-wrapper admin-page-header">
         <div className="header-inner">
           <div className="left item">
-            <Link to={'/'}>
+            <a>
               <div className="logo" />
-            </Link>
+            </a>
           </div>
           <div className="item menu">
             <AdminHeader />

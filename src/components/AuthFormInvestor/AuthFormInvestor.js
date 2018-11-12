@@ -2,8 +2,12 @@ import React from 'react'
 import './AuthFormInvestor.scss'
 import connect from 'react-redux/es/connect/connect'
 import { authDataInvestor } from '../../actions'
+import { redirectTo } from '@reach/router'
 
 class AuthFormInvestor extends React.Component {
+  componentDidUpdate() {
+    this.props.success && redirectTo('/investor')
+  }
   state = {
     id: '',
     password: ''
@@ -73,7 +77,8 @@ export default connect(
   state => {
     return {
       isLoading: state.authData.investorLogIsloading,
-      isLoaded: state.authData.investorLogIsloaded
+      isLoaded: state.authData.investorLogIsloaded,
+      success: state.authData.investorSuccess
     }
   },
   { authDataInvestor }

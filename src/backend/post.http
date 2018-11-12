@@ -1,8 +1,7 @@
-POST https://atc-bl.nadzor.online/bl198765/investor/login HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViYmI3NThiOWQwMzM3OWE1NWMxZDUyYiIsInR5cGUiOiJyZWd1bGFyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTQxNzQ4ODgzLCJleHAiOjE1NDE3NTI0ODN9.CYyIUeQ6ebxKf0uf2Tq1QGXYrnGcyvr0cYDpR-v9r-A  
+POST https://atc-bl.nadzor.online/bl198765/investor/signUp HTTP/1.1
 Content-Type: application/json
 
 {
-	"email": "saynschuman@gmail.com",
-	"password": "saynschuman"
+	"email": "invest",
+	"password": "123123"
 }
