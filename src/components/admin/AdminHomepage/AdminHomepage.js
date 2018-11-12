@@ -16,6 +16,9 @@ class AdminHomepage extends React.Component {
     this.props.getCourse()
     this.props.getCourseHistory()
   }
+  componentDidUpdate() {
+    this.props.isError && window.location.replace('/login-admin')
+  }
   render() {
     const options = {
       responsive: true,
@@ -194,6 +197,7 @@ export default connect(
       courseHistory: state.courseHistory.courseHistory,
       courseHistoryIsLoading: state.courseHistory.isLoading,
       courseHistoryIsLoaded: state.courseHistory.isLoaded,
+      isError: state.adminHomePageData.isError,
     }
   },
   { getHomePageAdminData, getCourse, getCourseHistory }

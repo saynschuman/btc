@@ -3,7 +3,8 @@ import { REQUEST_AGREEMENT, RESPONSE_AGREEMENT } from '../constants'
 const initialState = {
   isLoading: false,
   isLoaded: false,
-  agreement: {}
+  isError: false,
+  agreement: {},
 }
 
 export default function(state = initialState, action) {
@@ -12,14 +13,14 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isLoading: true,
-        isLoaded: false
+        isLoaded: false,
       }
     case RESPONSE_AGREEMENT:
       return {
         ...state,
         isLoading: false,
         isLoaded: true,
-        agreement: action.agreement
+        agreement: action.agreement,
       }
     default:
       return state

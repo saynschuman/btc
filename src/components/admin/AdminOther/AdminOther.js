@@ -13,6 +13,9 @@ class AdminOther extends React.Component {
     !this.props.isLoaded && this.props.getYieldList()
     !this.agreementIsLoaded && this.props.getAgreement()
   }
+  componentDidUpdate() {
+    this.props.isError && window.location.replace('/login-admin')
+  }
   render() {
     return (
       <div className={'other-page'}>
@@ -109,6 +112,7 @@ export default connect(
       agreementIsLoaded: state.agreement.isLoaded,
       agreementIsLoading: state.agreement.isLoading,
       agreement: state.agreement.agreement,
+      isError: state.adminHomePageData.isError,
     }
   },
   { getYieldList, getAgreement }
